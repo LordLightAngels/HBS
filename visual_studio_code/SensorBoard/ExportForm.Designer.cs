@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.mrbPDF = new MaterialSkin.Controls.MaterialRadioButton();
-            this.mlExport = new MaterialSkin.Controls.MaterialLabel();
+            this.mlContent = new MaterialSkin.Controls.MaterialLabel();
             this.mrbExcel = new MaterialSkin.Controls.MaterialRadioButton();
             this.mcbEnvoiPDF = new MaterialSkin.Controls.MaterialCheckBox();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.msltfInputEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mlTitle = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,20 +56,20 @@
             this.mrbPDF.Text = "PDF";
             this.mrbPDF.UseVisualStyleBackColor = true;
             // 
-            // mlExport
+            // mlContent
             // 
-            this.mlExport.AutoSize = true;
-            this.mlExport.Depth = 0;
-            this.mlExport.Font = new System.Drawing.Font("Roboto", 11F);
-            this.mlExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlExport.Location = new System.Drawing.Point(12, 9);
-            this.mlExport.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlExport.Name = "mlExport";
-            this.mlExport.Size = new System.Drawing.Size(504, 114);
-            this.mlExport.TabIndex = 3;
-            this.mlExport.Text = "Exports\n\n\n Veuillez saisir un format d\'export parmi les formats proposés ci-desso" +
-    "us.\n\n Format de l\'export : ";
-            this.mlExport.Click += new System.EventHandler(this.materialLabel1_Click);
+            this.mlContent.AutoSize = true;
+            this.mlContent.Depth = 0;
+            this.mlContent.Font = new System.Drawing.Font("Roboto", 11F);
+            this.mlContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mlContent.Location = new System.Drawing.Point(12, 56);
+            this.mlContent.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlContent.Name = "mlContent";
+            this.mlContent.Size = new System.Drawing.Size(500, 57);
+            this.mlContent.TabIndex = 3;
+            this.mlContent.Text = "Veuillez saisir un format d\'export parmi les formats proposés ci-dessous.\n\n Forma" +
+    "t de l\'export : ";
+            this.mlContent.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // mrbExcel
             // 
@@ -91,7 +92,7 @@
             // 
             this.mcbEnvoiPDF.AutoSize = true;
             this.mcbEnvoiPDF.Depth = 0;
-            this.mcbEnvoiPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.mcbEnvoiPDF.Font = new System.Drawing.Font("Roboto", 10F);
             this.mcbEnvoiPDF.Location = new System.Drawing.Point(16, 164);
             this.mcbEnvoiPDF.Margin = new System.Windows.Forms.Padding(0);
             this.mcbEnvoiPDF.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -103,22 +104,22 @@
             this.mcbEnvoiPDF.Text = "Envoi PDF par email à :";
             this.mcbEnvoiPDF.UseVisualStyleBackColor = true;
             // 
-            // materialSingleLineTextField1
+            // msltfInputEmail
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(208, 171);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(170, 23);
-            this.materialSingleLineTextField1.TabIndex = 6;
-            this.materialSingleLineTextField1.Text = "saisir adresse mail";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
-            this.materialSingleLineTextField1.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
+            this.msltfInputEmail.Depth = 0;
+            this.msltfInputEmail.Hint = "";
+            this.msltfInputEmail.Location = new System.Drawing.Point(208, 171);
+            this.msltfInputEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.msltfInputEmail.Name = "msltfInputEmail";
+            this.msltfInputEmail.PasswordChar = '\0';
+            this.msltfInputEmail.SelectedText = "";
+            this.msltfInputEmail.SelectionLength = 0;
+            this.msltfInputEmail.SelectionStart = 0;
+            this.msltfInputEmail.Size = new System.Drawing.Size(170, 23);
+            this.msltfInputEmail.TabIndex = 6;
+            this.msltfInputEmail.Text = "saisir adresse mail";
+            this.msltfInputEmail.UseSystemPasswordChar = false;
+            this.msltfInputEmail.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // mrbExport
             // 
@@ -134,16 +135,30 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.mlExport);
+            this.panel1.Controls.Add(this.mlTitle);
+            this.panel1.Controls.Add(this.mlContent);
             this.panel1.Controls.Add(this.mrbExport);
             this.panel1.Controls.Add(this.mrbExcel);
-            this.panel1.Controls.Add(this.materialSingleLineTextField1);
+            this.panel1.Controls.Add(this.msltfInputEmail);
             this.panel1.Controls.Add(this.mrbPDF);
             this.panel1.Controls.Add(this.mcbEnvoiPDF);
             this.panel1.Location = new System.Drawing.Point(27, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 264);
             this.panel1.TabIndex = 8;
+            // 
+            // mlTitle
+            // 
+            this.mlTitle.AutoSize = true;
+            this.mlTitle.Depth = 0;
+            this.mlTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.mlTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mlTitle.Location = new System.Drawing.Point(11, 16);
+            this.mlTitle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlTitle.Name = "mlTitle";
+            this.mlTitle.Size = new System.Drawing.Size(85, 25);
+            this.mlTitle.TabIndex = 8;
+            this.mlTitle.Text = "Exports";
             // 
             // ExportForm
             // 
@@ -164,11 +179,12 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialRadioButton mrbPDF;
-        private MaterialSkin.Controls.MaterialLabel mlExport;
+        private MaterialSkin.Controls.MaterialLabel mlContent;
         private MaterialSkin.Controls.MaterialRadioButton mrbExcel;
         private MaterialSkin.Controls.MaterialCheckBox mcbEnvoiPDF;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField msltfInputEmail;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
         private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialLabel mlTitle;
     }
 }
