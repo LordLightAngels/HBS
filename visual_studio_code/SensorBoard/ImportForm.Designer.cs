@@ -97,6 +97,7 @@
             this.mrbImport.TabIndex = 3;
             this.mrbImport.Text = "Import";
             this.mrbImport.UseVisualStyleBackColor = true;
+            this.mrbImport.Click += new System.EventHandler(this.btnClick_Import);
             // 
             // ImportForm
             // 
@@ -104,6 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 261);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImportForm";
             this.Text = "ImportForm";
             this.panel1.ResumeLayout(false);

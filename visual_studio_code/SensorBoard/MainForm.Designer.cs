@@ -33,11 +33,11 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.mrbConfiguration = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.mrbData = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnData = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbReport = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.mrbImport = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnImport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.mrbSynthesis = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSynthesis = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpFilter = new System.Windows.Forms.TableLayoutPanel();
             this.cbSensor = new System.Windows.Forms.ComboBox();
@@ -61,11 +61,11 @@
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.pnlMenu.Controls.Add(this.mrbConfiguration);
-            this.pnlMenu.Controls.Add(this.mrbData);
+            this.pnlMenu.Controls.Add(this.btnData);
             this.pnlMenu.Controls.Add(this.mrbReport);
-            this.pnlMenu.Controls.Add(this.mrbImport);
+            this.pnlMenu.Controls.Add(this.btnImport);
             this.pnlMenu.Controls.Add(this.mrbExport);
-            this.pnlMenu.Controls.Add(this.mrbSynthesis);
+            this.pnlMenu.Controls.Add(this.btnSynthesis);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMenu.Location = new System.Drawing.Point(3, 3);
             this.pnlMenu.Name = "pnlMenu";
@@ -84,17 +84,17 @@
             this.mrbConfiguration.Text = "Configuration";
             this.mrbConfiguration.UseVisualStyleBackColor = true;
             // 
-            // mrbData
+            // btnData
             // 
-            this.mrbData.Depth = 0;
-            this.mrbData.Location = new System.Drawing.Point(9, 85);
-            this.mrbData.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mrbData.Name = "mrbData";
-            this.mrbData.Primary = true;
-            this.mrbData.Size = new System.Drawing.Size(120, 53);
-            this.mrbData.TabIndex = 4;
-            this.mrbData.Text = "Données";
-            this.mrbData.UseVisualStyleBackColor = true;
+            this.btnData.Depth = 0;
+            this.btnData.Location = new System.Drawing.Point(9, 85);
+            this.btnData.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnData.Name = "btnData";
+            this.btnData.Primary = true;
+            this.btnData.Size = new System.Drawing.Size(120, 53);
+            this.btnData.TabIndex = 4;
+            this.btnData.Text = "Données";
+            this.btnData.UseVisualStyleBackColor = true;
             // 
             // mrbReport
             // 
@@ -108,17 +108,18 @@
             this.mrbReport.Text = "Rapport";
             this.mrbReport.UseVisualStyleBackColor = true;
             // 
-            // mrbImport
+            // btnImport
             // 
-            this.mrbImport.Depth = 0;
-            this.mrbImport.Location = new System.Drawing.Point(9, 237);
-            this.mrbImport.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mrbImport.Name = "mrbImport";
-            this.mrbImport.Primary = true;
-            this.mrbImport.Size = new System.Drawing.Size(120, 53);
-            this.mrbImport.TabIndex = 2;
-            this.mrbImport.Text = "Import";
-            this.mrbImport.UseVisualStyleBackColor = true;
+            this.btnImport.Depth = 0;
+            this.btnImport.Location = new System.Drawing.Point(9, 237);
+            this.btnImport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Primary = true;
+            this.btnImport.Size = new System.Drawing.Size(120, 53);
+            this.btnImport.TabIndex = 2;
+            this.btnImport.Text = "Import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.loadImport);
             // 
             // mrbExport
             // 
@@ -131,18 +132,20 @@
             this.mrbExport.TabIndex = 1;
             this.mrbExport.Text = "Export";
             this.mrbExport.UseVisualStyleBackColor = true;
+            this.mrbExport.Click += new System.EventHandler(this.loadExport);
             // 
-            // mrbSynthesis
+            // btnSynthesis
             // 
-            this.mrbSynthesis.Depth = 0;
-            this.mrbSynthesis.Location = new System.Drawing.Point(9, 9);
-            this.mrbSynthesis.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mrbSynthesis.Name = "mrbSynthesis";
-            this.mrbSynthesis.Primary = true;
-            this.mrbSynthesis.Size = new System.Drawing.Size(120, 53);
-            this.mrbSynthesis.TabIndex = 0;
-            this.mrbSynthesis.Text = "Synthèse";
-            this.mrbSynthesis.UseVisualStyleBackColor = true;
+            this.btnSynthesis.Depth = 0;
+            this.btnSynthesis.Location = new System.Drawing.Point(9, 9);
+            this.btnSynthesis.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSynthesis.Name = "btnSynthesis";
+            this.btnSynthesis.Primary = true;
+            this.btnSynthesis.Size = new System.Drawing.Size(120, 53);
+            this.btnSynthesis.TabIndex = 0;
+            this.btnSynthesis.Text = "Synthèse";
+            this.btnSynthesis.UseVisualStyleBackColor = true;
+            this.btnSynthesis.Click += new System.EventHandler(this.loadSynthesis);
             // 
             // tableLayoutPanel1
             // 
@@ -181,11 +184,16 @@
             this.cbSensor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.cbSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbSensor.ForeColor = System.Drawing.SystemColors.Window;
             this.cbSensor.FormattingEnabled = true;
+            this.cbSensor.Items.AddRange(new object[] {
+            "1",
+            "2"});
             this.cbSensor.Location = new System.Drawing.Point(435, 3);
             this.cbSensor.Name = "cbSensor";
             this.cbSensor.Size = new System.Drawing.Size(212, 21);
             this.cbSensor.TabIndex = 2;
+            this.cbSensor.Click += new System.EventHandler(this.loadSensor);
             // 
             // dtpStart
             // 
@@ -236,11 +244,11 @@
         private System.Windows.Forms.TableLayoutPanel tlpFilter;
         private System.Windows.Forms.ComboBox cbSensor;
         private MaterialSkin.Controls.MaterialRaisedButton mrbConfiguration;
-        private MaterialSkin.Controls.MaterialRaisedButton mrbData;
+        private MaterialSkin.Controls.MaterialRaisedButton btnData;
         private MaterialSkin.Controls.MaterialRaisedButton mrbReport;
-        private MaterialSkin.Controls.MaterialRaisedButton mrbImport;
+        private MaterialSkin.Controls.MaterialRaisedButton btnImport;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
-        private MaterialSkin.Controls.MaterialRaisedButton mrbSynthesis;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSynthesis;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.ImageList imageList1;

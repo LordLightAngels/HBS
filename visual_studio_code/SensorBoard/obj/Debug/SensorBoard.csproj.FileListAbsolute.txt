@@ -9,3 +9,7 @@ C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.exe
 C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.pdb
 C:\Users\Jub\workspace\SensorBoard\SensorBoard\bin\Debug\MaterialSkin.dll
 C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.ExportForm.resources
+C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.ImportForm.resources
+C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.SynthesisForm.resources
+C:\Users\Jub\workspace\SensorBoard\SensorBoard\obj\Debug\SensorBoard.Data.resources
+C:\Users\Jub\workspace\SensorBoard\SensorBoard\bin\Debug\MySql.Data.dll
