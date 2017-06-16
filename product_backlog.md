@@ -118,7 +118,7 @@
 |:----------- |---------------------------------------------------------------------------|
 | Titre       | **Stocker les données importées dans une BDD**			                  |
 | Priorite    | ___???___                                                                 |
-| Estimation  | ___?___                                                                   |
+| Estimation  | ___5___                                                                   |
 | En tant que | Utilisateur                                                               |
 | Je veux     | cliquer sur "Exporter le relevé vers la BDD" et choisir date ID du relevé |
 | Afin de     | pouvoir consulter les enregistrements du relevé en BDD                    |
@@ -146,7 +146,7 @@
 |:----------- |-------------------------------------------------------------------------------|
 | Titre       | **Afficher des données de synthèse**          			                      |
 | Priorite    | ___???___                                                                     |
-| Estimation  | ___?___                                                                       |
+| Estimation  | ___8___                                                                       |
 | En tant que | Utilisateur                                                                   |
 | Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date ID du relevé          |
 | Afin de     | obtenir ID capteur, nb données importées, date-h 1er et dernier enregistrement|
@@ -158,10 +158,10 @@
 - [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-[] ID du capteur
-[] nombre de données importées totales
-[] date - heure du 1er enregistrement
-[] date - heure du dernier enregistrement
+- [] ID du capteur
+- [] nombre de données importées totales
+- [] date - heure du 1er enregistrement
+- [] date - heure du dernier enregistrement
 
 ----------
 
@@ -181,8 +181,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-[] bouton "Afficher synthèse relevé"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [] bouton "Afficher synthèse relevé"
+- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
 [] ID du capteur
