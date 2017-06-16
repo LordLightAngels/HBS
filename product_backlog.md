@@ -146,7 +146,7 @@
 |:----------- |-------------------------------------------------------------------------------|
 | Titre       | **Afficher des données de synthèse**          			                      |
 | Priorite    | ___???___                                                                     |
-| Estimation  | ___8___                                                                       |
+| Estimation  | ___3___                                                                       |
 | En tant que | Utilisateur                                                                   |
 | Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date ID du relevé          |
 | Afin de     | obtenir ID capteur, nb données importées, date-h 1er et dernier enregistrement|
@@ -173,7 +173,7 @@
 |:----------- |-----------------------------------------------------------------------------------------|
 | Titre       | **Afficher des données de synthèse**          			                                |
 | Priorite    | ___???___                                                                               |
-| Estimation  | ___?___                                                                                 |
+| Estimation  | ___8___                                                                                 |
 | En tant que | Utilisateur                                                                             |
 | Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date & ID du relevé                  |
 | Afin de     | faire des calculs sur le nb d'enregistrements, le temps, la température et l'hygrométrie|
@@ -204,7 +204,7 @@
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de tableau**    |
 | Priorite    | ___???___                                                          |
-| Estimation  | ___?___                                                            |
+| Estimation  | ___3___                                                            |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher tableau relevé" et choisir ID & date relevé  |
 | Afin de     | visualiser un relevé sous forme de tableau                         |
@@ -232,7 +232,7 @@
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de tableau**    |
 | Priorite    | ___???___                                                          |
-| Estimation  | ___?___                                                            |
+| Estimation  | ___3___                                                            |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher tableau relevé" et choisir ID & date relevé  |
 | Afin de     | pouvoir trier sur les champs du tableau                            |
@@ -259,7 +259,7 @@
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de graphique**  |
 | Priorite    | ___???___                                                          |
-| Estimation  | ___?___                                                            |
+| Estimation  | ___13___                                                            |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher graphique relevé" et choisir ID & date relevé|
 | Afin de     | pouvoir visualiser les courbes de température et hygrométrie       |
@@ -267,14 +267,14 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un graphique :
-[] bouton "Afficher graphique relevé"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [] bouton "Afficher graphique relevé"
+- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un graphique avec :
-[] axe des abscisses = temps
-[] axe des ordonnées = gradations
-[] courbe évolution températures relevées
-[] courbe évolutions hygrométries relevées
+- [] axe des abscisses = temps
+- [] axe des ordonnées = gradations
+- [] courbe évolution températures relevées
+- [] courbe évolutions hygrométries relevées
 
 ----------
 
@@ -286,7 +286,7 @@
 |:----------- |------------------------------------------------------------------------|
 | Titre       | **Exporter les données**                                               |
 | Priorite    | ___???___                                                              |
-| Estimation  | ___?___                                                                |
+| Estimation  | ___5___                                                                |
 | En tant que | Utilisateur                                                            |
 | Je veux     | cliquer sur "Exporter relevé au format CSV" et choisir ID & date relevé|
 | Afin de     | pouvoir exporter un relevé au format CSV                               |
@@ -294,8 +294,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-[] bouton "Exporter relevé au format CSV"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [] bouton "Exporter relevé au format CSV"
+- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un message indiquant le succès de l'export du relevé au format CSV
 
@@ -309,7 +309,7 @@
 |:----------- |-------------------------------------------------------------------------------------------------------------|
 | Titre       | **Afficher un rapport au format PDF**                                                                       |
 | Priorite    | ___???___                                                                                                   |
-| Estimation  | ___?___                                                                                                     |
+| Estimation  | ___13___                                                                                                     |
 | En tant que | Utilisateur                                                                                                 |
 | Je veux     | cliquer sur "Afficher au format PDF" et choisir ID & date relevé                                            |
 | Afin de     | afficher un rapport pdf comprenant les données de synthèse, le tableau et le graphique du relevé selectionné|
@@ -317,13 +317,13 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-[] bouton "Afficher au format PDF"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [] bouton "Afficher au format PDF"
+- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir un rapport PDF affichant pour le relevé :
-[] les données de synthèse
-[] le tableau
-[] le graphique
+- [] les données de synthèse
+- [] le tableau
+- [] le graphique
 
 ----------
 
@@ -335,7 +335,7 @@
 |:----------- |----------------------------------------|
 | Titre       | **Imprimer un rapport au format PDF**  |
 | Priorite    | ___???___                              |
-| Estimation  | ___?___                                |
+| Estimation  | ___2___                                |
 | En tant que | Utilisateur                            |
 | Je veux     | cliquer sur "Imprimer le rapport"      |
 | Afin de     | imprimer un rapport                    |
@@ -343,7 +343,7 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-[] bouton "Imprimer le rapport"
+- [] bouton "Imprimer le rapport"
 
 2 - Obtenir un aperçu avant impression du rapport 
 
@@ -357,7 +357,7 @@
 |:----------- |------------------------------------------------|
 | Titre       | **Envoyer par mail un rapport au format PDF**  |
 | Priorite    | ___???___                                      |
-| Estimation  | ___?___                                        |
+| Estimation  | ___2___                                        |
 | En tant que | Utilisateur                                    |
 | Je veux     | cliquer sur "Envoyer le rapport"               |
 | Afin de     | envoyer le rapport par mail                    |
@@ -365,13 +365,13 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
-[] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
+- [] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
 
 2 - Dans la fenêtre de création de mail générée, avoir :
-[] champ de saisie du destinataire
-[] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
-[] corps du message pré-rempli avec des informations pertinentes
-[] bouton "envoyer" qui envoie le mail au destinataire saisi
+- [] champ de saisie du destinataire
+- [] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
+- [] corps du message pré-rempli avec des informations pertinentes
+- [] bouton "envoyer" qui envoie le mail au destinataire saisi
 
 3 - Vérifier que l'adresse mail du destinataire saisie est correcte
 
