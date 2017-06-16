@@ -11,9 +11,9 @@
 
 1 - Schéma sur support numérique modélisant :
 
-[] les tables
-[] les relations entre les tables
-[] les cardinalités
+[x] les tables
+[x] les relations entre les tables
+[x] les cardinalités
 
 ----------
 
@@ -34,10 +34,10 @@
 
 1 - Schéma sur support numérique modélisant :
 
-[] les données source de l'application
-[] les traitements effectués
-[] les données exploitables en sortie de l'application
-[] les technologies externes utilisées
+[x] les données source de l'application
+[x] les traitements effectués
+[x] les données exploitables en sortie de l'application
+[x] les technologies externes utilisées
 
 ----------
 
@@ -58,14 +58,14 @@
 
 1 - Réalisation de la maquette de la fenêtre d'accueil intégrant :
 
-[] les boutons permettant l'accès aux diverses fonctionnalités
+[x] les boutons permettant l'accès aux diverses fonctionnalités
 
 2 - Réalisation de la maquette des fenêtres propres aux fonctionnalités :
 
-[] Import des données
+[x] Import des données
 [] Affichage des données
-[] Export des données
-[] Génération de rapport
+[x] Export des données
+[x] Génération de rapport
 
 ----------
 
