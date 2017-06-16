@@ -49,10 +49,21 @@ namespace SensorBoard
 
             Dictionary<String, String> parameters = new Dictionary<String, String>();
 
-            List<Dictionary<String, String>> lines = DBInteractor.Select("SELECT id,label FROM sensor", parameters);
-
             cbSensor.DisplayMember = "Text";
             cbSensor.ValueMember = "Name";
+
+            List<Dictionary<String, String>> lines = new List<Dictionary<string, string>>();
+
+            try
+            {
+                lines = DBInteractor.Select("SELECT id,label FROM sensor", parameters);
+            } catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+                
+            }
+
             foreach (Dictionary<String, String> line in lines)
             {
                 MenuItem item = new MenuItem();
@@ -60,6 +71,7 @@ namespace SensorBoard
                 item.Name = line["id"];
                 cbSensor.Items.Add(item);
             }
+
         }
 
         private void loadImport(object sender, EventArgs e)

@@ -71,7 +71,7 @@ namespace SensorBoard
 
                     if (unformatedLines.Count > 0)
                     {
-                        throw new Exception("Certaines lignes sont mal formatées : " + String.Join(", ", unformatedLines.ToArray())
+                        throw new Exception("Certaines lignes sont mal formatées : \n\r" + String.Join(", ", unformatedLines.ToArray())
                             + "\n\rVeuillez reformater votre fichier");
                     }
 
@@ -115,9 +115,8 @@ namespace SensorBoard
                             String.Join(", ", nonExecutedQueries.ToArray()));
                     }
 
+                    MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
                 }
-
-                MessageBox.Show("L'insertion de vos données a été efectuée avec succès");
 
             }
             catch (Exception ex)

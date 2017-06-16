@@ -70,7 +70,7 @@ namespace SensorBoard.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à root.
+        ///   Recherche une chaîne localisée semblable à fsxfd.
         /// </summary>
         internal static string DATABASE_LOGIN {
             get {
