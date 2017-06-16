@@ -39,7 +39,7 @@ namespace SensorBoard
                     //MessageBox.Show(pickedfile.FileName);
                     // String content = File.ReadAllText(pickedfile.FileName);
                     //MessageBox.Show(content);
-                    MySqlConnection connection = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=;");
+                    MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=sensorboard;UID=root;PASSWORD=;");
                     
                     
                     //MySQL lance une exception avt même que je puisse l'intercepter, du coup faut que je capture mon exception ds 1 try-catch
@@ -51,95 +51,79 @@ namespace SensorBoard
                         throw new Exception("Pb connexion BDD : " + except.Message);
                     }
 
-                    MySqlTransaction transaction = connection.BeginTransaction();
-
                     Form form = this.ParentForm;
                     MainForm main = (MainForm)form;
                     String sensor = main.getSensor();
                     if (sensor == "") throw new Exception("Merci de sélectionner un capteur");
                     if (!File.Exists(pickedfile.FileName)) throw new Exception("Fichier Inexistant");
 
-                    String[] content = File.ReadAllLines(pickedfile.FileName);
-                    //content.Count == 0;
-                    if (content[0] == "") throw new Exception("Le fichier sélectionné est vide");
-
-                    /*
                     long finfo = new FileInfo(pickedfile.FileName).Length;
                     if (finfo == 0) throw new Exception("Fichier vide");
-                    */
 
-                    int nbUnformatedLines = 0;
-                    int nbNonExecutedQueries = 0;
+                    String[] content = File.ReadAllLines(pickedfile.FileName);
+                    List<int> unformatedLines = new List<int>();
 
-                    //for (int i = 0; i < content.Length; i++)
-
-                    String[] lines = File.ReadAllLines(pickedfile.FileName);
-
-                    for (int lineNumber = 0; lineNumber < lines.Length; lineNumber++)
+                    for (int lineNumber = 1; lineNumber < content.Length; lineNumber++)
                     {
-                        String[] columns = lines[lineNumber].Split(' ');
-                        if (columns.Length != 5) throw new Exception("Une erreur L " + lineNumber);
+                        String[] columns = content[lineNumber].Split(' ');
+                        if (columns.Length != 5) unformatedLines.Add(lineNumber + 1);
                     }
 
+                    if (unformatedLines.Count > 0)
+                    {
+                        throw new Exception("Certaines lignes sont mal formatées : " + String.Join(", ", unformatedLines.ToArray())
+                            + "\n\rVeuillez reformater votre fichier");
+                    }
+
+                    List<int> nonExecutedQueries = new List<int>();
 
                     //On itère sur chaque ligne du fichier sélectionné
-                    foreach (String line in content)
+                    for (int i = 0; i < content.Length; i ++)
                     {
                     //on split sur les espace, on a autant d'éléments ds le tableau que de colonnes ds le fichier
-                    String[] columns = line.Split(' ');
+                        String[] columns = content[i].Split(' ');
 
+                        String humidity = Regex.Replace(columns[4], "%", "");
+                        //columns[4] = columns[4].Substring(0, columns[4].Length - 1);
+                        //columns[4] = Regex.Replace(columns[4], "%", "");
+                        String temperature = columns[3];
+                        String dataDate = columns[1] + " " + columns[2];
+                        //DateTime madate = DateTime.Parse(columns[1] + " " + columns[2]);
 
-                    //if (columns.Length != 5) throw new Exception("le fichier importé ne contient pas le bon nb de colonnes");
-                    if (columns.Length != 5)
-                    {
-                        nbUnformatedLines += 1;
-                        continue;
-                    }
+                        MySqlCommand comm = connection.CreateCommand();
+                        //info du capteur pas sur l'import form mais sur main form
+                        //on instancie le main form depuis l'import form pr recuperer capteur
 
-                    String humidity = Regex.Replace(columns[4], "%", "");
-                    //columns[4] = columns[4].Substring(0, columns[4].Length - 1);
-                    //columns[4] = Regex.Replace(columns[4], "%", "");
-                    String temperature = columns[3];
-                    String dataDate = columns[1] + " " + columns[2];
-                    //DateTime madate = DateTime.Parse(columns[1] + " " + columns[2]);
+                        comm.CommandText = "INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                            "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)";
+                        comm.Parameters.AddWithValue("@data_date", dataDate);
+                        comm.Parameters.AddWithValue("@temperature", temperature);
+                        comm.Parameters.AddWithValue("@humidity", humidity);
+                        comm.Parameters.AddWithValue("@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                        comm.Parameters.AddWithValue("@sensor", sensor);
 
-
-
-
-                    MySqlCommand comm = connection.CreateCommand();
-                    //info du capteur pas sur l'import form mais sur main form
-                    //on instancie le main form depuis l'import form pr recuperer capteur
-
-
-
-                    comm.CommandText = "INSERT INTO data(data_date,temperature,humidity,import_date,sensor) VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)";
-                    comm.Parameters.AddWithValue("@data_date", dataDate);
-                    comm.Parameters.AddWithValue("@temperature", temperature);
-                    comm.Parameters.AddWithValue("@humidity", humidity);
-                    comm.Parameters.AddWithValue("@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    comm.Parameters.AddWithValue("@sensor", main.getSensor());
-
-                    int res = comm.ExecuteNonQuery();
-                    if (res == -1) nbNonExecutedQueries++;
-
-
+                        int res = comm.ExecuteNonQuery();
+                        if (res == -1) nonExecutedQueries.Add(i + 1);
 
                     }
+
                     connection.Close();
 
-                    if (nbNonExecutedQueries > 0) MessageBox.Show(nbNonExecutedQueries + "imports ont échoué");
-
-                    if (nbUnformatedLines > 0)
+                    if (nonExecutedQueries.Count > 0)
                     {
-                        MessageBox.Show("Avertisssement : Le fichier contient " + nbUnformatedLines + " lignes mal formatées. Elles ont été ignorées.");
+                        MessageBox.Show("L'import de certaines lignes ont échoués :\n\r" +
+                            String.Join(", ", nonExecutedQueries.ToArray()));
                     }
+
                 }
 
-            } catch (Exception ex)
+                MessageBox.Show("L'insertion de vos données a été efectuée avec succès");
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : " + ex.Message);
             }
-
 
             
         }
