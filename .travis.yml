@@ -1,0 +1,9 @@
+language: csharp
+solution: visual_studio_code/SensorBoard.sln
+
+matrix:
+    include:
+        - dotnet: 1.0.1
+          mono: none
+          dist: trusty
+        - mono: latest
