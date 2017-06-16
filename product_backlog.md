@@ -85,8 +85,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'ajout de données .txt  :
-- [ ] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
-- [ ] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
+- [x] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
+- [x] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
 
 ----------
 
