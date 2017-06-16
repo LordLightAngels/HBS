@@ -186,14 +186,10 @@
             this.cbSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSensor.ForeColor = System.Drawing.SystemColors.Window;
             this.cbSensor.FormattingEnabled = true;
-            this.cbSensor.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.cbSensor.Location = new System.Drawing.Point(435, 3);
             this.cbSensor.Name = "cbSensor";
             this.cbSensor.Size = new System.Drawing.Size(212, 21);
             this.cbSensor.TabIndex = 2;
-            this.cbSensor.Click += new System.EventHandler(this.loadSensor);
             // 
             // dtpStart
             // 

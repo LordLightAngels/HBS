@@ -61,6 +61,7 @@
     <Compile Include="Data.Designer.cs">
       <DependentUpon>Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBInteractor.cs" />
     <Compile Include="ExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SynthesisForm.resx">
       <DependentUpon>SynthesisForm.cs</DependentUpon>

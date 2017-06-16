@@ -39,7 +39,7 @@ namespace SensorBoard
                     //MessageBox.Show(pickedfile.FileName);
                     // String content = File.ReadAllText(pickedfile.FileName);
                     //MessageBox.Show(content);
-                    MySqlConnection connection = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=aa;");
+                    MySqlConnection connection = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=;");
                     
                     
                     //MySQL lance une exception avt même que je puisse l'intercepter, du coup faut que je capture mon exception ds 1 try-catch
@@ -109,6 +109,9 @@ namespace SensorBoard
                     MySqlCommand comm = connection.CreateCommand();
                     //info du capteur pas sur l'import form mais sur main form
                     //on instancie le main form depuis l'import form pr recuperer capteur
+
+
+
                     comm.CommandText = "INSERT INTO data(data_date,temperature,humidity,import_date,sensor) VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)";
                     comm.Parameters.AddWithValue("@data_date", dataDate);
                     comm.Parameters.AddWithValue("@temperature", temperature);

@@ -46,6 +46,20 @@ namespace SensorBoard
             pnlMain.Controls.Add(synthesis);
 
             synthesis.Show();
+
+            Dictionary<String, String> parameters = new Dictionary<String, String>();
+
+            List<Dictionary<String, String>> lines = DBInteractor.Select("SELECT id,label FROM sensor", parameters);
+
+            cbSensor.DisplayMember = "Text";
+            cbSensor.ValueMember = "Name";
+            foreach (Dictionary<String, String> line in lines)
+            {
+                MenuItem item = new MenuItem();
+                item.Text = line["label"];
+                item.Name = line["id"];
+                cbSensor.Items.Add(item);
+            }
         }
 
         private void loadImport(object sender, EventArgs e)
@@ -81,7 +95,10 @@ namespace SensorBoard
             {
                 return cbSensor.SelectedValue.ToString();
             }*/
-            return cbSensor.SelectedItem == null ? "" : cbSensor.SelectedItem.ToString();
+            //return cbSensor.SelectedItem == null ? "" : cbSensor.SelectedItem.ToString();
+            if (cbSensor.SelectedItem == null) return "";
+            MenuItem item = (MenuItem)cbSensor.SelectedItem;
+            return item.Name;
         }
         
 
@@ -94,11 +111,28 @@ namespace SensorBoard
                 form.Hide();
         }
 
-        private void loadSensor(object sender, EventArgs e)
+
+        //méthode perso Domitille
+        /*private void loadSensor(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=;");
+            string sql = "SELECT id, label FROM sensor";
+            MySqlConnection conn = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=;");
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    sensorList.Add(Convert.ToInt32(reader["id"]), reader["label"].ToString());
+                }
+            }
+            foreach(KeyValuePair<int, String>sensor in sensorList)
+            {
+                Console.WriteLine(sensor.Key.ToString() + " = " + sensor.Value);
+            }
 
 
-        }
+        }*/
     }
 }
