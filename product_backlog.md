@@ -11,9 +11,9 @@
 
 1 - Schéma sur support numérique modélisant :
 
-[x] les tables
-[x] les relations entre les tables
-[x] les cardinalités
+- [x] les tables
+- [x] les relations entre les tables
+- [x] les cardinalités
 
 ----------
 
@@ -34,10 +34,10 @@
 
 1 - Schéma sur support numérique modélisant :
 
-[x] les données source de l'application
-[x] les traitements effectués
-[x] les données exploitables en sortie de l'application
-[x] les technologies externes utilisées
+- [x] les données source de l'application
+- [x] les traitements effectués
+- [x] les données exploitables en sortie de l'application
+- [x] les technologies externes utilisées
 
 ----------
 
@@ -58,14 +58,14 @@
 
 1 - Réalisation de la maquette de la fenêtre d'accueil intégrant :
 
-[x] les boutons permettant l'accès aux diverses fonctionnalités
+- [x] les boutons permettant l'accès aux diverses fonctionnalités
 
 2 - Réalisation de la maquette des fenêtres propres aux fonctionnalités :
 
-[x] Import des données
-[] Affichage des données
-[x] Export des données
-[x] Génération de rapport
+- [x] Import des données
+- [] Affichage des données
+- [x] Export des données
+- [x] Génération de rapport
 
 ----------
 
@@ -85,8 +85,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'ajout de données .txt  :
-[] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
-[] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
+- [] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
+- [] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
 
 ----------
 
