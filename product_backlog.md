@@ -106,7 +106,7 @@
 ### DoD :
 
 1 - Afficher un tableau récapitulatif de tous les enregistrements liés à l'import effectué :
-- [ ] ???
+- [x] ???
 
 ----------
 
@@ -126,15 +126,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export de données 
-- [ ] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
-- [ ] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
+- [x] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
+- [x] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
 
 2 - Disposer des champs suivants dans la BDD :
-- [ ] ID Capteur
-- [ ] Date des enregistrements du relevé
-- [ ] Heure des enregistrements du relevé
-- [ ] Température relevée dans chaque enregistrement
-- [ ] Hygrométrie relevée dans chaque enregistrement
+- [x] ID Capteur
+- [x] Date des enregistrements du relevé
+- [x] Heure des enregistrements du relevé
+- [x] Température relevée dans chaque enregistrement
+- [x] Hygrométrie relevée dans chaque enregistrement
 
 ----------
 
