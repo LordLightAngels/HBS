@@ -77,7 +77,7 @@
 |:----------- |-------------------------------------------------------------|
 | Titre       | **Récupérer les données des capteurs**                      |
 | Priorite    | ___???___                                                   |
-| Estimation  | ___?___                                                     |
+| Estimation  | ___3___                                                     |
 | En tant que | Utilisateur                                                 |
 | Je veux     | cliquer sur un bouton "Importer des données "               |
 | Afin de     | enregistrer les données texte issues des capteurs ds l'appli|
@@ -98,7 +98,7 @@
 |:----------- |----------------------------------------------------------|
 | Titre       | **Attribuer l'id de capteur à l'import**      			 |
 | Priorite    | ___???___                                                |
-| Estimation  | ___?___                                                  |
+| Estimation  | ___2___                                                  |
 | En tant que | Utilisateur                                              |
 | Je veux     | lier l'import de données à un ID de capteur              |
 | Afin de     | savoir quelles données correspondent à quel capteur	     |
@@ -106,7 +106,7 @@
 ### DoD :
 
 1 - Afficher un tableau récapitulatif de tous les enregistrements liés à l'import effectué :
-[]   
+- []   
 
 ----------
 
@@ -126,15 +126,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export de données 
-[] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
-[] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
+- [] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
+- [] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
 
 2 - Disposer des champs suivants dans la BDD :
-[] ID Capteur
-[] Date des enregistrements du relevé
-[] Heure des enregistrements du relevé
-[] Température relevée dans chaque enregistrement
-[] Hygrométrie relevée dans chaque enregistrement
+- [] ID Capteur
+- [] Date des enregistrements du relevé
+- [] Heure des enregistrements du relevé
+- [] Température relevée dans chaque enregistrement
+- [] Hygrométrie relevée dans chaque enregistrement
 
 ----------
 
@@ -154,8 +154,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-[] bouton "Afficher synthèse relevé"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [] bouton "Afficher synthèse relevé"
+- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
 [] ID du capteur
