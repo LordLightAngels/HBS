@@ -63,7 +63,7 @@
 2 - Réalisation de la maquette des fenêtres propres aux fonctionnalités :
 
 - [x] Import des données
-- [] Affichage des données
+- [ ] Affichage des données
 - [x] Export des données
 - [x] Génération de rapport
 
@@ -85,8 +85,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'ajout de données .txt  :
-- [] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
-- [] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
+- [ ] bouton "Importer des données" permettant l'import d'un fichier préalablement enregistré sur le poste de travail
+- [ ] afficher un message de confirmation que l'import des données a bien réussi (nb lignes traitées)
 
 ----------
 
@@ -106,7 +106,7 @@
 ### DoD :
 
 1 - Afficher un tableau récapitulatif de tous les enregistrements liés à l'import effectué :
-- []   
+- [ ]   
 
 ----------
 
@@ -126,15 +126,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export de données 
-- [] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
-- [] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
+- [ ] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
+- [ ] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
 
 2 - Disposer des champs suivants dans la BDD :
-- [] ID Capteur
-- [] Date des enregistrements du relevé
-- [] Heure des enregistrements du relevé
-- [] Température relevée dans chaque enregistrement
-- [] Hygrométrie relevée dans chaque enregistrement
+- [ ] ID Capteur
+- [ ] Date des enregistrements du relevé
+- [ ] Heure des enregistrements du relevé
+- [ ] Température relevée dans chaque enregistrement
+- [ ] Hygrométrie relevée dans chaque enregistrement
 
 ----------
 
@@ -154,14 +154,14 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-- [] bouton "Afficher synthèse relevé"
-- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher synthèse relevé"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-- [] ID du capteur
-- [] nombre de données importées totales
-- [] date - heure du 1er enregistrement
-- [] date - heure du dernier enregistrement
+- [ ] ID du capteur
+- [ ] nombre de données importées totales
+- [ ] date - heure du 1er enregistrement
+- [ ] date - heure du dernier enregistrement
 
 ----------
 
@@ -181,18 +181,18 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-- [] bouton "Afficher synthèse relevé"
-- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher synthèse relevé"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-[] ID du capteur
-[] nombre de données importées totales
-[] date - heure du 1er enregistrement
-[] date - heure du dernier enregistrement
-[] nombre d'enregistrements
-[] amplitude de temps de relevé en heure et minutes
-[] température max/min/moyenne
-[] hygrométrie max/min/moyenne
+- [ ] ID du capteur
+- [ ] nombre de données importées totales
+- [ ] date - heure du 1er enregistrement
+- [ ] date - heure du dernier enregistrement
+- [ ] nombre d'enregistrements
+- [ ] amplitude de temps de relevé en heure et minutes
+- [ ] température max/min/moyenne
+- [ ] hygrométrie max/min/moyenne
 
 ----------
 
@@ -212,15 +212,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un tableau :
-[] bouton "Afficher tableau relevé"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher tableau relevé"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher pour chaque enregistrement les données suivantes :
-[] n° de l'enregistrement
-[] ID du capteur
-[] date - heure de l'enregistrement
-[] température relevée
-[] hygrométrie relevée
+- [ ] n° de l'enregistrement
+- [ ] ID du capteur
+- [ ] date - heure de l'enregistrement
+- [ ] température relevée
+- [ ] hygrométrie relevée
 
 ----------
 
@@ -240,14 +240,14 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un tableau :
-[] bouton "Afficher tableau relevé"
-[] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher tableau relevé"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Pouvoir trier les enregistrement du tableau selon les critères suivants :
-[] n° de l'enregistrement
-[] date - heure de l'enregistrement
-[] température relevée
-[] hygrométrie relevée
+- [ ] n° de l'enregistrement
+- [ ] date - heure de l'enregistrement
+- [ ] température relevée
+- [ ] hygrométrie relevée
 
 ----------
 
@@ -267,14 +267,14 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un graphique :
-- [] bouton "Afficher graphique relevé"
-- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher graphique relevé"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un graphique avec :
-- [] axe des abscisses = temps
-- [] axe des ordonnées = gradations
-- [] courbe évolution températures relevées
-- [] courbe évolutions hygrométries relevées
+- [ ] axe des abscisses = temps
+- [ ] axe des ordonnées = gradations
+- [ ] courbe évolution températures relevées
+- [ ] courbe évolutions hygrométries relevées
 
 ----------
 
@@ -294,8 +294,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-- [] bouton "Exporter relevé au format CSV"
-- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Exporter relevé au format CSV"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un message indiquant le succès de l'export du relevé au format CSV
 
@@ -317,13 +317,13 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-- [] bouton "Afficher au format PDF"
-- [] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [ ] bouton "Afficher au format PDF"
+- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir un rapport PDF affichant pour le relevé :
-- [] les données de synthèse
-- [] le tableau
-- [] le graphique
+- [ ] les données de synthèse
+- [ ] le tableau
+- [ ] le graphique
 
 ----------
 
@@ -343,7 +343,7 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-- [] bouton "Imprimer le rapport"
+- [ ] bouton "Imprimer le rapport"
 
 2 - Obtenir un aperçu avant impression du rapport 
 
@@ -365,13 +365,13 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
-- [] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
+- [ ] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
 
 2 - Dans la fenêtre de création de mail générée, avoir :
-- [] champ de saisie du destinataire
-- [] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
-- [] corps du message pré-rempli avec des informations pertinentes
-- [] bouton "envoyer" qui envoie le mail au destinataire saisi
+- [ ] champ de saisie du destinataire
+- [ ] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
+- [ ] corps du message pré-rempli avec des informations pertinentes
+- [ ] bouton "envoyer" qui envoie le mail au destinataire saisi
 
 3 - Vérifier que l'adresse mail du destinataire saisie est correcte
 
