@@ -106,7 +106,7 @@
 ### DoD :
 
 1 - Afficher un tableau récapitulatif de tous les enregistrements liés à l'import effectué :
-- [ ] ???
+- [x] ???
 
 ----------
 
@@ -116,8 +116,8 @@
 
 | ID          | 1_2                                                                       |
 |:----------- |---------------------------------------------------------------------------|
-| Titre       | **Stocker les données importées dans une BDD**			                  |
-| Priorite    | ___???___                                                                 |
+| Titre       | **Stocker les données importées dans une BDD**			                      |
+| Priorite    | ___100___                                                                 |
 | Estimation  | ___5___                                                                   |
 | En tant que | Utilisateur                                                               |
 | Je veux     | cliquer sur "Exporter le relevé vers la BDD" et choisir date ID du relevé |
@@ -126,15 +126,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export de données 
-- [ ] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
-- [ ] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
+- [x] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
+- [x] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
 
 2 - Disposer des champs suivants dans la BDD :
-- [ ] ID Capteur
-- [ ] Date des enregistrements du relevé
-- [ ] Heure des enregistrements du relevé
-- [ ] Température relevée dans chaque enregistrement
-- [ ] Hygrométrie relevée dans chaque enregistrement
+- [x] ID Capteur
+- [x] Date des enregistrements du relevé
+- [x] Heure des enregistrements du relevé
+- [x] Température relevée dans chaque enregistrement
+- [x] Hygrométrie relevée dans chaque enregistrement
 
 ----------
 
@@ -144,8 +144,8 @@
 
 | ID          | 2_0                                                                           |
 |:----------- |-------------------------------------------------------------------------------|
-| Titre       | **Afficher des données de synthèse**          			                      |
-| Priorite    | ___???___                                                                     |
+| Titre       | **Afficher des données de synthèse**          			                          |
+| Priorite    | ___40___                                                                      |
 | Estimation  | ___3___                                                                       |
 | En tant que | Utilisateur                                                                   |
 | Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date ID du relevé          |
@@ -171,8 +171,8 @@
 
 | ID          | 2_1                                                                                     |
 |:----------- |-----------------------------------------------------------------------------------------|
-| Titre       | **Afficher des données de synthèse**          			                                |
-| Priorite    | ___???___                                                                               |
+| Titre       | **Afficher des données de synthèse**          			                                    |
+| Priorite    | ___100___                                                                               |
 | Estimation  | ___8___                                                                                 |
 | En tant que | Utilisateur                                                                             |
 | Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date & ID du relevé                  |
@@ -203,7 +203,7 @@
 | ID          | 3_0                                                                |
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de tableau**    |
-| Priorite    | ___???___                                                          |
+| Priorite    | ___13___                                                           |
 | Estimation  | ___3___                                                            |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher tableau relevé" et choisir ID & date relevé  |
@@ -259,7 +259,7 @@
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de graphique**  |
 | Priorite    | ___???___                                                          |
-| Estimation  | ___13___                                                            |
+| Estimation  | ___13___                                                           |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher graphique relevé" et choisir ID & date relevé|
 | Afin de     | pouvoir visualiser les courbes de température et hygrométrie       |
@@ -285,7 +285,7 @@
 | ID          | 5_0                                                                    |
 |:----------- |------------------------------------------------------------------------|
 | Titre       | **Exporter les données**                                               |
-| Priorite    | ___???___                                                              |
+| Priorite    | ___100___                                                              |
 | Estimation  | ___5___                                                                |
 | En tant que | Utilisateur                                                            |
 | Je veux     | cliquer sur "Exporter relevé au format CSV" et choisir ID & date relevé|
@@ -308,7 +308,7 @@
 | ID          | 6_0                                                                                                         |
 |:----------- |-------------------------------------------------------------------------------------------------------------|
 | Titre       | **Afficher un rapport au format PDF**                                                                       |
-| Priorite    | ___???___                                                                                                   |
+| Priorite    | ___13___                                                                                                   |
 | Estimation  | ___13___                                                                                                     |
 | En tant que | Utilisateur                                                                                                 |
 | Je veux     | cliquer sur "Afficher au format PDF" et choisir ID & date relevé                                            |
@@ -334,7 +334,7 @@
 | ID          | 6_1                                    |
 |:----------- |----------------------------------------|
 | Titre       | **Imprimer un rapport au format PDF**  |
-| Priorite    | ___???___                              |
+| Priorite    | ___5___                                |
 | Estimation  | ___2___                                |
 | En tant que | Utilisateur                            |
 | Je veux     | cliquer sur "Imprimer le rapport"      |
@@ -356,7 +356,7 @@
 | ID          | 6_2                                            |
 |:----------- |------------------------------------------------|
 | Titre       | **Envoyer par mail un rapport au format PDF**  |
-| Priorite    | ___???___                                      |
+| Priorite    | ___5___                                        |
 | Estimation  | ___2___                                        |
 | En tant que | Utilisateur                                    |
 | Je veux     | cliquer sur "Envoyer le rapport"               |
