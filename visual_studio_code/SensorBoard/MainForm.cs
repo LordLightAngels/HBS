@@ -61,7 +61,6 @@ namespace SensorBoard
             {
                 MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
                     ex.Message + "\n\r" + ex.StackTrace);
-                
             }
 
             foreach (Dictionary<String, String> line in lines)
