@@ -63,7 +63,7 @@
 2 - Réalisation de la maquette des fenêtres propres aux fonctionnalités :
 
 - [x] Import des données
-- [ ] Affichage des données
+- [x] Affichage des données
 - [x] Export des données
 - [x] Génération de rapport
 
