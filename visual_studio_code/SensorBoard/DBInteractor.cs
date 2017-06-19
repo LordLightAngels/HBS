@@ -9,22 +9,23 @@ namespace SensorBoard
 {
     class DBInteractor
     {
-        public static MySqlConnection Connect()
+        MySqlConnection connection;
+
+        public void Connect()
         {
-            MySqlConnection connection = new MySqlConnection("SERVER=" + Properties.Resources.DATABASE_HOST
+            connection = new MySqlConnection("SERVER=" + Properties.Resources.DATABASE_HOST
             + ";DATABASE=" + Properties.Resources.DATABASE_NAME
              + ";UID=" + Properties.Resources.DATABASE_LOGIN
              + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";");
             connection.Open();
-            return connection;
         }
 
-        public static void Disconnect(MySqlConnection connection)
+        public void Disconnect()
         {
             connection.Close();
         }
 
-        public static void Insert(MySqlConnection connection, String query, Dictionary<String, String> parameters)
+        public void Insert(String query, Dictionary<String, String> parameters)
         {
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = query;
@@ -35,7 +36,6 @@ namespace SensorBoard
             }
 
             command.ExecuteNonQuery();
-            connection.Close();
         }
 
 
@@ -45,7 +45,7 @@ namespace SensorBoard
         /// <param name="query">Requête SQL</param>
         /// <param name="parameters">Valeurs de la requête</param>
         /// <returns></returns>
-        public static List<Dictionary<String, String>> Select(MySqlConnection connection, String query, Dictionary<String, String> parameters)
+        public List<Dictionary<String, String>> Select(String query, Dictionary<String, String> parameters)
         {
 
             List<Dictionary<String, String>> results = new List<Dictionary<String, String>>();
@@ -74,6 +74,12 @@ namespace SensorBoard
             return results;
         }
 
+        public static void quickInsert(String query, Dictionary<String, String> parameters)
+        {
+            DBInteractor db = new DBInteractor();
+            db.Connect();
+
+        }
 
     }
 }

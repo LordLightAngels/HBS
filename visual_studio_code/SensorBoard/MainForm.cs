@@ -18,6 +18,7 @@ namespace SensorBoard
         ImportForm import;
         ExportForm export;
         SynthesisForm synthesis;
+        DataForm data;
         Dictionary<int, String> sensorList = new Dictionary<int, string>();
 
         public MainForm()
@@ -45,6 +46,11 @@ namespace SensorBoard
             synthesis.Dock = DockStyle.Fill;
             pnlMain.Controls.Add(synthesis);
 
+            data = new DataForm();
+            data.TopLevel = false;
+            data.Dock = DockStyle.Fill;
+            pnlMain.Controls.Add(data);
+
             synthesis.Show();
 
             Dictionary<String, String> parameters = new Dictionary<String, String>();
@@ -54,9 +60,14 @@ namespace SensorBoard
 
             List<Dictionary<String, String>> lines = new List<Dictionary<string, string>>();
 
+            DBInteractor db = new DBInteractor();
+            MySqlConnection connection = new MySqlConnection();
+            
+
             try
             {
-                lines = DBInteractor.Select("SELECT id,label FROM sensor", parameters);
+                db.Connect();
+                lines = db.Select("SELECT id,label FROM sensor", parameters);
             } catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
@@ -90,6 +101,12 @@ namespace SensorBoard
         {
             HideForms();
             synthesis.Show();
+        }
+
+        private void loadData(object sender, EventArgs e)
+        {
+            HideForms();
+            data.Show();
         }
 
         /// <summary>

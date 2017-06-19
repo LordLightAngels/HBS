@@ -41,11 +41,11 @@ namespace SensorBoard
                     // String content = File.ReadAllText(pickedfile.FileName);
                     //MessageBox.Show(content);
                     //MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=sensorboard;UID=root;PASSWORD=;");
-                    MySqlConnection connection;
+                    DBInteractor db = new DBInteractor();
                     
                     //MySQL lance une exception avt même que je puisse l'intercepter, du coup faut que je capture mon exception ds 1 try-catch
                     try {
-                        connection = DBInteractor.Connect();
+                        db.Connect();
                     }
                     catch(Exception except)
                     {
@@ -91,6 +91,18 @@ namespace SensorBoard
                         String dataDate = columns[1] + " " + columns[2];
                         //DateTime madate = DateTime.Parse(columns[1] + " " + columns[2]);
 
+                        db.Insert("INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                            "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)",
+                            new Dictionary<String, String>(){
+                                { "@data_date", dataDate},
+                                {"@temperature", temperature },
+                                {"@humidity", humidity },
+                                {"@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
+                                {"@sensor", sensor },
+                            });
+                    }
+
+                        /*
                         MySqlCommand comm = connection.CreateCommand();
                         //info du capteur pas sur l'import form mais sur main form
                         //on instancie le main form depuis l'import form pr recuperer capteur
@@ -102,22 +114,25 @@ namespace SensorBoard
                         comm.Parameters.AddWithValue("@humidity", humidity);
                         comm.Parameters.AddWithValue("@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         comm.Parameters.AddWithValue("@sensor", sensor);
+                        */
 
-                        int res = comm.ExecuteNonQuery();
-                        if (res == -1) nonExecutedQueries.Add(i + 1);
+                        /*int res = comm.ExecuteNonQuery();
+                        if (res == -1) nonExecutedQueries.Add(i + 1);*/
+
+                    db.Disconnect();
 
                     }
 
-                    DBInteractor.Disconnect(connection);
+                   
 
-                    if (nonExecutedQueries.Count > 0)
+                    /*if (nonExecutedQueries.Count > 0)
                     {
                         MessageBox.Show("L'import de certaines lignes ont échoués :\n\r" +
                             String.Join(", ", nonExecutedQueries.ToArray()));
-                    }
+                    }*/
 
                     MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
-                }
+                
 
                 
             } 

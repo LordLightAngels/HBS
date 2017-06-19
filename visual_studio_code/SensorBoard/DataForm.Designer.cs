@@ -1,6 +1,6 @@
 ﻿namespace SensorBoard
 {
-    partial class Data
+    partial class DataForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgBase = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHumid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBase)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgBase
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgBase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.ColDate,
             this.colHour,
             this.colTemp,
-            this.colHumid});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(566, 336);
-            this.dataGridView1.TabIndex = 0;
+            this.colHumid,
+            this.colDelete});
+            this.dgBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgBase.Location = new System.Drawing.Point(0, 0);
+            this.dgBase.Name = "dgBase";
+            this.dgBase.Size = new System.Drawing.Size(566, 336);
+            this.dgBase.TabIndex = 0;
+            
             // 
             // colID
             // 
@@ -82,27 +86,34 @@
             this.colHumid.Name = "colHumid";
             this.colHumid.ReadOnly = true;
             // 
-            // Data
+            // colDelete
+            // 
+            this.colDelete.HeaderText = "Suppression";
+            this.colDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colDelete.Name = "colDelete";
+            // 
+            // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 336);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Data";
+            this.Name = "DataForm";
             this.Text = "Data";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBase)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgBase;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHour;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTemp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHumid;
+        private System.Windows.Forms.DataGridViewImageColumn colDelete;
     }
 }

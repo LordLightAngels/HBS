@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -43,7 +42,6 @@
             this.cbSensor = new System.Windows.Forms.ComboBox();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpFilter.SuspendLayout();
@@ -95,6 +93,7 @@
             this.btnData.TabIndex = 4;
             this.btnData.Text = "Données";
             this.btnData.UseVisualStyleBackColor = true;
+            this.btnData.Click += new System.EventHandler(this.loadData);
             // 
             // mrbReport
             // 
@@ -207,12 +206,6 @@
             this.dtpEnd.Size = new System.Drawing.Size(210, 20);
             this.dtpEnd.TabIndex = 4;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,7 +240,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSynthesis;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

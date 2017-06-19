@@ -95,5 +95,15 @@ namespace SensorBoard.Properties {
                 return ResourceManager.GetString("DATABASE_PASSWORD", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pbelle {
+            get {
+                object obj = ResourceManager.GetObject("pbelle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
