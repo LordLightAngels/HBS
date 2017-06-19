@@ -9,13 +9,23 @@ namespace SensorBoard
 {
     class DBInteractor
     {
-        public static void Insert(String query, Dictionary<String, String> parameters)
+        public static MySqlConnection Connect()
         {
-            MySqlConnection connection = new MySqlConnection("SERVER=" + Properties.Resources.DATABASE_HOST 
-                + ";DATABASE=" + Properties.Resources.DATABASE_NAME 
-                + ";UID=" + Properties.Resources.DATABASE_LOGIN 
-                + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";");
+            MySqlConnection connection = new MySqlConnection("SERVER=" + Properties.Resources.DATABASE_HOST
+            + ";DATABASE=" + Properties.Resources.DATABASE_NAME
+             + ";UID=" + Properties.Resources.DATABASE_LOGIN
+             + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";");
             connection.Open();
+            return connection;
+        }
+
+        public static void Disconnect(MySqlConnection connection)
+        {
+            connection.Close();
+        }
+
+        public static void Insert(MySqlConnection connection, String query, Dictionary<String, String> parameters)
+        {
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = query;
 
@@ -35,11 +45,10 @@ namespace SensorBoard
         /// <param name="query">Requête SQL</param>
         /// <param name="parameters">Valeurs de la requête</param>
         /// <returns></returns>
-        public static List<Dictionary<String, String>> Select(String query, Dictionary<String, String> parameters)
+        public static List<Dictionary<String, String>> Select(MySqlConnection connection, String query, Dictionary<String, String> parameters)
         {
 
             List<Dictionary<String, String>> results = new List<Dictionary<String, String>>();
-            MySqlConnection connection = DBConnect();
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = query;
 
@@ -65,14 +74,6 @@ namespace SensorBoard
             return results;
         }
 
-        private static MySqlConnection DBConnect()
-        {
-            MySqlConnection connection = new MySqlConnection("SERVER=" + Properties.Resources.DATABASE_HOST
-                + ";DATABASE=" + Properties.Resources.DATABASE_NAME
-                + ";UID=" + Properties.Resources.DATABASE_LOGIN
-                + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";");
-            connection.Open();
-            return connection;
-        }
+
     }
 }

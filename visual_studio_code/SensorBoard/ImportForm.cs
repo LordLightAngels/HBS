@@ -22,6 +22,7 @@ namespace SensorBoard
 
         private void btnClick_Import(object sender, EventArgs e)
         {
+
             try {
                 OpenFileDialog pickedfile = new OpenFileDialog();
                 //on récupère le formulaire parent de l'import form, il ns renvoie que le type du dessus
@@ -39,12 +40,12 @@ namespace SensorBoard
                     //MessageBox.Show(pickedfile.FileName);
                     // String content = File.ReadAllText(pickedfile.FileName);
                     //MessageBox.Show(content);
-                    MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=sensorboard;UID=root;PASSWORD=;");
-                    
+                    //MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=sensorboard;UID=root;PASSWORD=;");
+                    MySqlConnection connection;
                     
                     //MySQL lance une exception avt même que je puisse l'intercepter, du coup faut que je capture mon exception ds 1 try-catch
                     try {
-                        connection.Open();
+                        connection = DBInteractor.Connect();
                     }
                     catch(Exception except)
                     {
@@ -107,7 +108,7 @@ namespace SensorBoard
 
                     }
 
-                    connection.Close();
+                    DBInteractor.Disconnect(connection);
 
                     if (nonExecutedQueries.Count > 0)
                     {
@@ -118,12 +119,14 @@ namespace SensorBoard
                     MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
                 }
 
-            }
+                
+            } 
             catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : " + ex.Message);
             }
 
+            
             
         }
     }

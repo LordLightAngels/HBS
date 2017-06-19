@@ -121,7 +121,7 @@
     <value>127.0.0.1</value>
   </data>
   <data name="DATABASE_LOGIN" xml:space="preserve">
-    <value>fsxfd</value>
+    <value>root</value>
   </data>
   <data name="DATABASE_NAME" xml:space="preserve">
     <value>sensorboard</value>
