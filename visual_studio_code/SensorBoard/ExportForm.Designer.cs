@@ -69,7 +69,6 @@
             this.mlContent.TabIndex = 3;
             this.mlContent.Text = "Veuillez saisir un format d\'export parmi les formats proposés ci-dessous.\n\n Forma" +
     "t de l\'export : ";
-            this.mlContent.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // mrbExcel
             // 
@@ -119,7 +118,6 @@
             this.msltfInputEmail.TabIndex = 6;
             this.msltfInputEmail.Text = "saisir adresse mail";
             this.msltfInputEmail.UseSystemPasswordChar = false;
-            this.msltfInputEmail.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // mrbExport
             // 
@@ -132,6 +130,7 @@
             this.mrbExport.TabIndex = 7;
             this.mrbExport.Text = "Exporter";
             this.mrbExport.UseVisualStyleBackColor = true;
+            this.mrbExport.Click += new System.EventHandler(this.mrbExport_Click);
             // 
             // panel1
             // 
@@ -151,12 +150,12 @@
             // 
             this.mlTitle.AutoSize = true;
             this.mlTitle.Depth = 0;
-            this.mlTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.mlTitle.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mlTitle.Location = new System.Drawing.Point(11, 16);
             this.mlTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlTitle.Name = "mlTitle";
-            this.mlTitle.Size = new System.Drawing.Size(85, 25);
+            this.mlTitle.Size = new System.Drawing.Size(60, 19);
             this.mlTitle.TabIndex = 8;
             this.mlTitle.Text = "Exports";
             // 
@@ -164,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(800, 600);

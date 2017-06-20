@@ -69,16 +69,6 @@ namespace SensorBoard
                 dgBase.Rows[row].Tag = line["id"];
             }
 
-            /*DataGridViewRow row = new DataGridViewRow();
-
-            MySqlConnection connection = new MySqlConnection("SERVER=127.0.0.1;DATABASE=sensorboard;UID=root;PASSWORD=;");
-            connection.Open();
-            MySqlDataAdapter adapt = new MySqlDataAdapter("SELECT * FROM data", connection);
-            DataSet ds = new DataSet();
-            adapt.Fill(ds);
-            dgBase.DataSource = ds.Tables[0];
-            connection.Close();*/
-
         }
 
 
@@ -106,8 +96,6 @@ namespace SensorBoard
 
         private void dgBase_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            //int nbLines = dgBase.SelectedRows.Count;
-            //MessageBox.Show(nbLines.ToString());
             object object_id = e.Row.Tag;
             String id = (String)object_id;
 
