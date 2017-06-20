@@ -95,6 +95,11 @@ namespace SensorBoard
 
         }
 
+        internal string getSensorName()
+        {
+            return ((MenuItem)this.cbSensor.SelectedItem).Text;
+        }
+
         private void loadImport(object sender, EventArgs e)
         {
             HideForms();
@@ -165,29 +170,5 @@ namespace SensorBoard
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
             data.DisplayData();
         }
-
-
-        //méthode perso Domitille
-        /*private void loadSensor(object sender, EventArgs e)
-        {
-            string sql = "SELECT id, label FROM sensor";
-            MySqlConnection conn = new MySqlConnection("SERVER=localhost;DATABASE=sensorboard;UID=root;PASSWORD=;");
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    sensorList.Add(Convert.ToInt32(reader["id"]), reader["label"].ToString());
-                }
-            }
-            foreach(KeyValuePair<int, String>sensor in sensorList)
-            {
-                Console.WriteLine(sensor.Key.ToString() + " = " + sensor.Value);
-            }
-
-
-        }*/
     }
 }

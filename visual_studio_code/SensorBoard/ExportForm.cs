@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -72,10 +73,18 @@ namespace SensorBoard
                 finalRes += res + System.Environment.NewLine;
             }
 
-            SaveFileDialog pickedfile = new SaveFileDialog();
-            if (pickedfile.ShowDialog() == DialogResult.OK)
+            MainForm mf = (MainForm)this.ParentForm;
+            
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.DefaultExt = "csv";
+            String name = mf.getSensorName();
+
+            name = Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase);
+            savefile.FileName = name;
+
+            if (savefile.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(pickedfile.FileName, finalRes.ToString());
+                File.WriteAllText(savefile.FileName, finalRes.ToString());
             }
 
         }
