@@ -59,6 +59,7 @@
             this.dgBase.TabIndex = 0;
             this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBase_CellContentClick);
             this.dgBase.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgBase_UserDeletingRow);
+            this.dgBase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvData_KeyDown);
             // 
             // colID
             // 

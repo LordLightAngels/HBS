@@ -91,6 +91,9 @@ namespace SensorBoard
                 object object_id = dgBase.Rows[row].Tag;
                 String id = (String)object_id;
 
+                DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer les entrees", "Confirmation de suppresion", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) return;
+
                 String query = "DELETE FROM data WHERE id = " + id;
                 Dictionary<String, String> parameters = new Dictionary<string, string>();
                 DBInteractor db = new DBInteractor();
@@ -113,6 +116,13 @@ namespace SensorBoard
             DBInteractor db = new DBInteractor();
             db.quickExecute(query, parameters);
 
+        }
+
+        private void dgvData_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Delete) return;
+            DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer les entrees", "Confirmation de suppresion", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) e.Handled = true;
         }
 
     }
