@@ -63,7 +63,7 @@ namespace SensorBoard
                         line["data_date"].Split()[1],
                         line["temperature"],
                         line["humidity"],
-                        //line["uid"],
+                        line["uid"],
                         Properties.Resources.pbelle
                 });
                 dgBase.Rows[row].Tag = line["id"];
@@ -85,7 +85,7 @@ namespace SensorBoard
 
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 int row = e.RowIndex;
                 object object_id = dgBase.Rows[row].Tag;

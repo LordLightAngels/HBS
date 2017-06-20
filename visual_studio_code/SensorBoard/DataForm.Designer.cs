@@ -57,10 +57,11 @@
             this.dgBase.ReadOnly = true;
             this.dgBase.Size = new System.Drawing.Size(566, 336);
             this.dgBase.TabIndex = 0;
+            this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             // 
             // colID
             // 
-            this.colID.HeaderText = "N° enregistrement";
+            this.colID.HeaderText = "Nom Capteur";
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
             // 
