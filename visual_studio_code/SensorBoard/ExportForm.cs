@@ -59,11 +59,8 @@ namespace SensorBoard
 
             var csv = new StringBuilder();
 
-            //var first = entry..ToString();
-            //var second = image.ToString();
-            //var newLine = string.Format("{0},{1}", first, second);
-            //csv.AppendLine(newLine);
             String finalRes = "\"label\";\"UID\";\"Date et heure\";\"Température\";\"Humidité\";" + System.Environment.NewLine;
+
             foreach (Dictionary<String, String> line in resultset)
             {
                 String res = "";
@@ -74,11 +71,13 @@ namespace SensorBoard
                 res += "\"" + line["humidity"] + "%\";";
                 finalRes += res + System.Environment.NewLine;
             }
+
             SaveFileDialog pickedfile = new SaveFileDialog();
             if (pickedfile.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(pickedfile.FileName, finalRes.ToString());
             }
+
         }
 
             private void mrbExport_Click(object sender, EventArgs e)
