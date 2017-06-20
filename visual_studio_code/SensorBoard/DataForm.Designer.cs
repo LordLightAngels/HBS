@@ -57,7 +57,8 @@
             this.dgBase.ReadOnly = true;
             this.dgBase.Size = new System.Drawing.Size(566, 336);
             this.dgBase.TabIndex = 0;
-            this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
+            this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBase_CellContentClick);
+            this.dgBase.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgBase_UserDeletingRow);
             // 
             // colID
             // 

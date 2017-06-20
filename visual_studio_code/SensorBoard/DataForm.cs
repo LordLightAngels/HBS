@@ -83,7 +83,7 @@ namespace SensorBoard
 
 
 
-        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 6)
             {
@@ -98,6 +98,23 @@ namespace SensorBoard
 
                 DisplayData();
             }
-            }
+
         }
+
+        private void dgBase_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            //int nbLines = dgBase.SelectedRows.Count;
+            //MessageBox.Show(nbLines.ToString());
+            object object_id = e.Row.Tag;
+            String id = (String)object_id;
+
+            String query = "DELETE FROM data WHERE id = " + id;
+            Dictionary<String, String> parameters = new Dictionary<string, string>();
+            DBInteractor db = new DBInteractor();
+            db.quickExecute(query, parameters);
+
+        }
+
+    }
+
 }
