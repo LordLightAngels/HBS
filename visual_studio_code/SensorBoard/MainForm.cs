@@ -82,6 +82,11 @@ namespace SensorBoard
                 cbSensor.Items.Add(item);
             }
 
+            dtpStart.Value = new DateTime(DateTime.Now.Year, 1, 1);
+            //DateTime.Parse("01/01" + DateTime.Now.Year);
+            dtpEnd.Value = DateTime.Now.AddDays(1);
+        
+
         }
 
         private void loadImport(object sender, EventArgs e)
@@ -107,6 +112,7 @@ namespace SensorBoard
         {
             HideForms();
             data.Show();
+            data.DisplayData();
         }
 
         /// <summary>
@@ -128,7 +134,16 @@ namespace SensorBoard
             MenuItem item = (MenuItem)cbSensor.SelectedItem;
             return item.Name;
         }
-        
+
+        public DateTime GetStartDate()
+        {
+            return dtpStart.Value;
+        }
+
+        public DateTime GetEndDate()
+        {
+            return dtpEnd.Value;
+        }
 
         /// <summary>
         /// cache tous les formulaires
@@ -137,6 +152,12 @@ namespace SensorBoard
         {
             foreach (Control form in pnlMain.Controls)
                 form.Hide();
+        }
+
+        private void cbSensor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
+            data.DisplayData();
         }
 
 

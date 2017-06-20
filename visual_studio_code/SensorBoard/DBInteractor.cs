@@ -25,7 +25,7 @@ namespace SensorBoard
             connection.Close();
         }
 
-        public void Insert(String query, Dictionary<String, String> parameters)
+        public void Execute(String query, Dictionary<String, String> parameters)
         {
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = query;
@@ -69,16 +69,16 @@ namespace SensorBoard
                 }
                 results.Add(line);
             }
-
-            connection.Close();
             return results;
         }
 
-        public static void quickInsert(String query, Dictionary<String, String> parameters)
+        //à faire partout ailleurs que dans les boucles
+        public void quickExecute(String query, Dictionary<String, String> parameters)
         {
             DBInteractor db = new DBInteractor();
             db.Connect();
-
+            db.Execute(query, parameters);
+            db.Disconnect();
         }
 
     }

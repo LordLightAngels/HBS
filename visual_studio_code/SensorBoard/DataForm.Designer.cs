@@ -34,6 +34,7 @@
             this.colHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHumid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgBase)).BeginInit();
             this.SuspendLayout();
@@ -48,13 +49,14 @@
             this.colHour,
             this.colTemp,
             this.colHumid,
+            this.colUID,
             this.colDelete});
             this.dgBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgBase.Location = new System.Drawing.Point(0, 0);
             this.dgBase.Name = "dgBase";
+            this.dgBase.ReadOnly = true;
             this.dgBase.Size = new System.Drawing.Size(566, 336);
             this.dgBase.TabIndex = 0;
-            
             // 
             // colID
             // 
@@ -86,11 +88,18 @@
             this.colHumid.Name = "colHumid";
             this.colHumid.ReadOnly = true;
             // 
+            // colUID
+            // 
+            this.colUID.HeaderText = "UID";
+            this.colUID.Name = "colUID";
+            this.colUID.ReadOnly = true;
+            // 
             // colDelete
             // 
             this.colDelete.HeaderText = "Suppression";
             this.colDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.colDelete.Name = "colDelete";
+            this.colDelete.ReadOnly = true;
             // 
             // DataForm
             // 
@@ -114,6 +123,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHour;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTemp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHumid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUID;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
     }
 }

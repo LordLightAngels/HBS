@@ -189,6 +189,7 @@
             this.cbSensor.Name = "cbSensor";
             this.cbSensor.Size = new System.Drawing.Size(212, 21);
             this.cbSensor.TabIndex = 2;
+            this.cbSensor.SelectedIndexChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // dtpStart
             // 
@@ -197,6 +198,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(210, 20);
             this.dtpStart.TabIndex = 3;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // dtpEnd
             // 
@@ -205,6 +207,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(210, 20);
             this.dtpEnd.TabIndex = 4;
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // MainForm
             // 

@@ -16,16 +16,38 @@ namespace SensorBoard
         public DataForm()
         {
             InitializeComponent();
+        }
 
-            Dictionary<String, String> parameters = new Dictionary<String, String>();
-            List<Dictionary<String, String>> lines = new List<Dictionary<string, string>>();
+        public void DisplayData()
+        {
+            this.dgBase.Rows.Clear();
+
+            Form form = this.ParentForm;
+            MainForm main = (MainForm)form;
+            DateTime start = main.GetStartDate();
+            DateTime end = main.GetEndDate();
+            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String idSensor = main.getSensor();
+            String query;
+            String whereClause = idSensor;
+
+            whereClause = (idSensor == "") ? "1" : whereClause = "sensor.id = " + idSensor;
+
+            query = "SELECT  sensor.*, data.*" +
+                    "FROM sensor INNER JOIN data " +
+                    "ON data.sensor LIKE sensor.id " +
+                    "WHERE " + whereClause + " " +
+                    "AND data_date BETWEEN '" + startString + "' AND '" + endString + "' " +
+                    "ORDER BY data_date DESC, sensor ";
+            Dictionary<String, String> parameters = new Dictionary<string, string>();
             DBInteractor db = new DBInteractor();
-            MySqlConnection connection = new MySqlConnection();
-            //dgBase.Rows.Add(new object[] { "1", "2", "3", "4", "5", Properties.Resources.pbelle });
+            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+
             try
             {
                 db.Connect();
-                lines = db.Select("SELECT data.*, sensor.* FROM data INNER JOIN sensor ON data.sensor = sensor.id", parameters);
+                resultset = db.Select(query, parameters);
             }
             catch (Exception ex)
             {
@@ -33,18 +55,19 @@ namespace SensorBoard
                     ex.Message + "\n\r" + ex.StackTrace);
             }
 
-            foreach (Dictionary<String, String> line in lines)
+            foreach (Dictionary<String, String> line in resultset)
             {
-                dgBase.Rows.Add(new object[] {
-                                line["label"],
-                                line["import_date"],
-                                line["humidity"],
-                                line["temperature"],
-                                line["data_date"],
-                                Properties.Resources.pbelle });      
+                int row = dgBase.Rows.Add(new object[] {
+                        line["label"],
+                        line["data_date"].Split()[0],
+                        line["data_date"].Split()[1],
+                        line["temperature"],
+                        line["humidity"],
+                        //line["uid"],
+                        Properties.Resources.pbelle
+                });
+                dgBase.Rows[row].Tag = line["id"];
             }
-
-
 
             /*DataGridViewRow row = new DataGridViewRow();
 
@@ -58,9 +81,23 @@ namespace SensorBoard
 
         }
 
-        private void dgBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                int row = e.RowIndex;
+                object object_id = dgBase.Rows[row].Tag;
+                String id = (String)object_id;
+
+                String query = "DELETE FROM data WHERE id = " + id;
+                Dictionary<String, String> parameters = new Dictionary<string, string>();
+                DBInteractor db = new DBInteractor();
+                db.quickExecute(query, parameters);
+
+                DisplayData();
+            }
+            }
         }
-    }
 }

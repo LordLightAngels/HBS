@@ -91,7 +91,7 @@ namespace SensorBoard
                         String dataDate = columns[1] + " " + columns[2];
                         //DateTime madate = DateTime.Parse(columns[1] + " " + columns[2]);
 
-                        db.Insert("INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                        db.Execute("INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
                             "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)",
                             new Dictionary<String, String>(){
                                 { "@data_date", dataDate},
