@@ -68,11 +68,17 @@ namespace SensorBoard
             {
                 db.Connect();
                 lines = db.Select("SELECT id,label FROM sensor", parameters);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
                     ex.Message + "\n\r" + ex.StackTrace);
             }
+
+            MenuItem empty_item = new MenuItem();
+            empty_item.Text = "";
+            empty_item.Name = "";
+            cbSensor.Items.Add(empty_item);
 
             foreach (Dictionary<String, String> line in lines)
             {
