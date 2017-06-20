@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -87,11 +88,20 @@ namespace SensorBoard
                 File.WriteAllText(savefile.FileName, finalRes.ToString());
             }
 
+            if (mcbOuvrir.Checked)
+            {
+                Process.Start(savefile.FileName);
+            }
+
+
         }
 
-            private void mrbExport_Click(object sender, EventArgs e)
+        private void mrbExport_Click(object sender, EventArgs e)
         {
-            ExportDataCSV();
+            if (mrbExcel.Checked)
+            {
+                ExportDataCSV();
+            }
         }
     }
 }

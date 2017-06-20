@@ -35,6 +35,7 @@
             this.msltfInputEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mcbOuvrir = new MaterialSkin.Controls.MaterialCheckBox();
             this.mlTitle = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -122,7 +123,7 @@
             // mrbExport
             // 
             this.mrbExport.Depth = 0;
-            this.mrbExport.Location = new System.Drawing.Point(14, 211);
+            this.mrbExport.Location = new System.Drawing.Point(14, 261);
             this.mrbExport.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbExport.Name = "mrbExport";
             this.mrbExport.Primary = true;
@@ -134,6 +135,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mcbOuvrir);
             this.panel1.Controls.Add(this.mlTitle);
             this.panel1.Controls.Add(this.mlContent);
             this.panel1.Controls.Add(this.mrbExport);
@@ -143,8 +145,24 @@
             this.panel1.Controls.Add(this.mcbEnvoiPDF);
             this.panel1.Location = new System.Drawing.Point(27, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(572, 264);
+            this.panel1.Size = new System.Drawing.Size(572, 354);
             this.panel1.TabIndex = 8;
+            // 
+            // mcbOuvrir
+            // 
+            this.mcbOuvrir.AutoSize = true;
+            this.mcbOuvrir.Depth = 0;
+            this.mcbOuvrir.Font = new System.Drawing.Font("Roboto", 10F);
+            this.mcbOuvrir.Location = new System.Drawing.Point(16, 208);
+            this.mcbOuvrir.Margin = new System.Windows.Forms.Padding(0);
+            this.mcbOuvrir.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mcbOuvrir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mcbOuvrir.Name = "mcbOuvrir";
+            this.mcbOuvrir.Ripple = true;
+            this.mcbOuvrir.Size = new System.Drawing.Size(174, 30);
+            this.mcbOuvrir.TabIndex = 9;
+            this.mcbOuvrir.Text = "Ouvrir après génération";
+            this.mcbOuvrir.UseVisualStyleBackColor = true;
             // 
             // mlTitle
             // 
@@ -186,5 +204,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel mlTitle;
+        private MaterialSkin.Controls.MaterialCheckBox mcbOuvrir;
     }
 }
