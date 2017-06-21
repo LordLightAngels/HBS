@@ -39,6 +39,7 @@ namespace SensorBoard
         }
 
 
+
         /// <summary>
         /// Effectue une requete type select et retourne une liste de dictionnaires de résultats
         /// </summary>
@@ -72,6 +73,11 @@ namespace SensorBoard
             return results;
         }
 
+        public List<Dictionary<String, String>> Select(String query)
+        {
+            Dictionary<String, String> param = new Dictionary<string, string>();
+            return Select(query, param);
+        }
         //à faire partout ailleurs que dans les boucles
         public void quickExecute(String query, Dictionary<String, String> parameters)
         {

@@ -176,5 +176,47 @@ namespace SensorBoard
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
             data.DisplayData();
         }
+
+        //if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
+            //data.DisplayData();
+
+        public void refreshSensorMain()
+        {
+            cbSensor.Items.Clear();
+            Dictionary<String, String> parameters = new Dictionary<String, String>();
+
+            cbSensor.DisplayMember = "Text";
+            cbSensor.ValueMember = "Name";
+
+            List<Dictionary<String, String>> lines = new List<Dictionary<string, string>>();
+
+            DBInteractor db = new DBInteractor();
+            MySqlConnection connection = new MySqlConnection();
+
+
+            try
+            {
+                db.Connect();
+                lines = db.Select("SELECT id,label FROM sensor", parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+            }
+
+            MenuItem empty_item = new MenuItem();
+            empty_item.Text = "";
+            empty_item.Name = "";
+            cbSensor.Items.Add(empty_item);
+
+            foreach (Dictionary<String, String> line in lines)
+            {
+                MenuItem item = new MenuItem();
+                item.Text = line["label"];
+                item.Name = line["id"];
+                cbSensor.Items.Add(item);
+            }
+        }
     }
 }

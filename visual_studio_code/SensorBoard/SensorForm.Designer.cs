@@ -155,13 +155,14 @@
             this.mrbSensorCreate.Primary = true;
             this.mrbSensorCreate.Size = new System.Drawing.Size(95, 37);
             this.mrbSensorCreate.TabIndex = 1;
-            this.mrbSensorCreate.Text = "Creer";
+            this.mrbSensorCreate.Text = "New";
             this.mrbSensorCreate.UseVisualStyleBackColor = true;
             this.mrbSensorCreate.Click += new System.EventHandler(this.mrbSensorCreate_Click);
             // 
             // dgvSensor
             // 
             this.dgvSensor.AllowUserToAddRows = false;
+            this.dgvSensor.AllowUserToDeleteRows = false;
             this.dgvSensor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSensor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UIDSensor,
@@ -174,24 +175,28 @@
             this.dgvSensor.Name = "dgvSensor";
             this.dgvSensor.Size = new System.Drawing.Size(614, 160);
             this.dgvSensor.TabIndex = 0;
+            this.dgvSensor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSensor_CellClick);
             // 
             // UIDSensor
             // 
             this.UIDSensor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.UIDSensor.HeaderText = "UID";
             this.UIDSensor.Name = "UIDSensor";
+            this.UIDSensor.ReadOnly = true;
             // 
             // LabelSensor
             // 
             this.LabelSensor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LabelSensor.HeaderText = "Label";
             this.LabelSensor.Name = "LabelSensor";
+            this.LabelSensor.ReadOnly = true;
             // 
             // WebServiceSensor
             // 
             this.WebServiceSensor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.WebServiceSensor.HeaderText = "WebService";
             this.WebServiceSensor.Name = "WebServiceSensor";
+            this.WebServiceSensor.ReadOnly = true;
             // 
             // UpdateSensor
             // 
@@ -200,6 +205,7 @@
             this.UpdateSensor.Image = global::SensorBoard.Properties.Resources.pencil;
             this.UpdateSensor.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.UpdateSensor.Name = "UpdateSensor";
+            this.UpdateSensor.ReadOnly = true;
             // 
             // DeleteSensor
             // 
@@ -208,6 +214,7 @@
             this.DeleteSensor.Image = global::SensorBoard.Properties.Resources.pbelle;
             this.DeleteSensor.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.DeleteSensor.Name = "DeleteSensor";
+            this.DeleteSensor.ReadOnly = true;
             // 
             // SensorForm
             // 
