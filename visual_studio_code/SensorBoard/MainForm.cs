@@ -97,7 +97,9 @@ namespace SensorBoard
 
         internal string getSensorName()
         {
-            return ((MenuItem)this.cbSensor.SelectedItem).Text;
+            if (cbSensor.SelectedItem == null) return "";
+            MenuItem item = (MenuItem)cbSensor.SelectedItem;
+            return item.Name;
         }
 
         private void loadImport(object sender, EventArgs e)
@@ -132,15 +134,6 @@ namespace SensorBoard
         /// <returns></returns>
         public String getSensor()
         {
-            /*if (cbSensor.SelectedValue == null)
-            {
-                return "";
-            }
-            else
-            {
-                return cbSensor.SelectedValue.ToString();
-            }*/
-            //return cbSensor.SelectedItem == null ? "" : cbSensor.SelectedItem.ToString();
             if (cbSensor.SelectedItem == null) return "";
             MenuItem item = (MenuItem)cbSensor.SelectedItem;
             return item.Name;

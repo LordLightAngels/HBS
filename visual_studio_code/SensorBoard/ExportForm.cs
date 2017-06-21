@@ -74,26 +74,30 @@ namespace SensorBoard
                 finalRes += res + System.Environment.NewLine;
             }
 
-            MainForm mf = (MainForm)this.ParentForm;
-            
-            SaveFileDialog savefile = new SaveFileDialog();
-            savefile.DefaultExt = "csv";
-            String name = mf.getSensorName();
-
-            name = Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase);
-            savefile.FileName = name;
-
-            if (savefile.ShowDialog() == DialogResult.OK)
+            try
             {
-                File.WriteAllText(savefile.FileName, finalRes.ToString());
-            }
+                MainForm mf = (MainForm)this.ParentForm;
 
-            if (mcbOuvrir.Checked)
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.DefaultExt = "csv";
+                String name = Fonction.slugify(mf.getSensorName());
+                name = String.IsNullOrEmpty(name) ? "Tout-capteur" : name;
+                savefile.FileName = name;
+
+                if (savefile.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(savefile.FileName, finalRes.ToString());
+                }
+
+                if (mcbOuvrir.Checked)
+                {
+                    Process.Start(savefile.FileName);
+                }
+            }
+            catch (Exception ex)
             {
-                Process.Start(savefile.FileName);
+                MessageBox.Show("Erreur à l'enregistrement: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void mrbExport_Click(object sender, EventArgs e)
