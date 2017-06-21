@@ -33,7 +33,7 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.mrbConfiguration = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnData = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.mrbReport = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSensor = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnImport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnSynthesis = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -50,9 +50,10 @@
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(147, 3);
+            this.pnlMain.Location = new System.Drawing.Point(144, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(650, 531);
+            this.pnlMain.Size = new System.Drawing.Size(656, 537);
             this.pnlMain.TabIndex = 1;
             // 
             // pnlMenu
@@ -60,14 +61,15 @@
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.pnlMenu.Controls.Add(this.mrbConfiguration);
             this.pnlMenu.Controls.Add(this.btnData);
-            this.pnlMenu.Controls.Add(this.mrbReport);
+            this.pnlMenu.Controls.Add(this.btnSensor);
             this.pnlMenu.Controls.Add(this.btnImport);
             this.pnlMenu.Controls.Add(this.mrbExport);
             this.pnlMenu.Controls.Add(this.btnSynthesis);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMenu.Location = new System.Drawing.Point(3, 3);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(138, 531);
+            this.pnlMenu.Size = new System.Drawing.Size(144, 537);
             this.pnlMenu.TabIndex = 0;
             // 
             // mrbConfiguration
@@ -95,17 +97,18 @@
             this.btnData.UseVisualStyleBackColor = true;
             this.btnData.Click += new System.EventHandler(this.loadData);
             // 
-            // mrbReport
+            // btnSensor
             // 
-            this.mrbReport.Depth = 0;
-            this.mrbReport.Location = new System.Drawing.Point(9, 161);
-            this.mrbReport.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mrbReport.Name = "mrbReport";
-            this.mrbReport.Primary = true;
-            this.mrbReport.Size = new System.Drawing.Size(120, 53);
-            this.mrbReport.TabIndex = 3;
-            this.mrbReport.Text = "Rapport";
-            this.mrbReport.UseVisualStyleBackColor = true;
+            this.btnSensor.Depth = 0;
+            this.btnSensor.Location = new System.Drawing.Point(9, 161);
+            this.btnSensor.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSensor.Name = "btnSensor";
+            this.btnSensor.Primary = true;
+            this.btnSensor.Size = new System.Drawing.Size(120, 53);
+            this.btnSensor.TabIndex = 3;
+            this.btnSensor.Text = "Capteur";
+            this.btnSensor.UseVisualStyleBackColor = true;
+            this.btnSensor.Click += new System.EventHandler(this.loadSensor);
             // 
             // btnImport
             // 
@@ -237,7 +240,7 @@
         private System.Windows.Forms.ComboBox cbSensor;
         private MaterialSkin.Controls.MaterialRaisedButton mrbConfiguration;
         private MaterialSkin.Controls.MaterialRaisedButton btnData;
-        private MaterialSkin.Controls.MaterialRaisedButton mrbReport;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSensor;
         private MaterialSkin.Controls.MaterialRaisedButton btnImport;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
         private MaterialSkin.Controls.MaterialRaisedButton btnSynthesis;

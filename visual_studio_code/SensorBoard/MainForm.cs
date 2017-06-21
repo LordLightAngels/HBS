@@ -19,6 +19,7 @@ namespace SensorBoard
         ExportForm export;
         SynthesisForm synthesis;
         DataForm data;
+        SensorForm sensor;
         Dictionary<int, String> sensorList = new Dictionary<int, string>();
 
         public MainForm()
@@ -50,6 +51,11 @@ namespace SensorBoard
             data.TopLevel = false;
             data.Dock = DockStyle.Fill;
             pnlMain.Controls.Add(data);
+
+            sensor = new SensorForm();
+            sensor.TopLevel = false;
+            sensor.Dock = DockStyle.Fill;
+            pnlMain.Controls.Add(sensor);
 
             synthesis.Show();
 
@@ -126,6 +132,13 @@ namespace SensorBoard
             HideForms();
             data.Show();
             data.DisplayData();
+        }
+
+        private void loadSensor(object sender, EventArgs e)
+        {
+            HideForms();
+            sensor.Show();
+            sensor.DisplaySensor();
         }
 
         /// <summary>

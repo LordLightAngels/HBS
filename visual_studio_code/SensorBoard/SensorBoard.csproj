@@ -69,6 +69,12 @@
     <Compile Include="ExportForm.Designer.cs">
       <DependentUpon>ExportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SensorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SensorForm.Designer.cs">
+      <DependentUpon>SensorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SynthesisForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SensorForm.resx">
+      <DependentUpon>SensorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SynthesisForm.resx">
       <DependentUpon>SynthesisForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1497377721_6.ico" />
+    <None Include="Resources\pencil.png" />
     <None Include="Resources\pbelle.png" />
     <None Include="Resources\delete.png" />
   </ItemGroup>

@@ -71,8 +71,6 @@ namespace SensorBoard
 
         }
 
-
-
         private void dgBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 6)
@@ -94,16 +92,32 @@ namespace SensorBoard
 
         }
 
+        //List<String> errorSupp = new List<string> { };
+        int errorCpt = 0;
+
         private void dgBase_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            object object_id = e.Row.Tag;
-            String id = (String)object_id;
-
-            String query = "DELETE FROM data WHERE id = " + id;
-            Dictionary<String, String> parameters = new Dictionary<string, string>();
-            DBInteractor db = new DBInteractor();
-            db.quickExecute(query, parameters);
-
+            try
+            {
+                object object_id = e.Row.Tag;
+                String id = (String)object_id;
+                String query = "DELETE FROM data WHERE id = " + id;
+                Dictionary<String, String> parameters = new Dictionary<string, string>();
+                DBInteractor db = new DBInteractor();
+                db.quickExecute(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
+                style.BackColor = Color.Red;
+                e.Row.Cells[0].Style = style;
+                //MessageBox.Show("Erreur lors de la suppression :" + ex.Message, "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //errorSupp.Add(ex.Message);
+                //int sizeOfList = errorSupp.Count;
+                errorCpt++;
+                lblDatas.Text = "Le nombre d'erreur est : " + errorCpt;
+                e.Cancel = true;
+            }
         }
 
         private void dgvData_KeyDown(object sender, KeyEventArgs e)
@@ -111,8 +125,15 @@ namespace SensorBoard
             if (e.KeyCode != Keys.Delete) return;
             DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer les entrees", "Confirmation de suppresion", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) e.Handled = true;
+            lblDatas.Text = "Donnees existantes";
+            errorCpt = 0;
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.BackColor = Color.White;
+            foreach (DataGridViewRow row in dgBase.Rows)
+            {
+                row.DefaultCellStyle = style;
+            }
         }
-
     }
 
 }

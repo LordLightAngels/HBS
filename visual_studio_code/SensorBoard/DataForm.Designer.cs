@@ -36,6 +36,7 @@
             this.colHumid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblDatas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgBase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,10 @@
             this.colHumid,
             this.colUID,
             this.colDelete});
-            this.dgBase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgBase.Location = new System.Drawing.Point(0, 0);
+            this.dgBase.Location = new System.Drawing.Point(0, 37);
             this.dgBase.Name = "dgBase";
             this.dgBase.ReadOnly = true;
-            this.dgBase.Size = new System.Drawing.Size(566, 336);
+            this.dgBase.Size = new System.Drawing.Size(566, 299);
             this.dgBase.TabIndex = 0;
             this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBase_CellContentClick);
             this.dgBase.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgBase_UserDeletingRow);
@@ -105,17 +105,28 @@
             this.colDelete.Name = "colDelete";
             this.colDelete.ReadOnly = true;
             // 
+            // lblDatas
+            // 
+            this.lblDatas.AutoSize = true;
+            this.lblDatas.Location = new System.Drawing.Point(13, 13);
+            this.lblDatas.Name = "lblDatas";
+            this.lblDatas.Size = new System.Drawing.Size(101, 13);
+            this.lblDatas.TabIndex = 1;
+            this.lblDatas.Text = "Donnees Existantes";
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 336);
+            this.Controls.Add(this.lblDatas);
             this.Controls.Add(this.dgBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DataForm";
             this.Text = "Data";
             ((System.ComponentModel.ISupportInitialize)(this.dgBase)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,5 +140,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHumid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUID;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
+        private System.Windows.Forms.Label lblDatas;
     }
 }
