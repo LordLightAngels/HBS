@@ -32,7 +32,7 @@
             this.mlContent = new MaterialSkin.Controls.MaterialLabel();
             this.mrbExcel = new MaterialSkin.Controls.MaterialRadioButton();
             this.mcbEnvoiPDF = new MaterialSkin.Controls.MaterialCheckBox();
-            this.msltfInputEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tfInputEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mcbOuvrir = new MaterialSkin.Controls.MaterialCheckBox();
@@ -104,21 +104,21 @@
             this.mcbEnvoiPDF.Text = "Envoi PDF par email à :";
             this.mcbEnvoiPDF.UseVisualStyleBackColor = true;
             // 
-            // msltfInputEmail
+            // tfInputEmail
             // 
-            this.msltfInputEmail.Depth = 0;
-            this.msltfInputEmail.Hint = "";
-            this.msltfInputEmail.Location = new System.Drawing.Point(208, 171);
-            this.msltfInputEmail.MouseState = MaterialSkin.MouseState.HOVER;
-            this.msltfInputEmail.Name = "msltfInputEmail";
-            this.msltfInputEmail.PasswordChar = '\0';
-            this.msltfInputEmail.SelectedText = "";
-            this.msltfInputEmail.SelectionLength = 0;
-            this.msltfInputEmail.SelectionStart = 0;
-            this.msltfInputEmail.Size = new System.Drawing.Size(170, 23);
-            this.msltfInputEmail.TabIndex = 6;
-            this.msltfInputEmail.Text = "saisir adresse mail";
-            this.msltfInputEmail.UseSystemPasswordChar = false;
+            this.tfInputEmail.Depth = 0;
+            this.tfInputEmail.Hint = "";
+            this.tfInputEmail.Location = new System.Drawing.Point(208, 171);
+            this.tfInputEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfInputEmail.Name = "tfInputEmail";
+            this.tfInputEmail.PasswordChar = '\0';
+            this.tfInputEmail.SelectedText = "";
+            this.tfInputEmail.SelectionLength = 0;
+            this.tfInputEmail.SelectionStart = 0;
+            this.tfInputEmail.Size = new System.Drawing.Size(170, 23);
+            this.tfInputEmail.TabIndex = 6;
+            this.tfInputEmail.Text = "saisir adresse mail";
+            this.tfInputEmail.UseSystemPasswordChar = false;
             // 
             // mrbExport
             // 
@@ -140,7 +140,7 @@
             this.panel1.Controls.Add(this.mlContent);
             this.panel1.Controls.Add(this.mrbExport);
             this.panel1.Controls.Add(this.mrbExcel);
-            this.panel1.Controls.Add(this.msltfInputEmail);
+            this.panel1.Controls.Add(this.tfInputEmail);
             this.panel1.Controls.Add(this.mrbPDF);
             this.panel1.Controls.Add(this.mcbEnvoiPDF);
             this.panel1.Location = new System.Drawing.Point(27, 22);
@@ -200,7 +200,7 @@
         private MaterialSkin.Controls.MaterialLabel mlContent;
         private MaterialSkin.Controls.MaterialRadioButton mrbExcel;
         private MaterialSkin.Controls.MaterialCheckBox mcbEnvoiPDF;
-        private MaterialSkin.Controls.MaterialSingleLineTextField msltfInputEmail;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfInputEmail;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel mlTitle;

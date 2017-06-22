@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace SensorBoard
 {
     public partial class ExportForm : Form
     {
-        private object filePath;
+        private String filePath;
 
         public ExportForm()
         {
@@ -83,15 +84,44 @@ namespace SensorBoard
                 String name = Function.slugify(mf.getSensorName());
                 name = String.IsNullOrEmpty(name) ? "Tout-capteur" : name;
                 savefile.FileName = name;
+                
 
                 if (savefile.ShowDialog() == DialogResult.OK)
-                {
+                { 
                     File.WriteAllText(savefile.FileName, finalRes.ToString());
+                    this.filePath = savefile.FileName;
                 }
 
                 if (mcbOuvrir.Checked)
                 {
                     Process.Start(savefile.FileName);
+                }
+
+                if (mcbEnvoiPDF.Checked)
+                {
+                    try
+                    {
+                        MailMessage mail = new MailMessage();
+                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                        String destAddress = tfInputEmail.Text;
+
+                        mail.From = new MailAddress("cobralerte@gmail.com");
+                        mail.To.Add(destAddress);
+                        mail.Subject = "Test Mail";
+                        mail.Body = "This is for testing SMTP mail from GMAIL";
+                        mail.Attachments.Add(new Attachment(filePath));
+
+                        SmtpServer.Port = 587;
+                        SmtpServer.Credentials = new System.Net.NetworkCredential("cobralerte", "alerteCOBRA-Pi3B");
+                        SmtpServer.EnableSsl = true;
+
+                        SmtpServer.Send(mail);
+                        MessageBox.Show("Mail Send");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -100,12 +130,38 @@ namespace SensorBoard
             }
         }
 
+
+        public void SendMail()
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                String destAddress = tfInputEmail.Text;
+
+                mail.From = new MailAddress("cobralerte@gmail.com");
+                mail.To.Add(destAddress);
+                mail.Subject = "Test Mail";
+                mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("cobralerte", "alerteCOBRA-Pi3B");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Mail Send");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void mrbExport_Click(object sender, EventArgs e)
         {
-            if (mrbExcel.Checked)
-            {
-                ExportDataCSV();
-            }
+            if (mrbExcel.Checked) ExportDataCSV();
+            if (mcbEnvoiPDF.Checked) SendMail();
+
         }
     }
 }

@@ -50,10 +50,10 @@
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(192, 0);
+            this.pnlMain.Location = new System.Drawing.Point(144, 0);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(875, 661);
+            this.pnlMain.Size = new System.Drawing.Size(656, 537);
             this.pnlMain.TabIndex = 1;
             // 
             // pnlMenu
@@ -69,18 +69,17 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(192, 661);
+            this.pnlMenu.Size = new System.Drawing.Size(144, 537);
             this.pnlMenu.TabIndex = 0;
             // 
             // mrbConfiguration
             // 
             this.mrbConfiguration.Depth = 0;
-            this.mrbConfiguration.Location = new System.Drawing.Point(12, 479);
-            this.mrbConfiguration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mrbConfiguration.Location = new System.Drawing.Point(9, 389);
             this.mrbConfiguration.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbConfiguration.Name = "mrbConfiguration";
             this.mrbConfiguration.Primary = true;
-            this.mrbConfiguration.Size = new System.Drawing.Size(160, 65);
+            this.mrbConfiguration.Size = new System.Drawing.Size(120, 53);
             this.mrbConfiguration.TabIndex = 5;
             this.mrbConfiguration.Text = "Configuration";
             this.mrbConfiguration.UseVisualStyleBackColor = true;
@@ -88,12 +87,11 @@
             // btnData
             // 
             this.btnData.Depth = 0;
-            this.btnData.Location = new System.Drawing.Point(12, 105);
-            this.btnData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnData.Location = new System.Drawing.Point(9, 85);
             this.btnData.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnData.Name = "btnData";
             this.btnData.Primary = true;
-            this.btnData.Size = new System.Drawing.Size(160, 65);
+            this.btnData.Size = new System.Drawing.Size(120, 53);
             this.btnData.TabIndex = 4;
             this.btnData.Text = "Données";
             this.btnData.UseVisualStyleBackColor = true;
@@ -102,12 +100,11 @@
             // btnSensor
             // 
             this.btnSensor.Depth = 0;
-            this.btnSensor.Location = new System.Drawing.Point(12, 198);
-            this.btnSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSensor.Location = new System.Drawing.Point(9, 161);
             this.btnSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSensor.Name = "btnSensor";
             this.btnSensor.Primary = true;
-            this.btnSensor.Size = new System.Drawing.Size(160, 65);
+            this.btnSensor.Size = new System.Drawing.Size(120, 53);
             this.btnSensor.TabIndex = 3;
             this.btnSensor.Text = "Capteur";
             this.btnSensor.UseVisualStyleBackColor = true;
@@ -116,12 +113,11 @@
             // btnImport
             // 
             this.btnImport.Depth = 0;
-            this.btnImport.Location = new System.Drawing.Point(12, 292);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImport.Location = new System.Drawing.Point(9, 237);
             this.btnImport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnImport.Name = "btnImport";
             this.btnImport.Primary = true;
-            this.btnImport.Size = new System.Drawing.Size(160, 65);
+            this.btnImport.Size = new System.Drawing.Size(120, 53);
             this.btnImport.TabIndex = 2;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -130,12 +126,11 @@
             // mrbExport
             // 
             this.mrbExport.Depth = 0;
-            this.mrbExport.Location = new System.Drawing.Point(12, 385);
-            this.mrbExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mrbExport.Location = new System.Drawing.Point(9, 313);
             this.mrbExport.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbExport.Name = "mrbExport";
             this.mrbExport.Primary = true;
-            this.mrbExport.Size = new System.Drawing.Size(160, 65);
+            this.mrbExport.Size = new System.Drawing.Size(120, 53);
             this.mrbExport.TabIndex = 1;
             this.mrbExport.Text = "Export";
             this.mrbExport.UseVisualStyleBackColor = true;
@@ -144,12 +139,11 @@
             // btnSynthesis
             // 
             this.btnSynthesis.Depth = 0;
-            this.btnSynthesis.Location = new System.Drawing.Point(12, 11);
-            this.btnSynthesis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSynthesis.Location = new System.Drawing.Point(9, 9);
             this.btnSynthesis.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSynthesis.Name = "btnSynthesis";
             this.btnSynthesis.Primary = true;
-            this.btnSynthesis.Size = new System.Drawing.Size(160, 65);
+            this.btnSynthesis.Size = new System.Drawing.Size(120, 53);
             this.btnSynthesis.TabIndex = 0;
             this.btnSynthesis.Text = "Synthèse";
             this.btnSynthesis.UseVisualStyleBackColor = true;
@@ -163,12 +157,11 @@
             this.tableLayoutPanel1.Controls.Add(this.pnlMenu, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pnlMain, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 77);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 63);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 537);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // tlpFilter
@@ -181,12 +174,11 @@
             this.tlpFilter.Controls.Add(this.cbSensor, 2, 0);
             this.tlpFilter.Controls.Add(this.dtpStart, 0, 0);
             this.tlpFilter.Controls.Add(this.dtpEnd, 1, 0);
-            this.tlpFilter.Location = new System.Drawing.Point(196, 37);
-            this.tlpFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpFilter.Location = new System.Drawing.Point(147, 30);
             this.tlpFilter.Name = "tlpFilter";
             this.tlpFilter.RowCount = 1;
             this.tlpFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFilter.Size = new System.Drawing.Size(867, 37);
+            this.tlpFilter.Size = new System.Drawing.Size(650, 30);
             this.tlpFilter.TabIndex = 4;
             // 
             // cbSensor
@@ -196,44 +188,40 @@
             this.cbSensor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSensor.ForeColor = System.Drawing.SystemColors.Window;
             this.cbSensor.FormattingEnabled = true;
-            this.cbSensor.Location = new System.Drawing.Point(582, 4);
-            this.cbSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSensor.Location = new System.Drawing.Point(435, 3);
             this.cbSensor.Name = "cbSensor";
-            this.cbSensor.Size = new System.Drawing.Size(281, 24);
+            this.cbSensor.Size = new System.Drawing.Size(212, 21);
             this.cbSensor.TabIndex = 2;
             this.cbSensor.SelectedIndexChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // dtpStart
             // 
             this.dtpStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpStart.Location = new System.Drawing.Point(4, 4);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStart.Location = new System.Drawing.Point(3, 3);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(281, 22);
+            this.dtpStart.Size = new System.Drawing.Size(210, 20);
             this.dtpStart.TabIndex = 3;
             this.dtpStart.ValueChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // dtpEnd
             // 
             this.dtpEnd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpEnd.Location = new System.Drawing.Point(293, 4);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEnd.Location = new System.Drawing.Point(219, 3);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(281, 22);
+            this.dtpEnd.Size = new System.Drawing.Size(210, 20);
             this.dtpEnd.TabIndex = 4;
             this.dtpEnd.ValueChanged += new System.EventHandler(this.cbSensor_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 738);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.tlpFilter);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(1067, 738);
-            this.MinimumSize = new System.Drawing.Size(1067, 738);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 590);
             this.Name = "MainForm";
             this.Text = "SensorBoard";
             this.pnlMenu.ResumeLayout(false);

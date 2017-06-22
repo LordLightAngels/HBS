@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DATABASE_PASSWORD" xml:space="preserve">
-    <value>media</value>
+    <value />
   </data>
   <data name="DATABASE_NAME" xml:space="preserve">
     <value>sensorboard</value>
   </data>
   <data name="DATABASE_LOGIN" xml:space="preserve">
-    <value>media</value>
+    <value>root</value>
   </data>
   <data name="DATABASE_HOST" xml:space="preserve">
-    <value>192.168.33.10</value>
+    <value>127.0.0.1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbelle" type="System.Resources.ResXFileRef, System.Windows.Forms">

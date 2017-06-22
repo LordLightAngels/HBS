@@ -61,7 +61,7 @@ namespace SensorBoard.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 192.168.33.10.
+        ///   Recherche une chaîne localisée semblable à 127.0.0.1.
         /// </summary>
         internal static string DATABASE_HOST {
             get {
@@ -70,7 +70,7 @@ namespace SensorBoard.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à media.
+        ///   Recherche une chaîne localisée semblable à root.
         /// </summary>
         internal static string DATABASE_LOGIN {
             get {
@@ -88,7 +88,7 @@ namespace SensorBoard.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à media.
+        ///   Recherche une chaîne localisée semblable à .
         /// </summary>
         internal static string DATABASE_PASSWORD {
             get {
