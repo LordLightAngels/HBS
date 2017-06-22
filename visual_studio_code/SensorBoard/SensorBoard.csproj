@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fonction.cs" />
+    <Compile Include="Function.cs" />
     <Compile Include="DataForm.cs">
       <SubType>Form</SubType>
     </Compile>

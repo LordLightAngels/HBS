@@ -110,13 +110,15 @@ namespace SensorBoard
                 object object_id = dgvSensor.Rows[row].Tag;
                 String id = (String)object_id;
 
-                DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer les entrees", "Confirmation de suppresion", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer ce capteur ? Toutes les données y étant attaché vont être aussi supprimé ! "
+                , "Confirmation de suppresion", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No) return;
-
-                String query = "DELETE FROM sensor WHERE id = " + id;
+                String queryData = "DELETE FROM data WHERE sensor = " + id;
+                String querySensor = "DELETE FROM sensor WHERE id = " + id;
                 Dictionary<String, String> parameters = new Dictionary<string, string>();
                 DBInteractor db = new DBInteractor();
-                db.quickExecute(query, parameters);
+                db.quickExecute(queryData, parameters);
+                db.quickExecute(querySensor, parameters);
                 refreshSensor();
 
                 main.refreshSensorMain();

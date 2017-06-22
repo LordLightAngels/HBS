@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SensorBoard
 {
-    class Fonction
+    class Function
     {
         internal static string slugify(string name)
         {
-            return Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase); ;
+            return Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase);
         }
     }
 }
