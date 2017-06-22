@@ -87,5 +87,22 @@ namespace SensorBoard
             db.Disconnect();
         }
 
+        public static List<Dictionary<String, String>> QuickSelect(String query, Dictionary<String, String> parameters)
+        {
+            DBInteractor db = new DBInteractor();
+            db.Connect();
+            List<Dictionary<String, String>> resultSet = db.Select(query, parameters);
+            db.Disconnect();
+            return resultSet;
+
+        }
+
+        public static List<Dictionary<String, String>> QuickSelect(String query)
+        {
+            Dictionary<String, String> parameters = new Dictionary<string, string>();
+            return DBInteractor.QuickSelect(query, parameters);
+        }
+
+
     }
 }
