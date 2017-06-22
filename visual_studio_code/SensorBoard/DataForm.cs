@@ -30,16 +30,20 @@ namespace SensorBoard
             String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
             String idSensor = main.getSensor();
             String query;
-            String whereClause = idSensor;
+            String optionalClause = "WHERE 1 ";
 
-            whereClause = (idSensor == "") ? "1" : whereClause = "sensor.id = " + idSensor;
+            if (idSensor != "")
+            {
+                optionalClause = "WHERE sensor.id = " + idSensor + "  ";
+            }
 
             query = "SELECT  sensor.*, data.*" +
                     "FROM sensor INNER JOIN data " +
                     "ON data.sensor LIKE sensor.id " +
-                    "WHERE " + whereClause + " " +
-                    "AND data_date BETWEEN '" + startString + "' AND '" + endString + "' " +
+                    optionalClause + " " +
+                    "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
                     "ORDER BY data_date DESC, sensor ";
+
             Dictionary<String, String> parameters = new Dictionary<string, string>();
             DBInteractor db = new DBInteractor();
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
