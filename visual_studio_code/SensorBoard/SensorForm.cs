@@ -12,6 +12,9 @@ namespace SensorBoard
 {
     public partial class SensorForm : Form
     {
+        //Variable pour l'update si bouton modifier est sélectionné
+        String idSensor;
+
         public SensorForm()
         {
             InitializeComponent();
@@ -60,9 +63,9 @@ namespace SensorBoard
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvSensor, new object[] {
+                    line["uid"],
                     line["label"],
                     line["webservice"],
-                    line["uid"],
                     Properties.Resources.pencil,
                     Properties.Resources.pbelle
                 });
@@ -83,16 +86,24 @@ namespace SensorBoard
                 parameters["@label"] = msltfLabelSensor.Text;
                 parameters["@webservice"] = msltfWebServiceSensor.Text;
                 parameters["@uid"] = msltfUIDSensor.Text;
-                DBInteractor.QuickExecute("INSERT INTO sensor (label,webservice,uid) VALUE(@label,@webservice,@uid)", parameters);
-                refreshSensor();
+                if (idSensor!= null)
+                {
+                    DBInteractor.QuickExecute("UPDATE sensor SET label = '" + msltfLabelSensor.Text + "', webservice = '" 
+                        + msltfWebServiceSensor.Text + "', uid = '" + msltfUIDSensor.Text + "' WHERE id = " + idSensor);
+                }
+                else
+                {
+                    DBInteractor.QuickExecute("INSERT INTO sensor (label,webservice,uid) VALUE(@label,@webservice,@uid)", parameters);
+                }
                 main.refreshSensorMain();
                 msltfLabelSensor.Text = "";
                 msltfWebServiceSensor.Text = "";
                 msltfUIDSensor.Text = "";
+                refreshSensor();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erreur lors de l'ajout "+ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erreur lors de l'ajout " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,9 +126,20 @@ namespace SensorBoard
                 DBInteractor.QuickExecute(queryData);
                 DBInteractor.QuickExecute(querySensor);
                 refreshSensor();
-
                 main.refreshSensorMain();
                 DisplaySensor();
+            }
+            if (e.ColumnIndex == 3)
+            {
+                int row = e.RowIndex;
+                object object_id = dgvSensor.Rows[row].Tag;
+                String id = (String)object_id;
+
+                List<Dictionary<String, String>> resultSensor = DBInteractor.QuickSelect("SELECT * FROM sensor WHERE id = " + id);
+                msltfLabelSensor.Text = resultSensor[0]["label"];
+                msltfWebServiceSensor.Text = resultSensor[0]["webservice"];
+                msltfUIDSensor.Text = resultSensor[0]["uid"];
+                idSensor = resultSensor[0]["id"];
             }
         }
     }
