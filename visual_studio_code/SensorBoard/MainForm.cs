@@ -105,7 +105,7 @@ namespace SensorBoard
         {
             if (cbSensor.SelectedItem == null) return "";
             MenuItem item = (MenuItem)cbSensor.SelectedItem;
-            return item.Name;
+            return item.Text;
         }
 
         private void loadImport(object sender, EventArgs e)
