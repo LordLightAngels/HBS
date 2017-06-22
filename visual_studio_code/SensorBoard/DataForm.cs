@@ -106,7 +106,7 @@ namespace SensorBoard
                 DBInteractor db = new DBInteractor();
                 db.quickExecute(query, parameters);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DataGridViewCellStyle style = new DataGridViewCellStyle();
                 style.BackColor = Color.Red;
