@@ -39,6 +39,12 @@ namespace SensorBoard
         }
 
 
+        public void Execute(String query)
+        {
+            Dictionary<String, String> param = new Dictionary<string, string>();
+            Select(query, param);
+        }
+
 
         /// <summary>
         /// Effectue une requete type select et retourne une liste de dictionnaires de résultats
@@ -78,12 +84,21 @@ namespace SensorBoard
             Dictionary<String, String> param = new Dictionary<string, string>();
             return Select(query, param);
         }
+        
         //à faire partout ailleurs que dans les boucles
-        public void quickExecute(String query, Dictionary<String, String> parameters)
+        public static void QuickExecute(String query, Dictionary<String, String> parameters)
         {
             DBInteractor db = new DBInteractor();
             db.Connect();
             db.Execute(query, parameters);
+            db.Disconnect();
+        }
+
+        public static void QuickExecute(String query)
+        {
+            DBInteractor db = new DBInteractor();
+            db.Connect();
+            db.Execute(query);
             db.Disconnect();
         }
 

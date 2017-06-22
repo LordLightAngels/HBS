@@ -44,14 +44,11 @@ namespace SensorBoard
                     "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
                     "ORDER BY data_date DESC, sensor ";
 
-            Dictionary<String, String> parameters = new Dictionary<string, string>();
-            DBInteractor db = new DBInteractor();
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
 
             try
             {
-                db.Connect();
-                resultset = db.Select(query, parameters);
+                resultset = DBInteractor.QuickSelect(query);
             }
             catch (Exception ex)
             {
@@ -87,9 +84,7 @@ namespace SensorBoard
                 if (result == DialogResult.No) return;
 
                 String query = "DELETE FROM data WHERE id = " + id;
-                Dictionary<String, String> parameters = new Dictionary<string, string>();
-                DBInteractor db = new DBInteractor();
-                db.quickExecute(query, parameters);
+                DBInteractor.QuickExecute(query);
 
                 DisplayData();
             }
@@ -106,9 +101,9 @@ namespace SensorBoard
                 object object_id = e.Row.Tag;
                 String id = (String)object_id;
                 String query = "DELETE FROM data WHERE id = " + id;
-                Dictionary<String, String> parameters = new Dictionary<string, string>();
-                DBInteractor db = new DBInteractor();
-                db.quickExecute(query, parameters);
+                //Dictionary<String, String> parameters = new Dictionary<string, string>();
+                //DBInteractor db = new DBInteractor();
+                DBInteractor.QuickExecute(query);
             }
             catch (Exception ex)
             {

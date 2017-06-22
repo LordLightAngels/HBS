@@ -79,14 +79,14 @@ namespace SensorBoard
                 Form form = this.ParentForm;
                 MainForm main = (MainForm)form;
 
-                DBInteractor db = new DBInteractor();
-                db.Connect();
+                //DBInteractor db = new DBInteractor();
+                //db.Connect();
 
                 Dictionary<String, String> parameters = new Dictionary<String, String>();
                 parameters["@label"] = msltfLabelSensor.Text;
                 parameters["@webservice"] = msltfWebServiceSensor.Text;
                 parameters["@uid"] = msltfUIDSensor.Text;
-                db.quickExecute("INSERT INTO sensor (label,webservice,uid) VALUE(@label,@webservice,@uid)", parameters);
+                DBInteractor.QuickExecute("INSERT INTO sensor (label,webservice,uid) VALUE(@label,@webservice,@uid)", parameters);
                 refreshSensor();
                 main.refreshSensorMain();
                 msltfLabelSensor.Text = "";
@@ -114,9 +114,9 @@ namespace SensorBoard
                 if (result == DialogResult.No) return;
 
                 String query = "DELETE FROM sensor WHERE id = " + id;
-                Dictionary<String, String> parameters = new Dictionary<string, string>();
-                DBInteractor db = new DBInteractor();
-                db.quickExecute(query, parameters);
+                //Dictionary<String, String> parameters = new Dictionary<string, string>();
+                //DBInteractor db = new DBInteractor();
+                DBInteractor.QuickExecute(query);
                 refreshSensor();
 
                 main.refreshSensorMain();
