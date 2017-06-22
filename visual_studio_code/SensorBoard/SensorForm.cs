@@ -79,9 +79,6 @@ namespace SensorBoard
                 Form form = this.ParentForm;
                 MainForm main = (MainForm)form;
 
-                //DBInteractor db = new DBInteractor();
-                //db.Connect();
-
                 Dictionary<String, String> parameters = new Dictionary<String, String>();
                 parameters["@label"] = msltfLabelSensor.Text;
                 parameters["@webservice"] = msltfWebServiceSensor.Text;
@@ -110,13 +107,13 @@ namespace SensorBoard
                 object object_id = dgvSensor.Rows[row].Tag;
                 String id = (String)object_id;
 
-                DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer les entrees", "Confirmation de suppresion", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Etes vous sur de vouloir supprimer ce capteur ? Toutes les données y étant attaché vont être aussi supprimé ! "
+                , "Confirmation de suppresion", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No) return;
-
-                String query = "DELETE FROM sensor WHERE id = " + id;
-                //Dictionary<String, String> parameters = new Dictionary<string, string>();
-                //DBInteractor db = new DBInteractor();
-                DBInteractor.QuickExecute(query);
+                String queryData = "DELETE FROM data WHERE sensor = " + id;
+                String querySensor = "DELETE FROM sensor WHERE id = " + id;
+                DBInteractor.QuickExecute(queryData);
+                DBInteractor.QuickExecute(querySensor);
                 refreshSensor();
 
                 main.refreshSensorMain();

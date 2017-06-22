@@ -80,7 +80,7 @@ namespace SensorBoard
 
                 SaveFileDialog savefile = new SaveFileDialog();
                 savefile.DefaultExt = "csv";
-                String name = Fonction.slugify(mf.getSensorName());
+                String name = Function.slugify(mf.getSensorName());
                 name = String.IsNullOrEmpty(name) ? "Tout-capteur" : name;
                 savefile.FileName = name;
 
