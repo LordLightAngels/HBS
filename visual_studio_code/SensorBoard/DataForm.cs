@@ -73,7 +73,8 @@ namespace SensorBoard
 
         private void dgBase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 5)
+
             {
                 int row = e.RowIndex;
                 object object_id = dgBase.Rows[row].Tag;
