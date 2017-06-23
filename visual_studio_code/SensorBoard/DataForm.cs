@@ -56,18 +56,15 @@ namespace SensorBoard
                     ex.Message + "\n\r" + ex.StackTrace);
             }
 
-            int lenResultset = resultset.Count;
-            String dtSart = resultset[0]["data_date"];
-            String dtEnd = resultset[lenResultset - 1]["data_date"];
-
             foreach (Dictionary<String, String> line in resultset)
             {
                 int row = dgBase.Rows.Add(new object[] {
-                        line["label"],
-                        lenResultset.ToString(),
-                        dtSart,
-                        dtEnd,
+                       line["uid"],
+                        line["data_date"],
+                        line["temperature"],
+                        line["humidity"],
                         line["uid"],
+                        Properties.Resources.pbelle
                 });
             }
 

@@ -19,36 +19,63 @@ namespace SensorBoard
 
         public void DisplaySynthesis()
         {
-            String query = "SELECT data.*, sensor.* FROM data INNER JOIN sensor " +
-                "ON data.sensor = sensor.id ORDER BY data.data_date DESC";
+            Form form = this.ParentForm;
+            MainForm main = (MainForm)form;
+            String idSensor = main.getSensor();
+            String query;
+            String uidSensor;
 
-            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+            lUID.Text = "ID du capteur";
+            ldtStart.Text = "Date et heure de\r\nl'import le plus ancien";
+            ldtEnd.Text = "Date et heure de\r\nl'import le plus récent";
+            lNbr.Text = "Nombre total d'import\r\nsur cette période";
 
-            try
+            tfUID.Text = "";
+            tfdtStart.Text = "";
+            tfdtEnd.Text = "";
+            tfNbr.Text = "";
+
+            if (idSensor != "")
             {
-                resultset = DBInteractor.QuickSelect(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
-                    ex.Message + "\n\r" + ex.StackTrace);
-            }
+                query = "SELECT  sensor.*, data.*" +
+                        "FROM sensor INNER JOIN data " +
+                        "ON data.sensor = sensor.id " +
+                        "WHERE sensor.id = " + idSensor + " " +
+                        "ORDER BY data_date ASC";
 
-            foreach (Dictionary<String, String> line in resultset)
-            {
-                int row = dgSynthesis.Rows.Add(new object[] {
-                        line["uid"],
-                        line["data_date"],
-                        line["temperature"],
-                        line["humidity"],
-                        line["uid"],
-                        Properties.Resources.pbelle
-                });
-                dgSynthesis.Rows[row].Tag = line["id"];
+                List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+                String dtStart = "0";
+                String dtEnd = "0";
+                int lenResultset;
+
+                try
+                {
+                    resultset = DBInteractor.QuickSelect(query);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                        ex.Message + "\n\r" + ex.StackTrace);
+                }
+
+                uidSensor = resultset[0]["uid"];
+                lenResultset = resultset.Count;
+
+                if (lenResultset != 0)
+                {
+                    dtStart = resultset[0]["data_date"].ToString();
+                    dtEnd = resultset[lenResultset - 1]["data_date"].ToString();
+                }
+
+                tfUID.Text = uidSensor;
+                tfdtStart.Text = dtStart;
+                tfdtEnd.Text = dtEnd;
+                tfNbr.Text = lenResultset.ToString();
+
+                
+
             }
-
-            //dgSynthesis.
-
         }
     }
 }
+

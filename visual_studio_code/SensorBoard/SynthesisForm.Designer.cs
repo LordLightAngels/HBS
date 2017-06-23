@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SynthesisForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mlMinHumidData = new MaterialSkin.Controls.MaterialLabel();
@@ -52,11 +52,14 @@
             this.mlMaxTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
             this.chTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dgSynthesis = new System.Windows.Forms.DataGridView();
-            this.UID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbrData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtFirst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lUID = new System.Windows.Forms.Label();
+            this.ldtStart = new System.Windows.Forms.Label();
+            this.ldtEnd = new System.Windows.Forms.Label();
+            this.lNbr = new System.Windows.Forms.Label();
+            this.tfUID = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tfdtStart = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tfdtEnd = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.tfNbr = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -64,12 +67,18 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTemp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSynthesis)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.dgSynthesis);
+            this.pnlMain.Controls.Add(this.tfNbr);
+            this.pnlMain.Controls.Add(this.tfdtEnd);
+            this.pnlMain.Controls.Add(this.tfdtStart);
+            this.pnlMain.Controls.Add(this.tfUID);
+            this.pnlMain.Controls.Add(this.lNbr);
+            this.pnlMain.Controls.Add(this.ldtEnd);
+            this.pnlMain.Controls.Add(this.ldtStart);
+            this.pnlMain.Controls.Add(this.lUID);
             this.pnlMain.Controls.Add(this.panel1);
             this.pnlMain.Controls.Add(this.chart1);
             this.pnlMain.Controls.Add(this.pnlRecapTemp);
@@ -86,7 +95,7 @@
             this.panel1.Controls.Add(this.mlMaxHumid);
             this.panel1.Controls.Add(this.mlMinHumid);
             this.panel1.Controls.Add(this.mlHumidTitle);
-            this.panel1.Location = new System.Drawing.Point(427, 79);
+            this.panel1.Location = new System.Drawing.Point(366, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 96);
             this.panel1.TabIndex = 4;
@@ -158,16 +167,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(336, 193);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(263, 205);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
@@ -180,7 +189,7 @@
             this.pnlRecapTemp.Controls.Add(this.mlMedTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMaxTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMinTemp);
-            this.pnlRecapTemp.Location = new System.Drawing.Point(190, 78);
+            this.pnlRecapTemp.Location = new System.Drawing.Point(54, 90);
             this.pnlRecapTemp.Name = "pnlRecapTemp";
             this.pnlRecapTemp.Size = new System.Drawing.Size(194, 97);
             this.pnlRecapTemp.TabIndex = 2;
@@ -211,7 +220,7 @@
             this.mlTemp.Depth = 0;
             this.mlTemp.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlTemp.Location = new System.Drawing.Point(66, 6);
+            this.mlTemp.Location = new System.Drawing.Point(69, 6);
             this.mlTemp.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlTemp.Name = "mlTemp";
             this.mlTemp.Size = new System.Drawing.Size(102, 19);
@@ -272,52 +281,119 @@
             // 
             // chTemp
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chTemp.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chTemp.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea1";
+            this.chTemp.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chTemp.Legends.Add(legend10);
             this.chTemp.Location = new System.Drawing.Point(31, 193);
             this.chTemp.Name = "chTemp";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chTemp.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chTemp.Series.Add(series10);
             this.chTemp.Size = new System.Drawing.Size(286, 207);
             this.chTemp.TabIndex = 1;
             this.chTemp.Text = "graph Temp";
             // 
-            // dgSynthesis
+            // lUID
             // 
-            this.dgSynthesis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSynthesis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UID,
-            this.nbrData,
-            this.dtFirst,
-            this.dtLast});
-            this.dgSynthesis.Location = new System.Drawing.Point(3, 3);
-            this.dgSynthesis.Name = "dgSynthesis";
-            this.dgSynthesis.Size = new System.Drawing.Size(623, 71);
-            this.dgSynthesis.TabIndex = 5;
+            this.lUID.AutoSize = true;
+            this.lUID.Location = new System.Drawing.Point(31, 16);
+            this.lUID.Name = "lUID";
+            this.lUID.Size = new System.Drawing.Size(35, 13);
+            this.lUID.TabIndex = 5;
+            this.lUID.Text = "label1";
             // 
-            // UID
+            // ldtStart
             // 
-            this.UID.HeaderText = "UID";
-            this.UID.Name = "UID";
+            this.ldtStart.AutoSize = true;
+            this.ldtStart.Location = new System.Drawing.Point(159, 16);
+            this.ldtStart.Name = "ldtStart";
+            this.ldtStart.Size = new System.Drawing.Size(35, 13);
+            this.ldtStart.TabIndex = 6;
+            this.ldtStart.Text = "label2";
             // 
-            // nbrData
+            // ldtEnd
             // 
-            this.nbrData.HeaderText = "Nombre de données";
-            this.nbrData.Name = "nbrData";
+            this.ldtEnd.AutoSize = true;
+            this.ldtEnd.Location = new System.Drawing.Point(312, 16);
+            this.ldtEnd.Name = "ldtEnd";
+            this.ldtEnd.Size = new System.Drawing.Size(35, 13);
+            this.ldtEnd.TabIndex = 7;
+            this.ldtEnd.Text = "label3";
             // 
-            // dtFirst
+            // lNbr
             // 
-            this.dtFirst.HeaderText = "Date et heure du premier enregistrement";
-            this.dtFirst.Name = "dtFirst";
+            this.lNbr.AutoSize = true;
+            this.lNbr.Location = new System.Drawing.Point(492, 16);
+            this.lNbr.Name = "lNbr";
+            this.lNbr.Size = new System.Drawing.Size(35, 13);
+            this.lNbr.TabIndex = 8;
+            this.lNbr.Text = "label4";
             // 
-            // dtLast
+            // tfUID
             // 
-            this.dtLast.HeaderText = "Date et heure du dernier enregistrement";
-            this.dtLast.Name = "dtLast";
+            this.tfUID.Depth = 0;
+            this.tfUID.Hint = "";
+            this.tfUID.Location = new System.Drawing.Point(34, 45);
+            this.tfUID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfUID.Name = "tfUID";
+            this.tfUID.PasswordChar = '\0';
+            this.tfUID.SelectedText = "";
+            this.tfUID.SelectionLength = 0;
+            this.tfUID.SelectionStart = 0;
+            this.tfUID.Size = new System.Drawing.Size(75, 23);
+            this.tfUID.TabIndex = 9;
+            this.tfUID.Text = "materialSingleLineTextField1";
+            this.tfUID.UseSystemPasswordChar = false;
+            // 
+            // tfdtStart
+            // 
+            this.tfdtStart.Depth = 0;
+            this.tfdtStart.Hint = "";
+            this.tfdtStart.Location = new System.Drawing.Point(162, 45);
+            this.tfdtStart.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfdtStart.Name = "tfdtStart";
+            this.tfdtStart.PasswordChar = '\0';
+            this.tfdtStart.SelectedText = "";
+            this.tfdtStart.SelectionLength = 0;
+            this.tfdtStart.SelectionStart = 0;
+            this.tfdtStart.Size = new System.Drawing.Size(75, 23);
+            this.tfdtStart.TabIndex = 10;
+            this.tfdtStart.Text = "materialSingleLineTextField2";
+            this.tfdtStart.UseSystemPasswordChar = false;
+            // 
+            // tfdtEnd
+            // 
+            this.tfdtEnd.Depth = 0;
+            this.tfdtEnd.Hint = "";
+            this.tfdtEnd.Location = new System.Drawing.Point(315, 44);
+            this.tfdtEnd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfdtEnd.Name = "tfdtEnd";
+            this.tfdtEnd.PasswordChar = '\0';
+            this.tfdtEnd.SelectedText = "";
+            this.tfdtEnd.SelectionLength = 0;
+            this.tfdtEnd.SelectionStart = 0;
+            this.tfdtEnd.Size = new System.Drawing.Size(75, 23);
+            this.tfdtEnd.TabIndex = 11;
+            this.tfdtEnd.Text = "materialSingleLineTextField3";
+            this.tfdtEnd.UseSystemPasswordChar = false;
+            // 
+            // tfNbr
+            // 
+            this.tfNbr.Depth = 0;
+            this.tfNbr.Hint = "";
+            this.tfNbr.Location = new System.Drawing.Point(495, 45);
+            this.tfNbr.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfNbr.Name = "tfNbr";
+            this.tfNbr.PasswordChar = '\0';
+            this.tfNbr.SelectedText = "";
+            this.tfNbr.SelectionLength = 0;
+            this.tfNbr.SelectionStart = 0;
+            this.tfNbr.Size = new System.Drawing.Size(75, 23);
+            this.tfNbr.TabIndex = 12;
+            this.tfNbr.Text = "materialSingleLineTextField4";
+            this.tfNbr.UseSystemPasswordChar = false;
             // 
             // SynthesisForm
             // 
@@ -329,6 +405,7 @@
             this.Name = "SynthesisForm";
             this.Text = "SynthesisForm";
             this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -338,7 +415,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chTemp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSynthesis)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,10 +438,13 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgSynthesis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nbrData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtFirst;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtLast;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfNbr;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfdtEnd;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfdtStart;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfUID;
+        private System.Windows.Forms.Label lNbr;
+        private System.Windows.Forms.Label ldtEnd;
+        private System.Windows.Forms.Label ldtStart;
+        private System.Windows.Forms.Label lUID;
     }
 }
