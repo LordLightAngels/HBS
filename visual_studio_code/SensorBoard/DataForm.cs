@@ -59,13 +59,14 @@ namespace SensorBoard
             foreach (Dictionary<String, String> line in resultset)
             {
                 int row = dgBase.Rows.Add(new object[] {
-                       line["uid"],
+                        line["label"],
                         line["data_date"],
                         line["temperature"],
                         line["humidity"],
                         line["uid"],
                         Properties.Resources.pbelle
                 });
+                dgBase.Rows[row].Tag = line["id"];
             }
 
         }

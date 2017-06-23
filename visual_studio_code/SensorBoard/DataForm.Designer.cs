@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.dgBase = new System.Windows.Forms.DataGridView();
+            this.lblDatas = new System.Windows.Forms.Label();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTemp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHumid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblDatas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgBase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +47,6 @@
             this.dgBase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.ColDate,
-            this.colHour,
             this.colTemp,
             this.colHumid,
             this.colUID,
@@ -62,6 +60,15 @@
             this.dgBase.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgBase_UserDeletingRow);
             this.dgBase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvData_KeyDown);
             // 
+            // lblDatas
+            // 
+            this.lblDatas.AutoSize = true;
+            this.lblDatas.Location = new System.Drawing.Point(13, 13);
+            this.lblDatas.Name = "lblDatas";
+            this.lblDatas.Size = new System.Drawing.Size(101, 13);
+            this.lblDatas.TabIndex = 1;
+            this.lblDatas.Text = "Donnees Existantes";
+            // 
             // colID
             // 
             this.colID.HeaderText = "Nom Capteur";
@@ -70,15 +77,9 @@
             // 
             // ColDate
             // 
-            this.ColDate.HeaderText = "Date";
+            this.ColDate.HeaderText = "Date et heure";
             this.ColDate.Name = "ColDate";
             this.ColDate.ReadOnly = true;
-            // 
-            // colHour
-            // 
-            this.colHour.HeaderText = "Heure";
-            this.colHour.Name = "colHour";
-            this.colHour.ReadOnly = true;
             // 
             // colTemp
             // 
@@ -105,15 +106,6 @@
             this.colDelete.Name = "colDelete";
             this.colDelete.ReadOnly = true;
             // 
-            // lblDatas
-            // 
-            this.lblDatas.AutoSize = true;
-            this.lblDatas.Location = new System.Drawing.Point(13, 13);
-            this.lblDatas.Name = "lblDatas";
-            this.lblDatas.Size = new System.Drawing.Size(101, 13);
-            this.lblDatas.TabIndex = 1;
-            this.lblDatas.Text = "Donnees Existantes";
-            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,13 +125,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgBase;
+        private System.Windows.Forms.Label lblDatas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHour;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTemp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHumid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUID;
         private System.Windows.Forms.DataGridViewImageColumn colDelete;
-        private System.Windows.Forms.Label lblDatas;
     }
 }

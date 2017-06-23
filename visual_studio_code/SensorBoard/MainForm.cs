@@ -36,12 +36,6 @@ namespace SensorBoard
             //Ajout du formulaire au panel principal
             pnlMain.Controls.Add(import);
 
-            export = new ExportForm();
-            export.TopLevel = false;
-            export.Dock = DockStyle.Fill;
-            pnlMain.Controls.Add(export);
-
-
             synthesis = new SynthesisForm();
             synthesis.TopLevel = false;
             synthesis.Dock = DockStyle.Fill;
@@ -85,6 +79,11 @@ namespace SensorBoard
         private void loadExport(object sender, EventArgs e)
         {
             HideForms();
+            export = new ExportForm();
+            export.TopLevel = false;
+            export.Dock = DockStyle.Fill;
+            pnlMain.Controls.Add(export);
+
             export.Show();
         }
 

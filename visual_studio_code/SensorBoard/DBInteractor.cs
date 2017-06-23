@@ -42,7 +42,7 @@ namespace SensorBoard
         public void Execute(String query)
         {
             Dictionary<String, String> param = new Dictionary<string, string>();
-            Select(query, param);
+            Execute(query, param);
         }
 
 
