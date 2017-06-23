@@ -151,21 +151,13 @@ namespace SensorBoard
         public void refreshSensorMain()
         {
             cbSensor.Items.Clear();
-            Dictionary<String, String> parameters = new Dictionary<String, String>();
-
             cbSensor.DisplayMember = "Text";
             cbSensor.ValueMember = "Name";
-
             List<Dictionary<String, String>> lines = new List<Dictionary<string, string>>();
-
-            DBInteractor db = new DBInteractor();
-            MySqlConnection connection = new MySqlConnection();
-
 
             try
             {
-                db.Connect();
-                lines = db.Select("SELECT id,label FROM sensor", parameters);
+                 lines = DBInteractor.QuickSelect("SELECT id,label FROM sensor");
             }
             catch (Exception ex)
             {

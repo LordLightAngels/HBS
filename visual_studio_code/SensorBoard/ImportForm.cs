@@ -33,17 +33,7 @@ namespace SensorBoard
 
                 if (pickedfile.ShowDialog() == DialogResult.OK)
                 {
-                    DBInteractor db = new DBInteractor();
                     
-                    //MySQL lance une exception avt même que je puisse l'intercepter, du coup faut que je capture mon exception ds 1 try-catch
-                    try {
-                        db.Connect();
-                    }
-                    catch(Exception except)
-                    {
-                        throw new Exception("Pb connexion BDD : " + except.Message);
-                    }
-
                     Form form = this.ParentForm;
                     MainForm main = (MainForm)form;
                     String sensor = main.getSensor();
@@ -79,8 +69,9 @@ namespace SensorBoard
                         String humidity = Regex.Replace(columns[4], "%", "");
                         String temperature = columns[3];
                         String dataDate = columns[1] + " " + columns[2];
-
-                        db.Execute("INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                        try
+                        {
+                        DBInteractor.QuickExecute("INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
                             "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)",
                             new Dictionary<String, String>(){
                                 { "@data_date", dataDate},
@@ -89,11 +80,16 @@ namespace SensorBoard
                                 {"@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
                                 {"@sensor", sensor },
                             });
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                                ex.Message + "\n\r" + ex.StackTrace);
+                        }
                     }
-                    db.Disconnect();
-                    MessageBox.Show("L'insertion de vos données a été effectuée avec succès"); 
-                    }                
-            } 
+                    MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("ERREUR : " + ex.Message);

@@ -23,16 +23,11 @@ namespace SensorBoard
         public void DisplaySensor()
         {
             this.dgvSensor.Rows.Clear();
-
-            String query = "SELECT * FROM sensor";
-            Dictionary<String, String> parameters = new Dictionary<string, string>();
-            DBInteractor db = new DBInteractor();
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
 
             try
             {
-                db.Connect();
-                resultset = db.Select(query, parameters);
+                 resultset = DBInteractor.QuickSelect("SELECT * FROM sensor");
             }
             catch (Exception ex)
             {
