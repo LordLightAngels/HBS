@@ -37,15 +37,15 @@ namespace SensorBoard
 
             if (idSensor != "")
             {
-                query = "SELECT  sensor.*, data.*" +
-                        "FROM sensor INNER JOIN data " +
+                query = "SELECT data.*, sensor.*" +
+                        "FROM data INNER JOIN sensor " +
                         "ON data.sensor = sensor.id " +
                         "WHERE sensor.id = " + idSensor + " " +
                         "ORDER BY data_date ASC";
 
                 List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
-                String dtStart = "0";
-                String dtEnd = "0";
+                String dtStart = "";
+                String dtEnd = "";
                 int lenResultset;
 
                 try
@@ -58,11 +58,15 @@ namespace SensorBoard
                         ex.Message + "\n\r" + ex.StackTrace);
                 }
 
-                uidSensor = resultset[0]["uid"];
                 lenResultset = resultset.Count;
 
-                if (lenResultset != 0)
+                if (lenResultset == 0)
                 {
+                    uidSensor = DBInteractor.QuickSelect("SELECT uid FROM sensor WHERE sensor.id = " + idSensor)[0]["uid"].ToString();
+                }
+                else
+                {
+                    uidSensor = resultset[0]["uid"];
                     dtStart = resultset[0]["data_date"].ToString();
                     dtEnd = resultset[lenResultset - 1]["data_date"].ToString();
                 }

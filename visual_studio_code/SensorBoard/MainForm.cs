@@ -143,6 +143,7 @@ namespace SensorBoard
         {
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
             data.DisplayData();
+            synthesis.DisplaySynthesis();
         }
 
         //if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
