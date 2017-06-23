@@ -76,7 +76,7 @@
             // 
             this.mrbConfiguration.Depth = 0;
             this.mrbConfiguration.Location = new System.Drawing.Point(12, 479);
-            this.mrbConfiguration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mrbConfiguration.Margin = new System.Windows.Forms.Padding(4);
             this.mrbConfiguration.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbConfiguration.Name = "mrbConfiguration";
             this.mrbConfiguration.Primary = true;
@@ -89,7 +89,7 @@
             // 
             this.btnData.Depth = 0;
             this.btnData.Location = new System.Drawing.Point(12, 105);
-            this.btnData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnData.Margin = new System.Windows.Forms.Padding(4);
             this.btnData.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnData.Name = "btnData";
             this.btnData.Primary = true;
@@ -103,7 +103,7 @@
             // 
             this.btnSensor.Depth = 0;
             this.btnSensor.Location = new System.Drawing.Point(12, 198);
-            this.btnSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSensor.Margin = new System.Windows.Forms.Padding(4);
             this.btnSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSensor.Name = "btnSensor";
             this.btnSensor.Primary = true;
@@ -117,7 +117,7 @@
             // 
             this.btnImport.Depth = 0;
             this.btnImport.Location = new System.Drawing.Point(12, 292);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4);
             this.btnImport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnImport.Name = "btnImport";
             this.btnImport.Primary = true;
@@ -131,7 +131,7 @@
             // 
             this.mrbExport.Depth = 0;
             this.mrbExport.Location = new System.Drawing.Point(12, 385);
-            this.mrbExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mrbExport.Margin = new System.Windows.Forms.Padding(4);
             this.mrbExport.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbExport.Name = "mrbExport";
             this.mrbExport.Primary = true;
@@ -145,7 +145,7 @@
             // 
             this.btnSynthesis.Depth = 0;
             this.btnSynthesis.Location = new System.Drawing.Point(12, 11);
-            this.btnSynthesis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSynthesis.Margin = new System.Windows.Forms.Padding(4);
             this.btnSynthesis.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSynthesis.Name = "btnSynthesis";
             this.btnSynthesis.Primary = true;
@@ -164,7 +164,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pnlMain, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 77);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -182,7 +182,7 @@
             this.tlpFilter.Controls.Add(this.dtpStart, 0, 0);
             this.tlpFilter.Controls.Add(this.dtpEnd, 1, 0);
             this.tlpFilter.Location = new System.Drawing.Point(196, 37);
-            this.tlpFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpFilter.Margin = new System.Windows.Forms.Padding(4);
             this.tlpFilter.Name = "tlpFilter";
             this.tlpFilter.RowCount = 1;
             this.tlpFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -197,7 +197,7 @@
             this.cbSensor.ForeColor = System.Drawing.SystemColors.Window;
             this.cbSensor.FormattingEnabled = true;
             this.cbSensor.Location = new System.Drawing.Point(582, 4);
-            this.cbSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSensor.Margin = new System.Windows.Forms.Padding(4);
             this.cbSensor.Name = "cbSensor";
             this.cbSensor.Size = new System.Drawing.Size(281, 24);
             this.cbSensor.TabIndex = 2;
@@ -207,7 +207,7 @@
             // 
             this.dtpStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpStart.Location = new System.Drawing.Point(4, 4);
-            this.dtpStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStart.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(281, 22);
             this.dtpStart.TabIndex = 3;
@@ -217,7 +217,7 @@
             // 
             this.dtpEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEnd.Location = new System.Drawing.Point(293, 4);
-            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(281, 22);
             this.dtpEnd.TabIndex = 4;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.tlpFilter);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1067, 738);
             this.MinimumSize = new System.Drawing.Size(1067, 726);
             this.Name = "MainForm";

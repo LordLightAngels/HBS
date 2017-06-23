@@ -23,11 +23,16 @@ namespace SensorBoard
         public void DisplaySensor()
         {
             this.dgvSensor.Rows.Clear();
+
+            String query = "SELECT * FROM sensor";
+            Dictionary<String, String> parameters = new Dictionary<string, string>();
+            DBInteractor db = new DBInteractor();
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
 
             try
             {
-                 resultset = DBInteractor.QuickSelect("SELECT * FROM sensor");
+                db.Connect();
+                resultset = db.Select(query, parameters);
             }
             catch (Exception ex)
             {
@@ -85,6 +90,8 @@ namespace SensorBoard
                 {
                     DBInteractor.QuickExecute("UPDATE sensor SET label = '" + msltfLabelSensor.Text + "', webservice = '" 
                         + msltfWebServiceSensor.Text + "', uid = '" + msltfUIDSensor.Text + "' WHERE id = " + idSensor);
+                    idSensor = null;
+
                 }
                 else
                 {
