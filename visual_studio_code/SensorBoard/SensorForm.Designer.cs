@@ -58,7 +58,7 @@
             this.pnlSensor.Controls.Add(this.dgvSensor);
             this.pnlSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSensor.Location = new System.Drawing.Point(0, 0);
-            this.pnlSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSensor.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSensor.Name = "pnlSensor";
             this.pnlSensor.Size = new System.Drawing.Size(819, 391);
             this.pnlSensor.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.msltfWebServiceSensor.Depth = 0;
             this.msltfWebServiceSensor.Hint = "";
             this.msltfWebServiceSensor.Location = new System.Drawing.Point(636, 267);
-            this.msltfWebServiceSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msltfWebServiceSensor.Margin = new System.Windows.Forms.Padding(4);
             this.msltfWebServiceSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfWebServiceSensor.Name = "msltfWebServiceSensor";
             this.msltfWebServiceSensor.PasswordChar = '\0';
@@ -126,7 +126,7 @@
             this.msltfLabelSensor.Depth = 0;
             this.msltfLabelSensor.Hint = "";
             this.msltfLabelSensor.Location = new System.Drawing.Point(355, 267);
-            this.msltfLabelSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msltfLabelSensor.Margin = new System.Windows.Forms.Padding(4);
             this.msltfLabelSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfLabelSensor.Name = "msltfLabelSensor";
             this.msltfLabelSensor.PasswordChar = '\0';
@@ -142,7 +142,7 @@
             this.msltfUIDSensor.Depth = 0;
             this.msltfUIDSensor.Hint = "";
             this.msltfUIDSensor.Location = new System.Drawing.Point(73, 267);
-            this.msltfUIDSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msltfUIDSensor.Margin = new System.Windows.Forms.Padding(4);
             this.msltfUIDSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfUIDSensor.Name = "msltfUIDSensor";
             this.msltfUIDSensor.PasswordChar = '\0';
@@ -157,7 +157,7 @@
             // 
             this.mrbSensorCreate.Depth = 0;
             this.mrbSensorCreate.Location = new System.Drawing.Point(73, 331);
-            this.mrbSensorCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mrbSensorCreate.Margin = new System.Windows.Forms.Padding(4);
             this.mrbSensorCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbSensorCreate.Name = "mrbSensorCreate";
             this.mrbSensorCreate.Primary = true;
@@ -180,7 +180,7 @@
             this.DeleteSensor});
             this.dgvSensor.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvSensor.Location = new System.Drawing.Point(0, 0);
-            this.dgvSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSensor.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSensor.Name = "dgvSensor";
             this.dgvSensor.Size = new System.Drawing.Size(819, 197);
             this.dgvSensor.TabIndex = 0;
@@ -211,7 +211,7 @@
             // 
             this.UpdateSensor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.UpdateSensor.HeaderText = "Modifier";
-            this.UpdateSensor.Image = global::SensorBoard.Properties.Resources.pencil;
+            this.UpdateSensor.Image = global::SensorBoard.Properties.Resources.pencil3;
             this.UpdateSensor.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.UpdateSensor.Name = "UpdateSensor";
             this.UpdateSensor.ReadOnly = true;
@@ -232,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(819, 391);
             this.Controls.Add(this.pnlSensor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SensorForm";
             this.Text = "SensorForm";
             this.pnlSensor.ResumeLayout(false);

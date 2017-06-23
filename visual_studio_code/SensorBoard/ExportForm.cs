@@ -137,5 +137,10 @@ namespace SensorBoard
             if (mcbEnvoiDoc.Checked) SendMail();
 
         }
+
+        private void tfInputEmail_Click(object sender, EventArgs e)
+        {
+            tfInputEmail.Text = "";
+        }
     }
 }

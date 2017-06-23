@@ -41,7 +41,7 @@ namespace SensorBoard
                         line["uid"],
                         line["label"],
                         line["webservice"],
-                        Properties.Resources.pencil,
+                        Properties.Resources.pencil3,
                         Properties.Resources.pbelle
                 });
                 dgvSensor.Rows[row].Tag = line["id"];
@@ -61,7 +61,7 @@ namespace SensorBoard
                     line["uid"],
                     line["label"],
                     line["webservice"],
-                    Properties.Resources.pencil,
+                    Properties.Resources.pencil3,
                     Properties.Resources.pbelle
                 });
                 row.Tag = line["id"];
