@@ -101,22 +101,7 @@ namespace SensorBoard
                 {
                     try
                     {
-                        MailMessage mail = new MailMessage();
-                        SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                        String destAddress = tfInputEmail.Text;
-
-                        mail.From = new MailAddress("cobralerte@gmail.com");
-                        mail.To.Add(destAddress);
-                        mail.Subject = "Test Mail";
-                        mail.Body = "This is for testing SMTP mail from GMAIL";
-                        mail.Attachments.Add(new Attachment(filePath));
-
-                        SmtpServer.Port = 587;
-                        SmtpServer.Credentials = new System.Net.NetworkCredential("cobralerte", "alerteCOBRA-Pi3B");
-                        SmtpServer.EnableSsl = true;
-
-                        SmtpServer.Send(mail);
-                        MessageBox.Show("Mail Send");
+                        SendMail();
                     }
                     catch (Exception ex)
                     {
@@ -138,18 +123,20 @@ namespace SensorBoard
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
                 String destAddress = tfInputEmail.Text;
+                if (destAddress == "saisir adresse mail") throw new Exception("Veuillez saisir l'adresse d'un destinataire !"); 
 
                 mail.From = new MailAddress("cobralerte@gmail.com");
                 mail.To.Add(destAddress);
                 mail.Subject = "Test Mail";
                 mail.Body = "This is for testing SMTP mail from GMAIL";
+                mail.Attachments.Add(new Attachment(filePath));
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("cobralerte", "alerteCOBRA-Pi3B");
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
-                MessageBox.Show("Mail Send");
+                MessageBox.Show("Mail envoyé avec succès");
             }
             catch (Exception ex)
             {
