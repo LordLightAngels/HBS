@@ -75,7 +75,7 @@ namespace SensorBoard
             }
         }
 
-        private void mrbSensorCreate_Click(object sender, EventArgs e)
+        private void mrbSensorRegister_Click(object sender, EventArgs e)
         {
             try
             {

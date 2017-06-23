@@ -58,8 +58,9 @@
             this.pnlSensor.Controls.Add(this.dgvSensor);
             this.pnlSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSensor.Location = new System.Drawing.Point(0, 0);
+            this.pnlSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSensor.Name = "pnlSensor";
-            this.pnlSensor.Size = new System.Drawing.Size(614, 318);
+            this.pnlSensor.Size = new System.Drawing.Size(819, 391);
             this.pnlSensor.TabIndex = 0;
             // 
             // mlblWebServiceSensor
@@ -68,10 +69,11 @@
             this.mlblWebServiceSensor.Depth = 0;
             this.mlblWebServiceSensor.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlblWebServiceSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlblWebServiceSensor.Location = new System.Drawing.Point(473, 178);
+            this.mlblWebServiceSensor.Location = new System.Drawing.Point(631, 219);
+            this.mlblWebServiceSensor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlblWebServiceSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlblWebServiceSensor.Name = "mlblWebServiceSensor";
-            this.mlblWebServiceSensor.Size = new System.Drawing.Size(87, 19);
+            this.mlblWebServiceSensor.Size = new System.Drawing.Size(109, 24);
             this.mlblWebServiceSensor.TabIndex = 12;
             this.mlblWebServiceSensor.Text = "WebService";
             // 
@@ -81,10 +83,11 @@
             this.mlblLabelSensor.Depth = 0;
             this.mlblLabelSensor.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlblLabelSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlblLabelSensor.Location = new System.Drawing.Point(262, 178);
+            this.mlblLabelSensor.Location = new System.Drawing.Point(349, 219);
+            this.mlblLabelSensor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlblLabelSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlblLabelSensor.Name = "mlblLabelSensor";
-            this.mlblLabelSensor.Size = new System.Drawing.Size(45, 19);
+            this.mlblLabelSensor.Size = new System.Drawing.Size(56, 24);
             this.mlblLabelSensor.TabIndex = 11;
             this.mlblLabelSensor.Text = "Label";
             // 
@@ -94,10 +97,11 @@
             this.mlblUIDSensor.Depth = 0;
             this.mlblUIDSensor.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlblUIDSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlblUIDSensor.Location = new System.Drawing.Point(51, 178);
+            this.mlblUIDSensor.Location = new System.Drawing.Point(68, 219);
+            this.mlblUIDSensor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlblUIDSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlblUIDSensor.Name = "mlblUIDSensor";
-            this.mlblUIDSensor.Size = new System.Drawing.Size(33, 19);
+            this.mlblUIDSensor.Size = new System.Drawing.Size(39, 24);
             this.mlblUIDSensor.TabIndex = 10;
             this.mlblUIDSensor.Text = "UID";
             // 
@@ -105,14 +109,15 @@
             // 
             this.msltfWebServiceSensor.Depth = 0;
             this.msltfWebServiceSensor.Hint = "";
-            this.msltfWebServiceSensor.Location = new System.Drawing.Point(477, 217);
+            this.msltfWebServiceSensor.Location = new System.Drawing.Point(636, 267);
+            this.msltfWebServiceSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.msltfWebServiceSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfWebServiceSensor.Name = "msltfWebServiceSensor";
             this.msltfWebServiceSensor.PasswordChar = '\0';
             this.msltfWebServiceSensor.SelectedText = "";
             this.msltfWebServiceSensor.SelectionLength = 0;
             this.msltfWebServiceSensor.SelectionStart = 0;
-            this.msltfWebServiceSensor.Size = new System.Drawing.Size(95, 23);
+            this.msltfWebServiceSensor.Size = new System.Drawing.Size(127, 28);
             this.msltfWebServiceSensor.TabIndex = 9;
             this.msltfWebServiceSensor.UseSystemPasswordChar = false;
             // 
@@ -120,14 +125,15 @@
             // 
             this.msltfLabelSensor.Depth = 0;
             this.msltfLabelSensor.Hint = "";
-            this.msltfLabelSensor.Location = new System.Drawing.Point(266, 217);
+            this.msltfLabelSensor.Location = new System.Drawing.Point(355, 267);
+            this.msltfLabelSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.msltfLabelSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfLabelSensor.Name = "msltfLabelSensor";
             this.msltfLabelSensor.PasswordChar = '\0';
             this.msltfLabelSensor.SelectedText = "";
             this.msltfLabelSensor.SelectionLength = 0;
             this.msltfLabelSensor.SelectionStart = 0;
-            this.msltfLabelSensor.Size = new System.Drawing.Size(95, 23);
+            this.msltfLabelSensor.Size = new System.Drawing.Size(127, 28);
             this.msltfLabelSensor.TabIndex = 8;
             this.msltfLabelSensor.UseSystemPasswordChar = false;
             // 
@@ -135,29 +141,31 @@
             // 
             this.msltfUIDSensor.Depth = 0;
             this.msltfUIDSensor.Hint = "";
-            this.msltfUIDSensor.Location = new System.Drawing.Point(55, 217);
+            this.msltfUIDSensor.Location = new System.Drawing.Point(73, 267);
+            this.msltfUIDSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.msltfUIDSensor.MouseState = MaterialSkin.MouseState.HOVER;
             this.msltfUIDSensor.Name = "msltfUIDSensor";
             this.msltfUIDSensor.PasswordChar = '\0';
             this.msltfUIDSensor.SelectedText = "";
             this.msltfUIDSensor.SelectionLength = 0;
             this.msltfUIDSensor.SelectionStart = 0;
-            this.msltfUIDSensor.Size = new System.Drawing.Size(95, 23);
+            this.msltfUIDSensor.Size = new System.Drawing.Size(127, 28);
             this.msltfUIDSensor.TabIndex = 7;
             this.msltfUIDSensor.UseSystemPasswordChar = false;
             // 
             // mrbSensorCreate
             // 
             this.mrbSensorCreate.Depth = 0;
-            this.mrbSensorCreate.Location = new System.Drawing.Point(55, 269);
+            this.mrbSensorCreate.Location = new System.Drawing.Point(73, 331);
+            this.mrbSensorCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mrbSensorCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbSensorCreate.Name = "mrbSensorCreate";
             this.mrbSensorCreate.Primary = true;
-            this.mrbSensorCreate.Size = new System.Drawing.Size(95, 37);
+            this.mrbSensorCreate.Size = new System.Drawing.Size(127, 46);
             this.mrbSensorCreate.TabIndex = 1;
-            this.mrbSensorCreate.Text = "New";
+            this.mrbSensorCreate.Text = "Register";
             this.mrbSensorCreate.UseVisualStyleBackColor = true;
-            this.mrbSensorCreate.Click += new System.EventHandler(this.mrbSensorCreate_Click);
+            this.mrbSensorCreate.Click += new System.EventHandler(this.mrbSensorRegister_Click);
             // 
             // dgvSensor
             // 
@@ -172,8 +180,9 @@
             this.DeleteSensor});
             this.dgvSensor.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvSensor.Location = new System.Drawing.Point(0, 0);
+            this.dgvSensor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSensor.Name = "dgvSensor";
-            this.dgvSensor.Size = new System.Drawing.Size(614, 160);
+            this.dgvSensor.Size = new System.Drawing.Size(819, 197);
             this.dgvSensor.TabIndex = 0;
             this.dgvSensor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSensor_CellClick);
             // 
@@ -218,11 +227,12 @@
             // 
             // SensorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 318);
+            this.ClientSize = new System.Drawing.Size(819, 391);
             this.Controls.Add(this.pnlSensor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SensorForm";
             this.Text = "SensorForm";
             this.pnlSensor.ResumeLayout(false);
