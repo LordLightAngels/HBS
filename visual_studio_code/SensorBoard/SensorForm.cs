@@ -24,15 +24,11 @@ namespace SensorBoard
         {
             this.dgvSensor.Rows.Clear();
 
-            String query = "SELECT * FROM sensor";
-            Dictionary<String, String> parameters = new Dictionary<string, string>();
-            DBInteractor db = new DBInteractor();
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
 
             try
             {
-                db.Connect();
-                resultset = db.Select(query, parameters);
+                resultset = DBInteractor.QuickSelect("SELECT * FROM sensor");
             }
             catch (Exception ex)
             {
@@ -57,9 +53,20 @@ namespace SensorBoard
         public void refreshSensor()
         {
             dgvSensor.Rows.Clear();
-            DBInteractor db = new DBInteractor();
-            db.Connect();
-            foreach (Dictionary<String, String> line in db.Select("SELECT id,label,webservice,uid FROM sensor"))
+
+            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+
+            try
+            {
+                resultset = DBInteractor.QuickSelect("SELECT * FROM sensor");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+            }
+
+            foreach (Dictionary<String, String> line in resultset)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvSensor, new object[] {
