@@ -29,7 +29,7 @@ namespace SensorBoard
             String query;
             String uidSensor;
 
-            lUID.Text = "ID du capteur";
+            lUID.Text = "UID du capteur";
             ldtStart.Text = "Date et heure de\r\nl'import le plus ancien";
             ldtEnd.Text = "Date et heure de\r\nl'import le plus récent";
             lNbr.Text = "Nombre total d'import\r\nsur cette période";
