@@ -97,7 +97,7 @@ namespace SensorBoard
                     Process.Start(savefile.FileName);
                 }
 
-                if (mcbEnvoiDoc.Checked)
+                /*if (mcbEnvoiDoc.Checked)
                 {
                     try
                     {
@@ -107,7 +107,7 @@ namespace SensorBoard
                     {
                         MessageBox.Show(ex.ToString());
                     }
-                }
+                }*/
             }
             catch (Exception ex)
             {
