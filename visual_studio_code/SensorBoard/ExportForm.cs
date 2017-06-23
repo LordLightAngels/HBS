@@ -97,7 +97,7 @@ namespace SensorBoard
                     Process.Start(savefile.FileName);
                 }
 
-                if (mcbEnvoiPDF.Checked)
+                if (mcbEnvoiDoc.Checked)
                 {
                     try
                     {
@@ -147,7 +147,7 @@ namespace SensorBoard
         private void mrbExport_Click(object sender, EventArgs e)
         {
             if (mrbExcel.Checked) ExportDataCSV();
-            if (mcbEnvoiPDF.Checked) SendMail();
+            if (mcbEnvoiDoc.Checked) SendMail();
 
         }
     }

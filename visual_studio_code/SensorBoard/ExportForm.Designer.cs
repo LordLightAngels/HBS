@@ -31,7 +31,7 @@
             this.mrbPDF = new MaterialSkin.Controls.MaterialRadioButton();
             this.mlContent = new MaterialSkin.Controls.MaterialLabel();
             this.mrbExcel = new MaterialSkin.Controls.MaterialRadioButton();
-            this.mcbEnvoiPDF = new MaterialSkin.Controls.MaterialCheckBox();
+            this.mcbEnvoiDoc = new MaterialSkin.Controls.MaterialCheckBox();
             this.tfInputEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.mrbExport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -88,27 +88,27 @@
             this.mrbExcel.Text = "Excel";
             this.mrbExcel.UseVisualStyleBackColor = true;
             // 
-            // mcbEnvoiPDF
+            // mcbEnvoiDoc
             // 
-            this.mcbEnvoiPDF.AutoSize = true;
-            this.mcbEnvoiPDF.Depth = 0;
-            this.mcbEnvoiPDF.Font = new System.Drawing.Font("Roboto", 10F);
-            this.mcbEnvoiPDF.Location = new System.Drawing.Point(16, 164);
-            this.mcbEnvoiPDF.Margin = new System.Windows.Forms.Padding(0);
-            this.mcbEnvoiPDF.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.mcbEnvoiPDF.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mcbEnvoiPDF.Name = "mcbEnvoiPDF";
-            this.mcbEnvoiPDF.Ripple = true;
-            this.mcbEnvoiPDF.Size = new System.Drawing.Size(171, 30);
-            this.mcbEnvoiPDF.TabIndex = 5;
-            this.mcbEnvoiPDF.Text = "Envoi PDF par email à :";
-            this.mcbEnvoiPDF.UseVisualStyleBackColor = true;
+            this.mcbEnvoiDoc.AutoSize = true;
+            this.mcbEnvoiDoc.Depth = 0;
+            this.mcbEnvoiDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.mcbEnvoiDoc.Location = new System.Drawing.Point(16, 164);
+            this.mcbEnvoiDoc.Margin = new System.Windows.Forms.Padding(0);
+            this.mcbEnvoiDoc.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mcbEnvoiDoc.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mcbEnvoiDoc.Name = "mcbEnvoiDoc";
+            this.mcbEnvoiDoc.Ripple = true;
+            this.mcbEnvoiDoc.Size = new System.Drawing.Size(226, 30);
+            this.mcbEnvoiDoc.TabIndex = 5;
+            this.mcbEnvoiDoc.Text = "Envoi du document par email à :";
+            this.mcbEnvoiDoc.UseVisualStyleBackColor = true;
             // 
             // tfInputEmail
             // 
             this.tfInputEmail.Depth = 0;
             this.tfInputEmail.Hint = "";
-            this.tfInputEmail.Location = new System.Drawing.Point(208, 171);
+            this.tfInputEmail.Location = new System.Drawing.Point(252, 169);
             this.tfInputEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfInputEmail.Name = "tfInputEmail";
             this.tfInputEmail.PasswordChar = '\0';
@@ -142,7 +142,7 @@
             this.panel1.Controls.Add(this.mrbExcel);
             this.panel1.Controls.Add(this.tfInputEmail);
             this.panel1.Controls.Add(this.mrbPDF);
-            this.panel1.Controls.Add(this.mcbEnvoiPDF);
+            this.panel1.Controls.Add(this.mcbEnvoiDoc);
             this.panel1.Location = new System.Drawing.Point(27, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 354);
@@ -199,7 +199,7 @@
         private MaterialSkin.Controls.MaterialRadioButton mrbPDF;
         private MaterialSkin.Controls.MaterialLabel mlContent;
         private MaterialSkin.Controls.MaterialRadioButton mrbExcel;
-        private MaterialSkin.Controls.MaterialCheckBox mcbEnvoiPDF;
+        private MaterialSkin.Controls.MaterialCheckBox mcbEnvoiDoc;
         private MaterialSkin.Controls.MaterialSingleLineTextField tfInputEmail;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExport;
         private System.Windows.Forms.Panel panel1;
