@@ -132,7 +132,7 @@ namespace SensorBoard
                 mail.Attachments.Add(new Attachment(filePath));
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("cobralerte", "alerteCOBRA-Pi3B");
+                SmtpServer.Credentials = new System.Net.NetworkCredential(Properties.Resources.EMAIL_USER, Properties.Resources.EMAIL_PASSWORD);
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
