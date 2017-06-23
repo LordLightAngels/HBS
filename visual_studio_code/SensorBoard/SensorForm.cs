@@ -90,6 +90,8 @@ namespace SensorBoard
                 {
                     DBInteractor.QuickExecute("UPDATE sensor SET label = '" + msltfLabelSensor.Text + "', webservice = '" 
                         + msltfWebServiceSensor.Text + "', uid = '" + msltfUIDSensor.Text + "' WHERE id = " + idSensor);
+                    idSensor = null;
+
                 }
                 else
                 {
