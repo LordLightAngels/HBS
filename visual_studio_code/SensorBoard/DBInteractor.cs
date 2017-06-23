@@ -66,6 +66,8 @@ namespace SensorBoard
 
             MySqlDataReader resultset = command.ExecuteReader();
 
+            
+
             while (resultset.Read())
             {
                 Dictionary<String, String> line = new Dictionary<String, String>();
