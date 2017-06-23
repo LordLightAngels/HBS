@@ -66,7 +66,7 @@ namespace SensorBoard
                     line["uid"],
                     line["label"],
                     line["webservice"],
-                    Properties.Resources.pencil2,
+                    Properties.Resources.pencil3,
                     Properties.Resources.pbelle
                 });
                 row.Tag = line["id"];

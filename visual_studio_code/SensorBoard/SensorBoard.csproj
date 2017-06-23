@@ -143,7 +143,6 @@
   <ItemGroup>
     <Content Include="1497377721_6.ico" />
     <None Include="Resources\pencil3.png" />
-    <None Include="Resources\pencil2.png" />
     <None Include="Resources\pencil.png" />
     <None Include="Resources\pbelle.png" />
   </ItemGroup>
