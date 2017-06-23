@@ -57,13 +57,14 @@ namespace SensorBoard
             sensor.Dock = DockStyle.Fill;
             pnlMain.Controls.Add(sensor);
 
-            synthesis.Show();
-
             refreshSensorMain();
 
             dtpStart.Value = new DateTime(DateTime.Now.Year, 1, 1);
             dtpEnd.Value = DateTime.Now.AddDays(1);
-        
+
+            HideForms();
+            synthesis.Show();
+            synthesis.DisplaySynthesis();
 
         }
 
@@ -91,6 +92,7 @@ namespace SensorBoard
         {
             HideForms();
             synthesis.Show();
+            synthesis.DisplaySynthesis();
         }
 
         private void loadData(object sender, EventArgs e)
