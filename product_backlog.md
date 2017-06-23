@@ -66,6 +66,8 @@
 - [x] Affichage des données
 - [x] Export des données
 - [x] Génération de rapport
+- [ ] Configuration
+- [ ] Gestion des capteurs
 
 ----------
 
@@ -76,10 +78,10 @@
 | ID          | 1_0                                                         |
 |:----------- |-------------------------------------------------------------|
 | Titre       | **Récupérer les données des capteurs**                      |
-| Priorite    | ___???___                                                   |
+| Priorite    | ___40___                                                    |
 | Estimation  | ___3___                                                     |
 | En tant que | Utilisateur                                                 |
-| Je veux     | cliquer sur un bouton "Importer des données "               |
+| Je veux     | cliquer sur un bouton "Importer des données"                |
 | Afin de     | enregistrer les données texte issues des capteurs ds l'appli|
 
 ### DoD :
@@ -97,7 +99,7 @@
 | ID          | 1_1                                                      |
 |:----------- |----------------------------------------------------------|
 | Titre       | **Attribuer l'id de capteur à l'import**      			 |
-| Priorite    | ___???___                                                |
+| Priorite    | ___40___                                                 |
 | Estimation  | ___2___                                                  |
 | En tant que | Utilisateur                                              |
 | Je veux     | lier l'import de données à un ID de capteur              |
@@ -105,8 +107,8 @@
 
 ### DoD :
 
-1 - Afficher un tableau récapitulatif de tous les enregistrements liés à l'import effectué :
-- [x] ???
+1 - Disposer d'une fonctionnaité permettant de sélectionner le capteur duquel proviennent les données importées :
+- [x] affichage d'une liste de capteurs à partir de laquelle on peut en sélectionner un
 
 ----------
 
@@ -144,18 +146,18 @@
 
 | ID          | 2_0                                                                           |
 |:----------- |-------------------------------------------------------------------------------|
-| Titre       | **Afficher des données de synthèse**          			                          |
+| Titre       | **Afficher des données de synthèse**          			                      |
 | Priorite    | ___40___                                                                      |
 | Estimation  | ___3___                                                                       |
 | En tant que | Utilisateur                                                                   |
-| Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date ID du relevé          |
+| Je veux     | cliquer sur "Afficher synthèse relevé"  et choisir date & ID du capteur       |
 | Afin de     | obtenir ID capteur, nb données importées, date-h 1er et dernier enregistrement|
 
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-- [ ] bouton "Afficher synthèse relevé"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher synthèse relevé"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
 - [ ] ID du capteur
@@ -171,7 +173,7 @@
 
 | ID          | 2_1                                                                                     |
 |:----------- |-----------------------------------------------------------------------------------------|
-| Titre       | **Afficher des données de synthèse**          			                                    |
+| Titre       | **Afficher des données de synthèse**          			                                |
 | Priorite    | ___100___                                                                               |
 | Estimation  | ___8___                                                                                 |
 | En tant que | Utilisateur                                                                             |
@@ -181,8 +183,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant la récupération des enregistrements du relevé utiles à la synthèse
-- [ ] bouton "Afficher synthèse relevé"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher synthèse relevé"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
 - [ ] ID du capteur
@@ -212,15 +214,15 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un tableau :
-- [ ] bouton "Afficher tableau relevé"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher tableau relevé"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher pour chaque enregistrement les données suivantes :
-- [ ] n° de l'enregistrement
-- [ ] ID du capteur
-- [ ] date - heure de l'enregistrement
-- [ ] température relevée
-- [ ] hygrométrie relevée
+- [x] n° de l'enregistrement
+- [x] ID du capteur
+- [x] date - heure de l'enregistrement
+- [x] température relevée
+- [x] hygrométrie relevée
 
 ----------
 
@@ -231,7 +233,7 @@
 | ID          | 3_1                                                                |
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de tableau**    |
-| Priorite    | ___???___                                                          |
+| Priorite    | ___5___                                                            |
 | Estimation  | ___3___                                                            |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher tableau relevé" et choisir ID & date relevé  |
@@ -240,14 +242,18 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un tableau :
-- [ ] bouton "Afficher tableau relevé"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher tableau relevé"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Pouvoir trier les enregistrement du tableau selon les critères suivants :
-- [ ] n° de l'enregistrement
-- [ ] date - heure de l'enregistrement
-- [ ] température relevée
-- [ ] hygrométrie relevée
+- [x] n° de l'enregistrement
+- [x] date - heure de l'enregistrement
+- [x] température relevée
+- [x] hygrométrie relevée
+
+3 - Avoir la possibilité de supprimer des enregistrements de la BDD :
+- [x] disposer d'un bouton permettant la suppression d'un enregistrement du tableau et de la BDD
+- [x] avoir la possibilité de supprimer plusieurs enregistrements simultanément
 
 ----------
 
@@ -258,7 +264,7 @@
 | ID          | 4_0                                                                |
 |:----------- |--------------------------------------------------------------------|
 | Titre       | **Afficher les données de chaque relevé sous forme de graphique**  |
-| Priorite    | ___???___                                                          |
+| Priorite    | ___40___                                                           |
 | Estimation  | ___13___                                                           |
 | En tant que | Utilisateur                                                        |
 | Je veux     | cliquer sur "Afficher graphique relevé" et choisir ID & date relevé|
@@ -267,8 +273,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'affichage d'un graphique :
-- [ ] bouton "Afficher graphique relevé"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher graphique relevé"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un graphique avec :
 - [ ] axe des abscisses = temps
@@ -294,8 +300,8 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-- [ ] bouton "Exporter relevé au format CSV"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Exporter relevé au format CSV"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un message indiquant le succès de l'export du relevé au format CSV
 
@@ -374,5 +380,35 @@
 - [ ] bouton "envoyer" qui envoie le mail au destinataire saisi
 
 3 - Vérifier que l'adresse mail du destinataire saisie est correcte
+- [ ] affichage d'un message d'erreur si l'adresse mail saisie est incorrecte
+
+----------
+
+
+
+
+
+| ID          | 7_0                                               |
+|:----------- |---------------------------------------------------|
+| Titre       | **Gérer les capteurs**                            |
+| Priorite    | ___5___                                           |
+| Estimation  | ___2___                                           |
+| En tant que | Utilisateur                                       |
+| Je veux     | cliquer sur "Capteurs"                            |
+| Afin de     | pouvoir ajouter, modifier ou supprimer un capteur |
+
+### DoD :
+
+1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
+- [ ] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
+
+2 - Dans la fenêtre de création de mail générée, avoir :
+- [ ] champ de saisie du destinataire
+- [ ] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
+- [ ] corps du message pré-rempli avec des informations pertinentes
+- [ ] bouton "envoyer" qui envoie le mail au destinataire saisi
+
+3 - Vérifier que l'adresse mail du destinataire saisie est correcte
+- [ ] affichage d'un message d'erreur si l'adresse mail saisie est incorrecte
 
 ----------

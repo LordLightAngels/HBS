@@ -123,7 +123,7 @@ namespace SensorBoard
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
                 String destAddress = tfInputEmail.Text;
-                if (destAddress == "saisir adresse mail") throw new Exception("Veuillez saisir l'adresse d'un destinataire !"); 
+                if (!Function.IsValidEmailAddress(destAddress)) throw new Exception("Veuillez saisir une adresse mail valide !"); 
 
                 mail.From = new MailAddress("cobralerte@gmail.com");
                 mail.To.Add(destAddress);
@@ -140,7 +140,7 @@ namespace SensorBoard
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Erreur lors de l'envoi: " + ex.Message, "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

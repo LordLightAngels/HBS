@@ -13,5 +13,16 @@ namespace SensorBoard
         {
             return Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase);
         }
+
+        internal static bool IsValidEmailAddress(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return false;
+            else
+            {
+                var regex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+                return regex.IsMatch(s) && !s.EndsWith(".");
+            }
+        }
     }
 }
