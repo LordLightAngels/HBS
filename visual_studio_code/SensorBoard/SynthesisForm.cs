@@ -21,6 +21,10 @@ namespace SensorBoard
         {
             Form form = this.ParentForm;
             MainForm main = (MainForm)form;
+            DateTime start = main.GetStartDate();
+            DateTime end = main.GetEndDate();
+            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
             String idSensor = main.getSensor();
             String query;
             String uidSensor;
@@ -41,6 +45,7 @@ namespace SensorBoard
                         "FROM data INNER JOIN sensor " +
                         "ON data.sensor = sensor.id " +
                         "WHERE sensor.id = " + idSensor + " " +
+                        "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
                         "ORDER BY data_date ASC";
 
                 List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
@@ -75,8 +80,6 @@ namespace SensorBoard
                 tfdtStart.Text = dtStart;
                 tfdtEnd.Text = dtEnd;
                 tfNbr.Text = lenResultset.ToString();
-
-                
 
             }
         }
