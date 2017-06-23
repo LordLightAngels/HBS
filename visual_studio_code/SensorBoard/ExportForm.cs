@@ -45,14 +45,12 @@ namespace SensorBoard
                     "WHERE " + whereClause + " " +
                     "AND data_date BETWEEN '" + startString + "' AND '" + endString + "' " +
                     "ORDER BY data_date DESC, sensor ";
-            Dictionary<String, String> parameters = new Dictionary<string, string>();
-            DBInteractor db = new DBInteractor();
+
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
 
             try
             {
-                db.Connect();
-                resultset = db.Select(query, parameters);
+                resultset = DBInteractor.QuickSelect(query);
             }
             catch (Exception ex)
             {
