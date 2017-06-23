@@ -39,7 +39,7 @@ namespace SensorBoard
 
             query = "SELECT  sensor.*, data.*" +
                     "FROM sensor INNER JOIN data " +
-                    "ON data.sensor LIKE sensor.id " +
+                    "ON data.sensor = sensor.id " +
                     optionalClause + " " +
                     "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
                     "ORDER BY data_date DESC, sensor ";
@@ -59,15 +59,13 @@ namespace SensorBoard
             foreach (Dictionary<String, String> line in resultset)
             {
                 int row = dgBase.Rows.Add(new object[] {
-                        line["label"],
-                        line["data_date"].Split()[0],
-                        line["data_date"].Split()[1],
+                       line["uid"],
+                        line["data_date"],
                         line["temperature"],
                         line["humidity"],
                         line["uid"],
                         Properties.Resources.pbelle
                 });
-                dgBase.Rows[row].Tag = line["id"];
             }
 
         }
