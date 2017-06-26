@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -14,8 +15,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
@@ -34,38 +34,6 @@ namespace SensorBoard
         {
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
             resultset = Sensor.getAllSensors();
-
-            /*Form form = this.ParentForm;
-            MainForm main = (MainForm)form;
-            DateTime start = main.GetStartDate();
-            DateTime end = main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
-            String idSensor = main.getSensor();
-
-            String query;
-            String whereClause = idSensor;
-
-            whereClause = (idSensor == "") ? "1" : whereClause = "sensor.id = " + idSensor;
-
-            query = "SELECT  sensor.*, data.*" +
-                    "FROM sensor INNER JOIN data " +
-                    "ON data.sensor LIKE sensor.id " +
-                    "WHERE " + whereClause + " " +
-                    "AND data_date BETWEEN '" + startString + "' AND '" + endString + "' " +
-                    "ORDER BY data_date DESC, sensor ";
-
-            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
-
-            try
-            {
-                resultset = DBInteractor.QuickSelect(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
-                    ex.Message + "\n\r" + ex.StackTrace);
-            }*/
 
             var csv = new StringBuilder();
 
@@ -98,32 +66,11 @@ namespace SensorBoard
             }
         }
 
-        private void ExportDataPDF(string filePath)
+
+        public void ExportDataPDF(string filePath)
         {
+
             FileStream fs = new FileStream(filePath, FileMode.Create);
-            Document document = new Document(PageSize.A4, 25, 25, 30, 30);
-            PdfWriter writer = PdfWriter.GetInstance(document, fs);
-            document.AddAuthor("Micke Blomquist");
-            document.AddCreator("Sample application using iTextSharp");
-            document.AddKeywords("PDF tutorial education");
-            document.AddSubject("Document subject - Describing the steps creating a PDF document");
-            document.AddTitle("The document title - PDF creation using iTextSharp");
-            // Open the document to enable you to write to the document
-            document.Open();
-            // Add a simple and wellknown phrase to the document in a flow layout manner
-            document.Add(new Paragraph("Hello World!"));
-            // Close the document
-            document.Close();
-            // Close the writer instance
-            writer.Close();
-            // Always close open filehandles explicity
-            fs.Close();
-        }
-
-        public void GeneratePDF()
-        {
-
-            FileStream fs = new FileStream("Export.pdf", FileMode.Create);
             // Create an instance of the document class which represents the PDF document itself.
             Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
             // Create an instance to the PDF file by creating an instance of the PDF 
@@ -134,7 +81,7 @@ namespace SensorBoard
             // Open the document to enable you to write to the document
             doc.Open();
             // Add a simple and wellknown phrase to the document in a flow layout manner
-            doc.Add(new Paragraph("Hello World!"));
+            doc.Add(new Paragraph("Phrase test à changer"));
 
            PdfPTable table = new PdfPTable(5);
 
@@ -143,11 +90,16 @@ namespace SensorBoard
             table.SpacingBefore = 20f;
             table.SpacingAfter = 30f;
 
-            PdfPCell cell = new PdfPCell(new Phrase("Report"));
-            cell.Colspan = 5;
-            cell.Border = 0;
-            cell.HorizontalAlignment = 1;
-            table.AddCell(cell);
+            PdfPCell cell0 = new PdfPCell(new Phrase("Rapport"));
+            cell0.Colspan = 5;
+            cell0.Border = 0;
+            cell0.HorizontalAlignment = 1;
+            table.AddCell(cell0);
+            table.AddCell("Nom du capteur");
+            table.AddCell("UID du capteur");
+            table.AddCell("Date-heure du relevé");
+            table.AddCell("Température");
+            table.AddCell("Humidité");
 
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
             resultset = Sensor.getAllSensors();

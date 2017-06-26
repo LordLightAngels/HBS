@@ -59,6 +59,7 @@ namespace SensorBoard
             HideForms();
             synthesis.Show();
             synthesis.DisplaySynthesis();
+            synthesis.chTemp_Load();
 
         }
 
@@ -92,6 +93,7 @@ namespace SensorBoard
             HideForms();
             synthesis.Show();
             synthesis.DisplaySynthesis();
+            synthesis.chTemp_Load();
         }
 
         private void loadData(object sender, EventArgs e)
@@ -143,6 +145,7 @@ namespace SensorBoard
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
             data.DisplayData();
             synthesis.DisplaySynthesis();
+            synthesis.chTemp_Load();
         }
 
         //if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
