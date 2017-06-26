@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +25,7 @@ namespace SensorBoard
             InitializeComponent();
         }
 
-        public void ExportDataCSV()
+        public void ExportDataCSV(String filePath)
         {
 
             Form form = this.ParentForm;
@@ -75,24 +77,11 @@ namespace SensorBoard
 
             try
             {
-                MainForm mf = (MainForm)this.ParentForm;
-
-                SaveFileDialog savefile = new SaveFileDialog();
-                savefile.DefaultExt = "csv";
-                String name = Function.slugify(mf.getSensorName());
-                name = String.IsNullOrEmpty(name) ? "Tout-capteur" : name;
-                savefile.FileName = name;
-                
-
-                if (savefile.ShowDialog() == DialogResult.OK)
-                { 
-                    File.WriteAllText(savefile.FileName, finalRes.ToString());
-                    this.filePath = savefile.FileName;
-                }
+                File.WriteAllText(filePath, finalRes.ToString());
 
                 if (mcbOuvrir.Checked)
                 {
-                    Process.Start(savefile.FileName);
+                    Process.Start(filePath);
                 }
 
             }
@@ -102,11 +91,52 @@ namespace SensorBoard
             }
         }
 
+        private void ExportDataPDF(string filePath)
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Create);
+            Document document = new Document(PageSize.A4, 25, 25, 30, 30);
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
+            document.AddAuthor("Micke Blomquist");
+            document.AddCreator("Sample application using iTextSharp");
+            document.AddKeywords("PDF tutorial education");
+            document.AddSubject("Document subject - Describing the steps creating a PDF document");
+            document.AddTitle("The document title - PDF creation using iTextSharp");
+            // Open the document to enable you to write to the document
+            document.Open();
+            // Add a simple and wellknown phrase to the document in a flow layout manner
+            document.Add(new Paragraph("Hello World!"));
+            // Close the document
+            document.Close();
+            // Close the writer instance
+            writer.Close();
+            // Always close open filehandles explicity
+            fs.Close();
+        }
 
         public void SendMail()
         {
             try
             {
+                String query;
+                query = "SELECT * FROM configuration ";
+
+                List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+
+                try
+                {
+                    resultset = DBInteractor.QuickSelect(query);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                        ex.Message + "\n\r" + ex.StackTrace);
+                }
+                String mailUser;
+                String mailPassword;
+                mailUser = resultset[0]["key"];
+                mailPassword = resultset[0]["value"];
+
+
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
                 String destAddress = tfInputEmail.Text;
@@ -119,7 +149,7 @@ namespace SensorBoard
                 mail.Attachments.Add(new Attachment(filePath));
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential(Properties.Resources.EMAIL_USER, Properties.Resources.EMAIL_PASSWORD);
+                SmtpServer.Credentials = new System.Net.NetworkCredential(mailUser, mailPassword);
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
@@ -133,14 +163,34 @@ namespace SensorBoard
 
         private void mrbExport_Click(object sender, EventArgs e)
         {
-            if (mrbExcel.Checked) ExportDataCSV();
-            if (mcbEnvoiDoc.Checked) SendMail();
+            if (!mrbExcel.Checked && !mrbPDF.Checked)
+            {
+                MessageBox.Show("Veuillez saisir un format d'export");
+            }
+            else
+            {
+                MainForm mf = (MainForm)this.ParentForm;
+                SaveFileDialog saveFile = new SaveFileDialog();
+                String name = Function.slugify(mf.getSensorName());
+                name = String.IsNullOrEmpty(name) ? "Tout-capteur" : name;
+                saveFile.FileName = name;
+                saveFile.DefaultExt = (mrbExcel.Checked ? "csv" : "pdf");
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    if (mrbExcel.Checked) ExportDataCSV(saveFile.FileName);
+                    if (mrbPDF.Checked) ExportDataPDF(saveFile.FileName);
+                }
+            }
 
+            if (mcbEnvoiDoc.Checked) SendMail();
         }
 
         private void tfInputEmail_Click(object sender, EventArgs e)
         {
-            tfInputEmail.Text = "";
+            if (!tfInputEmail.Text.Contains("@"))
+            {
+                tfInputEmail.Text = "";
+            }
         }
     }
 }
