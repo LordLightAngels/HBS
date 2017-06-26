@@ -78,6 +78,7 @@
     <Compile Include="ExportForm.Designer.cs">
       <DependentUpon>ExportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sensor.cs" />
     <Compile Include="SensorForm.cs">
       <SubType>Form</SubType>
     </Compile>

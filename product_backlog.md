@@ -160,7 +160,7 @@
 - [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-- [ ] ID du capteur
+- [ ] uid du capteur
 - [ ] nombre de données importées totales
 - [ ] date - heure du 1er enregistrement
 - [ ] date - heure du dernier enregistrement
@@ -392,7 +392,7 @@
 |:----------- |---------------------------------------------------|
 | Titre       | **Gérer les capteurs**                            |
 | Priorite    | ___5___                                           |
-| Estimation  | ___2___                                           |
+| Estimation  | ___8___                                           |
 | En tant que | Utilisateur                                       |
 | Je veux     | cliquer sur "Capteurs"                            |
 | Afin de     | pouvoir ajouter, modifier ou supprimer un capteur |
@@ -400,15 +400,17 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
-- [ ] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
+- [x] bouton "Capteurs" qui ouvre une fenêtre de gestion de capteurs
 
-2 - Dans la fenêtre de création de mail générée, avoir :
-- [ ] champ de saisie du destinataire
-- [ ] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
-- [ ] corps du message pré-rempli avec des informations pertinentes
-- [ ] bouton "envoyer" qui envoie le mail au destinataire saisi
+2 - Dans la fenêtre de gestion de capteurs générée, avoir un tableau affichant :
+- [x] uid capteur
+- [x] label capteur
+- [x] webservice capteur
+- [x] un bouton permettant la modification de capteurs sur le tableau affiché ainsi qu'en BDD
+- [x] un bouton permettant la suppression de capteurs sur le tableau affiché ainsi qu'en BDD
 
-3 - Vérifier que l'adresse mail du destinataire saisie est correcte
-- [ ] affichage d'un message d'erreur si l'adresse mail saisie est incorrecte
+3 - S'assurer de l'intégrité de la BDD et prévenir l'utilisateur
+- [x] s'assurer qu'une suppression de capteur entraîne la suppression des données liées à ces capteurs en BDD
+- [x] afficher un message à l'utilisateur le prévenant qu'une suppression d'un capteur entraîne la suppression 
 
 ----------
