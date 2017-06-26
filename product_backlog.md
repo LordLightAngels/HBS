@@ -66,8 +66,8 @@
 - [x] Affichage des données
 - [x] Export des données
 - [x] Génération de rapport
-- [ ] Configuration
-- [ ] Gestion des capteurs
+- [x] Configuration
+- [x] Gestion des capteurs
 
 ----------
 
