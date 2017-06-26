@@ -11,6 +11,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace SensorBoard
 {
@@ -25,8 +30,10 @@ namespace SensorBoard
 
         public void ExportDataCSV()
         {
+            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+            resultset = Sensor.getAllSensors();
 
-            Form form = this.ParentForm;
+            /*Form form = this.ParentForm;
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
@@ -56,7 +63,7 @@ namespace SensorBoard
             {
                 MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
                     ex.Message + "\n\r" + ex.StackTrace);
-            }
+            }*/
 
             var csv = new StringBuilder();
 
@@ -103,6 +110,72 @@ namespace SensorBoard
         }
 
 
+        public void GeneratePDF()
+        {
+
+            FileStream fs = new FileStream("Export.pdf", FileMode.Create);
+            // Create an instance of the document class which represents the PDF document itself.
+            Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
+            // Create an instance to the PDF file by creating an instance of the PDF 
+            // Writer class using the document and the filestream in the constructor.
+            PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+
+
+            // Open the document to enable you to write to the document
+            doc.Open();
+            // Add a simple and wellknown phrase to the document in a flow layout manner
+            doc.Add(new Paragraph("Hello World!"));
+
+           /* PdfPTable table = new PdfPTable(5);
+
+            table.HorizontalAlignment = 0;
+            //leave a gap before and after the table
+            table.SpacingBefore = 20f;
+            table.SpacingAfter = 30f;
+
+            PdfPCell cell = new PdfPCell(new Phrase("Report"));
+            cell.Colspan = 5;
+            cell.Border = 0;
+            cell.HorizontalAlignment = 1;
+            table.AddCell(cell);
+            string connect = "SERVER=" + Properties.Resources.DATABASE_HOST
+            + ";DATABASE=" + Properties.Resources.DATABASE_NAME
+             + ";UID=" + Properties.Resources.DATABASE_LOGIN
+             + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";"; 
+            using (SqlConnection conn = new SqlConnection(connect))
+            {
+                string query = "SELECT ProductID, ProductName FROM Products";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            table.AddCell(rdr[0].ToString());
+                            table.AddCell(rdr[1].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Response.Write(ex.Message);
+                }
+                doc.Add(table);
+            }*/
+
+
+            // Close the document
+            doc.Close();
+            // Close the writer instance
+            writer.Close();
+            // Always close open filehandles explicity
+            fs.Close();
+
+
+        }
+
         public void SendMail()
         {
             try
@@ -134,6 +207,7 @@ namespace SensorBoard
         private void mrbExport_Click(object sender, EventArgs e)
         {
             if (mrbExcel.Checked) ExportDataCSV();
+            if (mrbPDF.Checked) GeneratePDF();
             if (mcbEnvoiDoc.Checked) SendMail();
 
         }
