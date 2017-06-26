@@ -26,18 +26,19 @@ namespace SensorBoard
             String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
             String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
             String idSensor = main.getSensor();
+            String labelSensor;
             String query;
+            String queryTemp;
+            String queryHumid;
             String uidSensor;
 
-            lUID.Text = "UID du capteur";
-            ldtStart.Text = "Date et heure de\r\nl'import le plus ancien";
-            ldtEnd.Text = "Date et heure de\r\nl'import le plus récent";
-            lNbr.Text = "Nombre total d'import\r\nsur cette période";
+            lUID.Text = "UID";
+            lLabel.Text = "Libellé";
+            ldtStart.Text = "Date de l'import le plus ancien";
+            ldtEnd.Text = "Date de l'import le plus récent";
+            lNbr.Text = "Nombre d'import\r\nsur la période";
 
-            tfUID.Text = "";
-            tfdtStart.Text = "";
-            tfdtEnd.Text = "";
-            tfNbr.Text = "";
+            tfUID.Text = tfLabel.Text = tfdtStart.Text = tfdtEnd.Text = tfNbr.Text = mlMinTempData.Text = mlMaxTempData.Text = mlMedTempData.Text = mlMinHumidData.Text = mlMaxHumidData.Text = mlMedHumidData.Text = "";
 
             if (idSensor != "")
             {
@@ -48,14 +49,27 @@ namespace SensorBoard
                         "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
                         "ORDER BY data_date ASC";
 
+                queryTemp = "SELECT MIN(temperature) AS Tmin, MAX(temperature) AS Tmax, AVG(temperature) AS Tmed from data INNER JOIN sensor ON data.sensor = sensor.id WHERE sensor.id = " + idSensor;
+                queryHumid = "SELECT MIN(humidity) AS Hmin, MAX(humidity) AS Hmax, AVG(humidity) AS Hmed from data INNER JOIN sensor ON data.sensor = sensor.id WHERE sensor.id = " + idSensor;
+
                 List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+                List<Dictionary<String, String>> resultTemp = new List<Dictionary<string, string>>();
+                List<Dictionary<String, String>> resultHumid = new List<Dictionary<string, string>>();
                 String dtStart = "";
                 String dtEnd = "";
+                Decimal tempMin;
+                Decimal tempMax;
+                Decimal tempMed;
+                Decimal humidMin;
+                Decimal humidMax;
+                Decimal humidMed;
                 int lenResultset;
 
                 try
                 {
                     resultset = DBInteractor.QuickSelect(query);
+                    resultTemp = DBInteractor.QuickSelect(queryTemp);
+                    resultHumid = DBInteractor.QuickSelect(queryHumid);
                 }
                 catch (Exception ex)
                 {
@@ -65,23 +79,40 @@ namespace SensorBoard
 
                 lenResultset = resultset.Count;
 
+                //Si pas de data liées au capteur alors renvoi juste l'uid  et le libellé du capteur sélectionné
                 if (lenResultset == 0)
                 {
                     uidSensor = DBInteractor.QuickSelect("SELECT uid FROM sensor WHERE sensor.id = " + idSensor)[0]["uid"].ToString();
+                    labelSensor = DBInteractor.QuickSelect("SELECT label FROM sensor WHERE sensor.id = " + idSensor)[0]["label"].ToString();
+                    tempMin = tempMax = tempMed = humidMin = humidMax = humidMed = 0;
                 }
                 else
                 {
                     uidSensor = resultset[0]["uid"];
                     // requête avec ORDER BY ASC --> 1ere ligne du resultset comprend la data la plus ancienne
+                    labelSensor = resultset[0]["label"];
                     dtStart = resultset[0]["data_date"].ToString();
                     // requête avec ORDER BY ASC --> dernière ligne du resultset comprend la data la plus récente
                     dtEnd = resultset[lenResultset - 1]["data_date"].ToString();
+                    tempMin = decimal.Parse(resultTemp[0]["Tmin"]);
+                    tempMax = decimal.Parse(resultTemp[0]["Tmax"]);
+                    tempMed = decimal.Parse(resultTemp[0]["Tmed"]);
+                    humidMin = decimal.Parse(resultHumid[0]["Hmin"]);
+                    humidMax = decimal.Parse(resultHumid[0]["Hmax"]);
+                    humidMed = decimal.Parse(resultHumid[0]["Hmed"]);
                 }
 
                 tfUID.Text = uidSensor;
+                tfLabel.Text = labelSensor;
                 tfdtStart.Text = dtStart;
                 tfdtEnd.Text = dtEnd;
                 tfNbr.Text = lenResultset.ToString();
+                mlMinTempData.Text = tempMin + "°C";
+                mlMaxTempData.Text = tempMax + "°C";
+                mlMedTempData.Text = Math.Round(tempMed,1) + "°C";
+                mlMinHumidData.Text = humidMin + "%";
+                mlMaxHumidData.Text = humidMax + "%";
+                mlMedHumidData.Text = Math.Round(humidMed,1) + "%";
 
             }
         }

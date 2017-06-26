@@ -119,7 +119,5 @@ namespace SensorBoard
             Dictionary<String, String> parameters = new Dictionary<string, string>();
             return DBInteractor.QuickSelect(query, parameters);
         }
-
-
     }
 }
