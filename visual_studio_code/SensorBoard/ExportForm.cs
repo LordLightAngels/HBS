@@ -126,7 +126,7 @@ namespace SensorBoard
             // Add a simple and wellknown phrase to the document in a flow layout manner
             doc.Add(new Paragraph("Hello World!"));
 
-           /* PdfPTable table = new PdfPTable(5);
+           PdfPTable table = new PdfPTable(5);
 
             table.HorizontalAlignment = 0;
             //leave a gap before and after the table
@@ -138,32 +138,21 @@ namespace SensorBoard
             cell.Border = 0;
             cell.HorizontalAlignment = 1;
             table.AddCell(cell);
-            string connect = "SERVER=" + Properties.Resources.DATABASE_HOST
-            + ";DATABASE=" + Properties.Resources.DATABASE_NAME
-             + ";UID=" + Properties.Resources.DATABASE_LOGIN
-             + ";PASSWORD=" + Properties.Resources.DATABASE_PASSWORD + ";"; 
-            using (SqlConnection conn = new SqlConnection(connect))
+
+            List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
+            resultset = Sensor.getAllSensors();
+
+            foreach (Dictionary<String, String> line in resultset)
             {
-                string query = "SELECT ProductID, ProductName FROM Products";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                try
-                {
-                    conn.Open();
-                    using (SqlDataReader rdr = cmd.ExecuteReader())
-                    {
-                        while (rdr.Read())
-                        {
-                            table.AddCell(rdr[0].ToString());
-                            table.AddCell(rdr[1].ToString());
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Response.Write(ex.Message);
-                }
-                doc.Add(table);
-            }*/
+                table.AddCell(line["label"].ToString());
+                table.AddCell(line["uid"].ToString());
+                table.AddCell(line["data_date"].ToString());
+                table.AddCell(line["temperature"].ToString());
+                table.AddCell(line["humidity"].ToString());
+            }
+
+            doc.Add(table);
+            
 
 
             // Close the document
