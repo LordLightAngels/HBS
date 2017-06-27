@@ -32,11 +32,11 @@ namespace SensorBoard
             String queryHumid;
             String uidSensor;
 
-            lUID.Text = "UID";
+            /*lUID.Text = "UID";
             lLabel.Text = "Libellé";
             ldtStart.Text = "Date de l'import le plus ancien";
             ldtEnd.Text = "Date de l'import le plus récent";
-            lNbr.Text = "Nombre d'import\r\nsur la période";
+            lNbr.Text = "Nombre d'import\r\nsur la période";*/
 
             tfUID.Text = tfLabel.Text = tfdtStart.Text = tfdtEnd.Text = tfNbr.Text = mlMinTempData.Text = mlMaxTempData.Text = mlMedTempData.Text = mlMinHumidData.Text = mlMaxHumidData.Text = mlMedHumidData.Text = "";
 
@@ -156,21 +156,21 @@ namespace SensorBoard
 
                 lenResultset = resultset.Count;
 
-               /* chTemp.Series.Add("Temperatures");
-                chTemp.Series.Add("Humidity");*/
+                chTemp.Series["Temperatures"].Points.Clear();
+                chTemp.Series["Humidité"].Points.Clear();
+
+
 
 
                 foreach (Dictionary<String, String> line in resultset)
                 {
                     chTemp.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
-                    
+                    chTemp.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
+
 
                 }
 
-                foreach (Dictionary<String, String> line in resultset)
-                {
-                    chHumid.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
-                }
+
 
 
 

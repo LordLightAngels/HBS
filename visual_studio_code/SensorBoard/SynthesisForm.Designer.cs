@@ -28,17 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SynthesisForm));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tfLabel = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lLabel = new System.Windows.Forms.Label();
-            this.chHumid = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mlMedHumidData = new MaterialSkin.Controls.MaterialLabel();
             this.mlMaxHumidData = new MaterialSkin.Controls.MaterialLabel();
@@ -69,7 +66,6 @@
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
             this.chTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chHumid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,7 +79,6 @@
             // 
             this.pnlMain.Controls.Add(this.tfLabel);
             this.pnlMain.Controls.Add(this.lLabel);
-            this.pnlMain.Controls.Add(this.chHumid);
             this.pnlMain.Controls.Add(this.panel1);
             this.pnlMain.Controls.Add(this.tfNbr);
             this.pnlMain.Controls.Add(this.tfdtEnd);
@@ -95,16 +90,16 @@
             this.pnlMain.Controls.Add(this.lUID);
             this.pnlMain.Controls.Add(this.pnlRecapTemp);
             this.pnlMain.Controls.Add(this.chTemp);
-            this.pnlMain.Location = new System.Drawing.Point(24, 12);
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(623, 415);
+            this.pnlMain.Size = new System.Drawing.Size(656, 537);
             this.pnlMain.TabIndex = 0;
             // 
             // tfLabel
             // 
             this.tfLabel.Depth = 0;
             this.tfLabel.Hint = "";
-            this.tfLabel.Location = new System.Drawing.Point(259, 148);
+            this.tfLabel.Location = new System.Drawing.Point(59, 22);
             this.tfLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfLabel.Name = "tfLabel";
             this.tfLabel.PasswordChar = '\0';
@@ -119,28 +114,11 @@
             // lLabel
             // 
             this.lLabel.AutoSize = true;
-            this.lLabel.Location = new System.Drawing.Point(216, 156);
+            this.lLabel.Location = new System.Drawing.Point(16, 26);
             this.lLabel.Name = "lLabel";
             this.lLabel.Size = new System.Drawing.Size(37, 13);
             this.lLabel.TabIndex = 13;
             this.lLabel.Text = "Libelle";
-            // 
-            // chHumid
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chHumid.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chHumid.Legends.Add(legend1);
-            this.chHumid.Location = new System.Drawing.Point(313, 193);
-            this.chHumid.Name = "chHumid";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Humidité";
-            this.chHumid.Series.Add(series1);
-            this.chHumid.Size = new System.Drawing.Size(286, 207);
-            this.chHumid.TabIndex = 1;
-            this.chHumid.Text = "graph Humid";
             // 
             // panel1
             // 
@@ -152,7 +130,7 @@
             this.panel1.Controls.Add(this.mlMedHumid);
             this.panel1.Controls.Add(this.mlMaxHumid);
             this.panel1.Controls.Add(this.mlMinHumid);
-            this.panel1.Location = new System.Drawing.Point(405, 90);
+            this.panel1.Location = new System.Drawing.Point(349, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(194, 97);
             this.panel1.TabIndex = 6;
@@ -269,7 +247,7 @@
             // 
             this.tfNbr.Depth = 0;
             this.tfNbr.Hint = "";
-            this.tfNbr.Location = new System.Drawing.Point(259, 45);
+            this.tfNbr.Location = new System.Drawing.Point(565, 22);
             this.tfNbr.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfNbr.Name = "tfNbr";
             this.tfNbr.PasswordChar = '\0';
@@ -285,7 +263,7 @@
             // 
             this.tfdtEnd.Depth = 0;
             this.tfdtEnd.Hint = "";
-            this.tfdtEnd.Location = new System.Drawing.Point(405, 45);
+            this.tfdtEnd.Location = new System.Drawing.Point(219, 71);
             this.tfdtEnd.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtEnd.Name = "tfdtEnd";
             this.tfdtEnd.PasswordChar = '\0';
@@ -301,7 +279,7 @@
             // 
             this.tfdtStart.Depth = 0;
             this.tfdtStart.Hint = "";
-            this.tfdtStart.Location = new System.Drawing.Point(16, 45);
+            this.tfdtStart.Location = new System.Drawing.Point(16, 71);
             this.tfdtStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtStart.Name = "tfdtStart";
             this.tfdtStart.PasswordChar = '\0';
@@ -317,7 +295,7 @@
             // 
             this.tfUID.Depth = 0;
             this.tfUID.Hint = "";
-            this.tfUID.Location = new System.Drawing.Point(259, 86);
+            this.tfUID.Location = new System.Drawing.Point(294, 22);
             this.tfUID.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfUID.Name = "tfUID";
             this.tfUID.PasswordChar = '\0';
@@ -332,34 +310,34 @@
             // lNbr
             // 
             this.lNbr.AutoSize = true;
-            this.lNbr.Location = new System.Drawing.Point(256, 16);
+            this.lNbr.Location = new System.Drawing.Point(480, 26);
             this.lNbr.Name = "lNbr";
-            this.lNbr.Size = new System.Drawing.Size(53, 13);
+            this.lNbr.Size = new System.Drawing.Size(63, 13);
             this.lNbr.TabIndex = 8;
-            this.lNbr.Text = "NbrImport";
+            this.lNbr.Text = "Nb Relevés";
             // 
             // ldtEnd
             // 
             this.ldtEnd.AutoSize = true;
-            this.ldtEnd.Location = new System.Drawing.Point(402, 16);
+            this.ldtEnd.Location = new System.Drawing.Point(216, 51);
             this.ldtEnd.Name = "ldtEnd";
-            this.ldtEnd.Size = new System.Drawing.Size(94, 13);
+            this.ldtEnd.Size = new System.Drawing.Size(129, 13);
             this.ldtEnd.TabIndex = 7;
-            this.ldtEnd.Text = "DateImportRecent";
+            this.ldtEnd.Text = "Date-Heure dernier relevé";
             // 
             // ldtStart
             // 
             this.ldtStart.AutoSize = true;
-            this.ldtStart.Location = new System.Drawing.Point(13, 16);
+            this.ldtStart.Location = new System.Drawing.Point(13, 51);
             this.ldtStart.Name = "ldtStart";
-            this.ldtStart.Size = new System.Drawing.Size(92, 13);
+            this.ldtStart.Size = new System.Drawing.Size(112, 13);
             this.ldtStart.TabIndex = 6;
-            this.ldtStart.Text = "DateImportAncien";
+            this.ldtStart.Text = "Date-Heure 1er relevé";
             // 
             // lUID
             // 
             this.lUID.AutoSize = true;
-            this.lUID.Location = new System.Drawing.Point(216, 96);
+            this.lUID.Location = new System.Drawing.Point(251, 26);
             this.lUID.Name = "lUID";
             this.lUID.Size = new System.Drawing.Size(26, 13);
             this.lUID.TabIndex = 5;
@@ -375,7 +353,7 @@
             this.pnlRecapTemp.Controls.Add(this.mlMedTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMaxTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMinTemp);
-            this.pnlRecapTemp.Location = new System.Drawing.Point(16, 90);
+            this.pnlRecapTemp.Location = new System.Drawing.Point(83, 108);
             this.pnlRecapTemp.Name = "pnlRecapTemp";
             this.pnlRecapTemp.Size = new System.Drawing.Size(194, 97);
             this.pnlRecapTemp.TabIndex = 2;
@@ -492,16 +470,27 @@
             // 
             chartArea2.Name = "ChartArea1";
             this.chTemp.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.DockedToChartArea = "ChartArea1";
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.IsDockedInsideChartArea = false;
             legend2.Name = "Legend1";
             this.chTemp.Legends.Add(legend2);
-            this.chTemp.Location = new System.Drawing.Point(16, 193);
+            this.chTemp.Location = new System.Drawing.Point(12, 211);
             this.chTemp.Name = "chTemp";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Temperatures";
-            this.chTemp.Series.Add(series2);
-            this.chTemp.Size = new System.Drawing.Size(286, 207);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.Red;
+            series3.Legend = "Legend1";
+            series3.Name = "Temperatures";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.Blue;
+            series4.Legend = "Legend1";
+            series4.Name = "Humidité";
+            this.chTemp.Series.Add(series3);
+            this.chTemp.Series.Add(series4);
+            this.chTemp.Size = new System.Drawing.Size(617, 323);
             this.chTemp.TabIndex = 1;
             this.chTemp.Text = "graph Temp";
             // 
@@ -509,14 +498,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 439);
+            this.ClientSize = new System.Drawing.Size(656, 537);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SynthesisForm";
             this.Text = "SynthesisForm";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chHumid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -564,7 +552,6 @@
         private MaterialSkin.Controls.MaterialLabel mlMinHumid;
         private MaterialSkin.Controls.MaterialLabel mlMedTempData;
         private MaterialSkin.Controls.MaterialLabel mlMaxTempData;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chHumid;
         private MaterialSkin.Controls.MaterialSingleLineTextField tfLabel;
         private System.Windows.Forms.Label lLabel;
     }
