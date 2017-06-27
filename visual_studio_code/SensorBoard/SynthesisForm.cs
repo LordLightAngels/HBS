@@ -96,9 +96,7 @@ namespace SensorBoard
                     humidMax = decimal.Parse(resultHumid[0]["Hmax"]);
                     humidMed = decimal.Parse(resultHumid[0]["Hmed"]);
                     TimeSpan tsAmplitude = DateTime.Parse(dtEnd).Subtract(DateTime.Parse(dtStart));
-                    //amplitude = tsAmplitude.ToString(@"yyyy\-MM\-dd hh\:mm\:ss");
                     amplitude = string.Format("{0:dd\\ \\j\\o\\u\\r\\s\\ hh\\:mm\\:ss}", tsAmplitude);
-                    //amplitude = tsAmplitude.Ticks.ToString("yyyy-MM-dd hh:mm:ss");
                 }
 
                 tfUID.Text = uidSensor;
@@ -121,7 +119,6 @@ namespace SensorBoard
 
         public void chTemp_Load()
         {
-
             chTemp.Series["Temperatures"].Points.Clear();
             chTemp.Series["Humidité"].Points.Clear();
 
@@ -133,8 +130,6 @@ namespace SensorBoard
             String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
             String idSensor = main.getSensor();
             String query;
-            String uidSensor;
-
 
             if (idSensor != "")
             {
@@ -146,8 +141,6 @@ namespace SensorBoard
                         "ORDER BY data_date ASC";
 
                 List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
-                String dtStart = "";
-                String dtEnd = "";
                 int lenResultset;
 
                 try
@@ -166,8 +159,6 @@ namespace SensorBoard
                 {
                     chTemp.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
                     chTemp.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
-
-
                 }
 
             }
