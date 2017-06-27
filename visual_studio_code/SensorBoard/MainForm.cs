@@ -24,13 +24,17 @@ namespace SensorBoard
         SynthesisForm synthesis;
         DataForm data;
         SensorForm sensor;
-        Timer aTimer;
         Dictionary<int, String> sensorList = new Dictionary<int, string>();
         private readonly object serializer;
+        Timer webserviceTimer;
 
         public MainForm()
         {
             InitializeComponent();
+
+            webserviceTimer = new Timer();
+            webserviceTimer.Interval = 5000;
+            webserviceTimer.Tick += WebserviceTimer_Tick;
 
 
             //Instantiation du formulaire enfant
@@ -67,6 +71,55 @@ namespace SensorBoard
             synthesis.DisplaySynthesis();
             synthesis.chTemp_Load();
 
+        }
+
+        private void WebserviceTimer_Tick(object sender, EventArgs e)
+        {
+            MenuItem item = (MenuItem)cbSensor.SelectedItem;
+            String webservice = (String)item.Tag;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(webservice);
+            //onglet network F12 qui permet de voir ce qu'on envoie en header
+            request.UserAgent = "Mozilla(Gecko 1.2.13)";
+            request.Method = "GET";
+            WebResponse response = request.GetResponse();
+            Stream receiveStream = response.GetResponseStream();
+            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+            Console.WriteLine("Response stream received.");
+
+
+
+            JObject obj = JObject.Parse(readStream.ReadToEnd());
+            
+            String dataDate = (String)obj["date"];
+            String humidity = (String)obj["humidity"];
+            String temperature = (String)obj["temperature"];
+
+            String query = "INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                    "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)";
+            Dictionary<String, String> parameters = new Dictionary<String, String>(){
+                                            {"@data_date", dataDate},
+                                            {"@temperature", temperature },
+                                            {"@humidity", humidity },
+                                            {"@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
+                                            {"@sensor", item.Name },
+                                };
+
+            try
+            {
+                DBInteractor.QuickExecute(query, parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+            }
+
+            //MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
+
+            response.Close();
+            readStream.Close();
+            synthesis.DisplaySynthesis();
+  
         }
 
         internal string getSensorName()
@@ -149,6 +202,7 @@ namespace SensorBoard
         private void cbSensor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
+            webserviceTimer.Stop();
             if (cbSensor.SelectedItem != null)
             {
                 
@@ -157,8 +211,7 @@ namespace SensorBoard
                 String webservice = (String)item.Tag;
                 if((webservice != "") && (webservice != null))
                 {
-                    MessageBox.Show(webservice);
-                    aTimer.Tick += new EventHandler(GetDataWebService);
+                    webserviceTimer.Start();
                 }
             }
             data.DisplayData();
@@ -168,9 +221,6 @@ namespace SensorBoard
 
         private void GetDataWebService(object sender, EventArgs e)
         {
-            aTimer = new Timer();
-            aTimer.Interval = 5000;
-            aTimer.Enabled = true;
             MenuItem item = (MenuItem)cbSensor.SelectedItem;
             String webservice = (String)item.Tag;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(webservice);
@@ -213,12 +263,10 @@ namespace SensorBoard
 
             response.Close();
             readStream.Close();
-            aTimer.Stop();
 
         }
 
 
-        
 
         //if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
         //data.DisplayData();
