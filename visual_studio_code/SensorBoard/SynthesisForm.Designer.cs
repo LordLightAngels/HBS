@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SynthesisForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tfLabel = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lLabel = new System.Windows.Forms.Label();
@@ -99,7 +99,7 @@
             // 
             this.tfLabel.Depth = 0;
             this.tfLabel.Hint = "";
-            this.tfLabel.Location = new System.Drawing.Point(59, 22);
+            this.tfLabel.Location = new System.Drawing.Point(59, 9);
             this.tfLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfLabel.Name = "tfLabel";
             this.tfLabel.PasswordChar = '\0';
@@ -114,7 +114,7 @@
             // lLabel
             // 
             this.lLabel.AutoSize = true;
-            this.lLabel.Location = new System.Drawing.Point(16, 26);
+            this.lLabel.Location = new System.Drawing.Point(16, 13);
             this.lLabel.Name = "lLabel";
             this.lLabel.Size = new System.Drawing.Size(37, 13);
             this.lLabel.TabIndex = 13;
@@ -247,7 +247,7 @@
             // 
             this.tfNbr.Depth = 0;
             this.tfNbr.Hint = "";
-            this.tfNbr.Location = new System.Drawing.Point(565, 22);
+            this.tfNbr.Location = new System.Drawing.Point(565, 8);
             this.tfNbr.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfNbr.Name = "tfNbr";
             this.tfNbr.PasswordChar = '\0';
@@ -263,7 +263,7 @@
             // 
             this.tfdtEnd.Depth = 0;
             this.tfdtEnd.Hint = "";
-            this.tfdtEnd.Location = new System.Drawing.Point(219, 71);
+            this.tfdtEnd.Location = new System.Drawing.Point(459, 38);
             this.tfdtEnd.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtEnd.Name = "tfdtEnd";
             this.tfdtEnd.PasswordChar = '\0';
@@ -279,7 +279,7 @@
             // 
             this.tfdtStart.Depth = 0;
             this.tfdtStart.Hint = "";
-            this.tfdtStart.Location = new System.Drawing.Point(16, 71);
+            this.tfdtStart.Location = new System.Drawing.Point(124, 38);
             this.tfdtStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtStart.Name = "tfdtStart";
             this.tfdtStart.PasswordChar = '\0';
@@ -295,7 +295,7 @@
             // 
             this.tfUID.Depth = 0;
             this.tfUID.Hint = "";
-            this.tfUID.Location = new System.Drawing.Point(294, 22);
+            this.tfUID.Location = new System.Drawing.Point(294, 9);
             this.tfUID.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfUID.Name = "tfUID";
             this.tfUID.PasswordChar = '\0';
@@ -310,7 +310,7 @@
             // lNbr
             // 
             this.lNbr.AutoSize = true;
-            this.lNbr.Location = new System.Drawing.Point(480, 26);
+            this.lNbr.Location = new System.Drawing.Point(480, 13);
             this.lNbr.Name = "lNbr";
             this.lNbr.Size = new System.Drawing.Size(63, 13);
             this.lNbr.TabIndex = 8;
@@ -319,7 +319,7 @@
             // ldtEnd
             // 
             this.ldtEnd.AutoSize = true;
-            this.ldtEnd.Location = new System.Drawing.Point(216, 51);
+            this.ldtEnd.Location = new System.Drawing.Point(331, 41);
             this.ldtEnd.Name = "ldtEnd";
             this.ldtEnd.Size = new System.Drawing.Size(129, 13);
             this.ldtEnd.TabIndex = 7;
@@ -328,7 +328,7 @@
             // ldtStart
             // 
             this.ldtStart.AutoSize = true;
-            this.ldtStart.Location = new System.Drawing.Point(13, 51);
+            this.ldtStart.Location = new System.Drawing.Point(9, 41);
             this.ldtStart.Name = "ldtStart";
             this.ldtStart.Size = new System.Drawing.Size(112, 13);
             this.ldtStart.TabIndex = 6;
@@ -337,7 +337,7 @@
             // lUID
             // 
             this.lUID.AutoSize = true;
-            this.lUID.Location = new System.Drawing.Point(251, 26);
+            this.lUID.Location = new System.Drawing.Point(251, 13);
             this.lUID.Name = "lUID";
             this.lUID.Size = new System.Drawing.Size(26, 13);
             this.lUID.TabIndex = 5;
@@ -468,28 +468,28 @@
             // 
             // chTemp
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chTemp.ChartAreas.Add(chartArea2);
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.DockedToChartArea = "ChartArea1";
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend2.IsDockedInsideChartArea = false;
-            legend2.Name = "Legend1";
-            this.chTemp.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chTemp.ChartAreas.Add(chartArea3);
+            legend3.Alignment = System.Drawing.StringAlignment.Center;
+            legend3.DockedToChartArea = "ChartArea1";
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.IsDockedInsideChartArea = false;
+            legend3.Name = "Legend1";
+            this.chTemp.Legends.Add(legend3);
             this.chTemp.Location = new System.Drawing.Point(12, 211);
             this.chTemp.Name = "chTemp";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.Red;
-            series3.Legend = "Legend1";
-            series3.Name = "Temperatures";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.Blue;
-            series4.Legend = "Legend1";
-            series4.Name = "Humidité";
-            this.chTemp.Series.Add(series3);
-            this.chTemp.Series.Add(series4);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Red;
+            series5.Legend = "Legend1";
+            series5.Name = "Temperatures";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.Blue;
+            series6.Legend = "Legend1";
+            series6.Name = "Humidité";
+            this.chTemp.Series.Add(series5);
+            this.chTemp.Series.Add(series6);
             this.chTemp.Size = new System.Drawing.Size(617, 323);
             this.chTemp.TabIndex = 1;
             this.chTemp.Text = "graph Temp";

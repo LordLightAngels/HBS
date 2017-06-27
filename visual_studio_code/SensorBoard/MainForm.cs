@@ -1,11 +1,15 @@
 ﻿using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +24,9 @@ namespace SensorBoard
         SynthesisForm synthesis;
         DataForm data;
         SensorForm sensor;
+        Timer aTimer;
         Dictionary<int, String> sensorList = new Dictionary<int, string>();
+        private readonly object serializer;
 
         public MainForm()
         {
@@ -143,13 +149,79 @@ namespace SensorBoard
         private void cbSensor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
+            if (cbSensor.SelectedItem != null)
+            {
+                
+                //Si on caste pas en MenuItem, pas accès à propriété Tag
+                MenuItem item = (MenuItem)cbSensor.SelectedItem;
+                String webservice = (String)item.Tag;
+                if((webservice != "") && (webservice != null))
+                {
+                    MessageBox.Show(webservice);
+                    aTimer.Tick += new EventHandler(GetDataWebService);
+                }
+            }
             data.DisplayData();
             synthesis.DisplaySynthesis();
             synthesis.chTemp_Load();
         }
 
+        private void GetDataWebService(object sender, EventArgs e)
+        {
+            aTimer = new Timer();
+            aTimer.Interval = 5000;
+            aTimer.Enabled = true;
+            MenuItem item = (MenuItem)cbSensor.SelectedItem;
+            String webservice = (String)item.Tag;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(webservice);
+            request.UserAgent = "toto";
+            request.Method = "GET";
+            WebResponse response = request.GetResponse();
+            Stream receiveStream = response.GetResponseStream();
+            StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+            MessageBox.Show("Response stream received.");
+            
+            
+
+            JObject obj = JObject.Parse(readStream.ReadToEnd());
+            MessageBox.Show(obj.ToString());
+            String dataDate = (String)obj["date"];
+            String humidity = (String)obj["humidity"];
+            String temperature = (String)obj["temperature"];
+
+            String query = "INSERT INTO data(data_date,temperature,humidity,import_date,sensor) " +
+                    "VALUES(@data_date, @temperature, @humidity, @import_date, @sensor)";
+            Dictionary < String, String > parameters = new Dictionary<String, String>(){
+                                            {"@data_date", dataDate},
+                                            {"@temperature", temperature },
+                                            {"@humidity", humidity },
+                                            {"@import_date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
+                                            {"@sensor", item.Name },
+                                };
+
+            try
+            {
+                DBInteractor.QuickExecute(query,parameters);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+            }
+
+            MessageBox.Show("L'insertion de vos données a été effectuée avec succès");
+
+            response.Close();
+            readStream.Close();
+            aTimer.Stop();
+
+        }
+
+
+        
+
         //if (dtpStart.Value > dtpEnd.Value) MessageBox.Show("Rectifiez votre sélection de dates");
-            //data.DisplayData();
+        //data.DisplayData();
 
         public void refreshSensorMain()
         {
@@ -160,7 +232,7 @@ namespace SensorBoard
 
             try
             {
-                 lines = DBInteractor.QuickSelect("SELECT id,label FROM sensor");
+                 lines = DBInteractor.QuickSelect("SELECT id,label, webservice FROM sensor");
             }
             catch (Exception ex)
             {
@@ -178,6 +250,7 @@ namespace SensorBoard
                 MenuItem item = new MenuItem();
                 item.Text = line["label"];
                 item.Name = line["id"];
+                item.Tag = line["webservice"];
                 cbSensor.Items.Add(item);
             }
         }
