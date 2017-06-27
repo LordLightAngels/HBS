@@ -32,7 +32,7 @@ namespace SensorBoard
             String queryHumid;
             String uidSensor;
 
-            tfUID.Text = tfLabel.Text = tfdtStart.Text = tfdtEnd.Text = tfNbr.Text = mlMinTempData.Text = mlMaxTempData.Text = mlMedTempData.Text = mlMinHumidData.Text = mlMaxHumidData.Text = mlMedHumidData.Text = "";
+            tfUID.Text = tfLabel.Text = tfdtStart.Text = tfdtEnd.Text = tfNbr.Text = mlMinTempData.Text = mlMaxTempData.Text = mlMedTempData.Text = mlMinHumidData.Text = mlMaxHumidData.Text = mlMedHumidData.Text = tfAmplitude.Text = "";
 
             if (idSensor != "")
             {
@@ -51,6 +51,7 @@ namespace SensorBoard
                 List<Dictionary<String, String>> resultHumid = new List<Dictionary<string, string>>();
                 String dtStart = "";
                 String dtEnd = "";
+                String amplitude = "";
                 Decimal tempMin;
                 Decimal tempMax;
                 Decimal tempMed;
@@ -94,6 +95,10 @@ namespace SensorBoard
                     humidMin = decimal.Parse(resultHumid[0]["Hmin"]);
                     humidMax = decimal.Parse(resultHumid[0]["Hmax"]);
                     humidMed = decimal.Parse(resultHumid[0]["Hmed"]);
+                    TimeSpan tsAmplitude = DateTime.Parse(dtEnd).Subtract(DateTime.Parse(dtStart));
+                    //amplitude = tsAmplitude.ToString(@"yyyy\-MM\-dd hh\:mm\:ss");
+                    amplitude = string.Format("{0:dd\\ \\j\\o\\u\\r\\s\\ hh\\:mm\\:ss}", tsAmplitude);
+                    //amplitude = tsAmplitude.Ticks.ToString("yyyy-MM-dd hh:mm:ss");
                 }
 
                 tfUID.Text = uidSensor;
@@ -101,6 +106,7 @@ namespace SensorBoard
                 tfdtStart.Text = dtStart;
                 tfdtEnd.Text = dtEnd;
                 tfNbr.Text = lenResultset.ToString();
+                tfAmplitude.Text = amplitude;
                 mlMinTempData.Text = tempMin + "°C";
                 mlMaxTempData.Text = tempMax + "°C";
                 mlMedTempData.Text = Math.Round(tempMed,1) + "°C";
@@ -115,6 +121,10 @@ namespace SensorBoard
 
         public void chTemp_Load()
         {
+
+            chTemp.Series["Temperatures"].Points.Clear();
+            chTemp.Series["Humidité"].Points.Clear();
+
             Form form = this.ParentForm;
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
@@ -152,9 +162,6 @@ namespace SensorBoard
 
                 lenResultset = resultset.Count;
 
-                chTemp.Series["Temperatures"].Points.Clear();
-                chTemp.Series["Humidité"].Points.Clear();
-
                 foreach (Dictionary<String, String> line in resultset)
                 {
                     chTemp.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
@@ -163,14 +170,8 @@ namespace SensorBoard
 
                 }
 
-
-
-
-
-
             }
         }
-
     }
 }
 

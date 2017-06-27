@@ -65,6 +65,8 @@
             this.mlMaxTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
             this.chTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lAmplitude = new System.Windows.Forms.Label();
+            this.tfAmplitude = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,6 +79,8 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.tfAmplitude);
+            this.pnlMain.Controls.Add(this.lAmplitude);
             this.pnlMain.Controls.Add(this.tfLabel);
             this.pnlMain.Controls.Add(this.lLabel);
             this.pnlMain.Controls.Add(this.panel1);
@@ -494,6 +498,30 @@
             this.chTemp.TabIndex = 1;
             this.chTemp.Text = "graph Temp";
             // 
+            // lAmplitude
+            // 
+            this.lAmplitude.AutoSize = true;
+            this.lAmplitude.Location = new System.Drawing.Point(139, 74);
+            this.lAmplitude.Name = "lAmplitude";
+            this.lAmplitude.Size = new System.Drawing.Size(161, 13);
+            this.lAmplitude.TabIndex = 15;
+            this.lAmplitude.Text = "Amplitude temporelle des relevés";
+            // 
+            // tfAmplitude
+            // 
+            this.tfAmplitude.Depth = 0;
+            this.tfAmplitude.Hint = "";
+            this.tfAmplitude.Location = new System.Drawing.Point(318, 70);
+            this.tfAmplitude.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfAmplitude.Name = "tfAmplitude";
+            this.tfAmplitude.PasswordChar = '\0';
+            this.tfAmplitude.SelectedText = "";
+            this.tfAmplitude.SelectionLength = 0;
+            this.tfAmplitude.SelectionStart = 0;
+            this.tfAmplitude.Size = new System.Drawing.Size(170, 23);
+            this.tfAmplitude.TabIndex = 16;
+            this.tfAmplitude.UseSystemPasswordChar = false;
+            // 
             // SynthesisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,5 +582,7 @@
         private MaterialSkin.Controls.MaterialLabel mlMaxTempData;
         private MaterialSkin.Controls.MaterialSingleLineTextField tfLabel;
         private System.Windows.Forms.Label lLabel;
+        private MaterialSkin.Controls.MaterialSingleLineTextField tfAmplitude;
+        private System.Windows.Forms.Label lAmplitude;
     }
 }
