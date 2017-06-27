@@ -129,15 +129,6 @@ namespace SensorBoard
             String query;
             String uidSensor;
 
-            lUID.Text = "UID du capteur";
-            ldtStart.Text = "Date et heure de\r\nl'import le plus ancien";
-            ldtEnd.Text = "Date et heure de\r\nl'import le plus récent";
-            lNbr.Text = "Nombre total d'import\r\nsur cette période";
-
-            tfUID.Text = "";
-            tfdtStart.Text = "";
-            tfdtEnd.Text = "";
-            tfNbr.Text = "";
 
             if (idSensor != "")
             {
@@ -165,14 +156,21 @@ namespace SensorBoard
 
                 lenResultset = resultset.Count;
 
-                chTemp.Series.Add("Temperatures");
+               /* chTemp.Series.Add("Temperatures");
+                chTemp.Series.Add("Humidity");*/
+
 
                 foreach (Dictionary<String, String> line in resultset)
                 {
                     chTemp.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
-                
+                    
+
                 }
 
+                foreach (Dictionary<String, String> line in resultset)
+                {
+                    chHumid.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
+                }
 
 
 

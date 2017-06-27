@@ -131,11 +131,12 @@
             this.chHumid.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chHumid.Legends.Add(legend1);
-            this.chHumid.Location = new System.Drawing.Point(315, 193);
+            this.chHumid.Location = new System.Drawing.Point(313, 193);
             this.chHumid.Name = "chHumid";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Humidité";
             this.chHumid.Series.Add(series1);
             this.chHumid.Size = new System.Drawing.Size(286, 207);
             this.chHumid.TabIndex = 1;
@@ -496,8 +497,9 @@
             this.chTemp.Location = new System.Drawing.Point(16, 193);
             this.chTemp.Name = "chTemp";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Temperatures";
             this.chTemp.Series.Add(series2);
             this.chTemp.Size = new System.Drawing.Size(286, 207);
             this.chTemp.TabIndex = 1;
