@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SynthesisForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.tfAmplitude = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lAmplitude = new System.Windows.Forms.Label();
             this.tfLabel = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,9 +66,7 @@
             this.mlMedTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMaxTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
-            this.chTemp = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lAmplitude = new System.Windows.Forms.Label();
-            this.tfAmplitude = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.chTempHumid = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,7 +74,7 @@
             this.pnlRecapTemp.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTempHumid)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -93,11 +93,35 @@
             this.pnlMain.Controls.Add(this.ldtStart);
             this.pnlMain.Controls.Add(this.lUID);
             this.pnlMain.Controls.Add(this.pnlRecapTemp);
-            this.pnlMain.Controls.Add(this.chTemp);
+            this.pnlMain.Controls.Add(this.chTempHumid);
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(656, 537);
             this.pnlMain.TabIndex = 0;
+            // 
+            // tfAmplitude
+            // 
+            this.tfAmplitude.Depth = 0;
+            this.tfAmplitude.Hint = "";
+            this.tfAmplitude.Location = new System.Drawing.Point(318, 70);
+            this.tfAmplitude.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tfAmplitude.Name = "tfAmplitude";
+            this.tfAmplitude.PasswordChar = '\0';
+            this.tfAmplitude.SelectedText = "";
+            this.tfAmplitude.SelectionLength = 0;
+            this.tfAmplitude.SelectionStart = 0;
+            this.tfAmplitude.Size = new System.Drawing.Size(170, 23);
+            this.tfAmplitude.TabIndex = 16;
+            this.tfAmplitude.UseSystemPasswordChar = false;
+            // 
+            // lAmplitude
+            // 
+            this.lAmplitude.AutoSize = true;
+            this.lAmplitude.Location = new System.Drawing.Point(139, 74);
+            this.lAmplitude.Name = "lAmplitude";
+            this.lAmplitude.Size = new System.Drawing.Size(161, 13);
+            this.lAmplitude.TabIndex = 15;
+            this.lAmplitude.Text = "Amplitude temporelle des relevés";
             // 
             // tfLabel
             // 
@@ -470,57 +494,33 @@
             this.mlMinTemp.TabIndex = 1;
             this.mlMinTemp.Text = "Min";
             // 
-            // chTemp
+            // chTempHumid
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chTemp.ChartAreas.Add(chartArea3);
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.DockedToChartArea = "ChartArea1";
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend3.IsDockedInsideChartArea = false;
-            legend3.Name = "Legend1";
-            this.chTemp.Legends.Add(legend3);
-            this.chTemp.Location = new System.Drawing.Point(12, 211);
-            this.chTemp.Name = "chTemp";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.Red;
-            series5.Legend = "Legend1";
-            series5.Name = "Temperatures";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Color = System.Drawing.Color.Blue;
-            series6.Legend = "Legend1";
-            series6.Name = "Humidité";
-            this.chTemp.Series.Add(series5);
-            this.chTemp.Series.Add(series6);
-            this.chTemp.Size = new System.Drawing.Size(617, 323);
-            this.chTemp.TabIndex = 1;
-            this.chTemp.Text = "graph Temp";
-            // 
-            // lAmplitude
-            // 
-            this.lAmplitude.AutoSize = true;
-            this.lAmplitude.Location = new System.Drawing.Point(139, 74);
-            this.lAmplitude.Name = "lAmplitude";
-            this.lAmplitude.Size = new System.Drawing.Size(161, 13);
-            this.lAmplitude.TabIndex = 15;
-            this.lAmplitude.Text = "Amplitude temporelle des relevés";
-            // 
-            // tfAmplitude
-            // 
-            this.tfAmplitude.Depth = 0;
-            this.tfAmplitude.Hint = "";
-            this.tfAmplitude.Location = new System.Drawing.Point(318, 70);
-            this.tfAmplitude.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tfAmplitude.Name = "tfAmplitude";
-            this.tfAmplitude.PasswordChar = '\0';
-            this.tfAmplitude.SelectedText = "";
-            this.tfAmplitude.SelectionLength = 0;
-            this.tfAmplitude.SelectionStart = 0;
-            this.tfAmplitude.Size = new System.Drawing.Size(170, 23);
-            this.tfAmplitude.TabIndex = 16;
-            this.tfAmplitude.UseSystemPasswordChar = false;
+            chartArea1.Name = "ChartArea1";
+            this.chTempHumid.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.DockedToChartArea = "ChartArea1";
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.IsDockedInsideChartArea = false;
+            legend1.Name = "Legend1";
+            this.chTempHumid.Legends.Add(legend1);
+            this.chTempHumid.Location = new System.Drawing.Point(12, 211);
+            this.chTempHumid.Name = "chTempHumid";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Legend = "Legend1";
+            series1.Name = "Temperatures";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Blue;
+            series2.Legend = "Legend1";
+            series2.Name = "Humidité";
+            this.chTempHumid.Series.Add(series1);
+            this.chTempHumid.Series.Add(series2);
+            this.chTempHumid.Size = new System.Drawing.Size(617, 323);
+            this.chTempHumid.TabIndex = 1;
+            this.chTempHumid.Text = "graph Temp";
             // 
             // SynthesisForm
             // 
@@ -543,7 +543,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chTempHumid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -551,7 +551,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chTemp;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chTempHumid;
         private MaterialSkin.Controls.MaterialLabel mlTemp;
         private System.Windows.Forms.Panel pnlRecapTemp;
         private MaterialSkin.Controls.MaterialLabel mlMinTempData;

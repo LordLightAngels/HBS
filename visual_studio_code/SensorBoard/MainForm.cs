@@ -28,6 +28,11 @@ namespace SensorBoard
         private readonly object serializer;
         Timer webserviceTimer;
 
+        public SynthesisForm getSynthesis()
+        {
+            return this.synthesis;
+        }
+
         public MainForm()
         {
             InitializeComponent();

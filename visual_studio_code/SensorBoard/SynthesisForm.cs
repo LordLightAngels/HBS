@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SensorBoard
 {
     public partial class SynthesisForm : Form
     {
+        public Stream getCHTempHumidImageBuffer()
+        {
+            Stream stream = null;
+            this.chTempHumid.SaveImage(stream, ChartImageFormat.Png);
+            return stream;
+        }
+        
         public SynthesisForm()
         {
             InitializeComponent();
@@ -119,8 +128,8 @@ namespace SensorBoard
 
         public void chTemp_Load()
         {
-            chTemp.Series["Temperatures"].Points.Clear();
-            chTemp.Series["Humidité"].Points.Clear();
+            chTempHumid.Series["Temperatures"].Points.Clear();
+            chTempHumid.Series["Humidité"].Points.Clear();
 
             Form form = this.ParentForm;
             MainForm main = (MainForm)form;
@@ -157,10 +166,10 @@ namespace SensorBoard
 
                 foreach (Dictionary<String, String> line in resultset)
                 {
-                    chTemp.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
-                    chTemp.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
+                    chTempHumid.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
+                    chTempHumid.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
                 }
-
+                
             }
         }
     }

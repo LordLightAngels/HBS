@@ -18,6 +18,7 @@ using iTextSharp;
 
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SensorBoard
 {
@@ -101,8 +102,41 @@ namespace SensorBoard
             table.AddCell("Température");
             table.AddCell("Humidité");
 
+            Form form = this.ParentForm;
+            MainForm main = (MainForm)form;
+            SynthesisForm synthesis = main.getSynthesis();
+            Byte[] chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
+            DateTime start = main.GetStartDate();
+            DateTime end = main.GetEndDate();
+            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String idSensor = main.getSensor();
+            String query;
+            String optionalClause = "WHERE 1 ";
+
+            if (idSensor != "")
+            {
+                optionalClause = "WHERE sensor.id = " + idSensor + "  ";
+            }
+
+            query = "SELECT  sensor.*, data.*" +
+                    "FROM sensor INNER JOIN data " +
+                    "ON data.sensor = sensor.id " +
+                    optionalClause + " " +
+                    "AND (data_date BETWEEN '" + startString + "' AND '" + endString + "') " +
+                    "ORDER BY sensor ASC, data_date ASC";
+
             List<Dictionary<String, String>> resultset = new List<Dictionary<string, string>>();
-            resultset = Sensor.getAllSensors();
+
+            try
+            {
+                resultset = DBInteractor.QuickSelect(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR : Impossible de se connecter à la base de données...\n\r\n\r" +
+                    ex.Message + "\n\r" + ex.StackTrace);
+            }
 
             foreach (Dictionary<String, String> line in resultset)
             {
@@ -124,6 +158,17 @@ namespace SensorBoard
             // Always close open filehandles explicity
             fs.Close();
 
+            try
+            {
+                if (mcbOuvrir.Checked)
+                {
+                    Process.Start(filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur à l'enregistrement: " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -177,6 +222,7 @@ namespace SensorBoard
 
         private void mrbExport_Click(object sender, EventArgs e)
         {
+
             if (!mrbExcel.Checked && !mrbPDF.Checked)
             {
                 MessageBox.Show("Veuillez saisir un format d'export");
@@ -191,12 +237,14 @@ namespace SensorBoard
                 saveFile.DefaultExt = (mrbExcel.Checked ? "csv" : "pdf");
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
+
+                    this.filePath = saveFile.FileName;
+                    if (mcbEnvoiDoc.Checked) SendMail();
                     if (mrbExcel.Checked) ExportDataCSV(saveFile.FileName);
                     if (mrbPDF.Checked) ExportDataPDF(saveFile.FileName);
                 }
             }
 
-            if (mcbEnvoiDoc.Checked) SendMail();
         }
 
         private void tfInputEmail_Click(object sender, EventArgs e)
