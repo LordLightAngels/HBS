@@ -67,6 +67,7 @@
             this.mlMaxTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
             this.chTempHumid = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -151,6 +152,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.materialTabSelector1);
             this.panel1.Controls.Add(this.mlMedHumidData);
             this.panel1.Controls.Add(this.mlMaxHumidData);
             this.panel1.Controls.Add(this.panel3);
@@ -522,6 +524,17 @@
             this.chTempHumid.TabIndex = 1;
             this.chTempHumid.Text = "graph Temp";
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = null;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(153, 78);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(8, 8);
+            this.materialTabSelector1.TabIndex = 8;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
             // SynthesisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,13 +570,16 @@
         public MaterialSkin.Controls.MaterialSingleLineTextField tfdtEnd;
         public MaterialSkin.Controls.MaterialSingleLineTextField tfdtStart;
         public MaterialSkin.Controls.MaterialSingleLineTextField tfUID;
+        public MaterialSkin.Controls.MaterialLabel mlMedTempData;
+        public MaterialSkin.Controls.MaterialLabel mlMaxTempData;
+        public MaterialSkin.Controls.MaterialLabel mlMinTempData;
+        public MaterialSkin.Controls.MaterialLabel mlMedHumidData;
+        public MaterialSkin.Controls.MaterialLabel mlMaxHumidData;
+        public MaterialSkin.Controls.MaterialLabel mlMinHumidData;
 
         private System.Windows.Forms.Panel pnlMain;
         private MaterialSkin.Controls.MaterialLabel mlTemp;
         private System.Windows.Forms.Panel pnlRecapTemp;
-        private MaterialSkin.Controls.MaterialLabel mlMinTempData;
-        private MaterialSkin.Controls.MaterialLabel mlMedTemp;
-        private MaterialSkin.Controls.MaterialLabel mlMaxTemp;
         private MaterialSkin.Controls.MaterialLabel mlMinTemp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -572,18 +588,16 @@
         private System.Windows.Forms.Label ldtStart;
         private System.Windows.Forms.Label lUID;
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialLabel mlMedHumidData;
-        private MaterialSkin.Controls.MaterialLabel mlMaxHumidData;
+        private MaterialSkin.Controls.MaterialLabel mlMedHumid;
+        private MaterialSkin.Controls.MaterialLabel mlMaxHumid;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialLabel mlHumid;
-        private MaterialSkin.Controls.MaterialLabel mlMinHumidData;
-        private MaterialSkin.Controls.MaterialLabel mlMedHumid;
-        private MaterialSkin.Controls.MaterialLabel mlMaxHumid;
         private MaterialSkin.Controls.MaterialLabel mlMinHumid;
-        private MaterialSkin.Controls.MaterialLabel mlMedTempData;
-        private MaterialSkin.Controls.MaterialLabel mlMaxTempData;
+        private MaterialSkin.Controls.MaterialLabel mlMedTemp;
+        private MaterialSkin.Controls.MaterialLabel mlMaxTemp;
         private System.Windows.Forms.Label lLabel;
         private System.Windows.Forms.Label lAmplitude;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
     }
 }

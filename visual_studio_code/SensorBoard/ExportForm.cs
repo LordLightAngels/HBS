@@ -84,6 +84,24 @@ namespace SensorBoard
             // Add a simple and wellknown phrase to the document in a flow layout manner
             doc.Add(new Paragraph("Phrase test à changer"));
 
+            Form form = this.ParentForm;
+            MainForm main = (MainForm)form;
+            SynthesisForm synthesis = main.getSynthesis();
+
+            doc.Add(new Paragraph("Nom du capteur : " + main.getSynthesis().tfLabel.Text));
+            doc.Add(new Paragraph("UID du capteur : " + main.getSynthesis().tfUID.Text));
+            doc.Add(new Paragraph("Date et heure du premier relevé : " + main.getSynthesis().tfdtStart.Text));
+            doc.Add(new Paragraph("Date et heure du dernier relevé : " + main.getSynthesis().tfdtEnd.Text));
+            doc.Add(new Paragraph("Nombre de relevés : " + main.getSynthesis().tfNbr.Text));
+            doc.Add(new Paragraph("Amplitude temporelle des relevés : " + main.getSynthesis().tfAmplitude.Text));
+            doc.Add(new Paragraph("Température Minimum / Moyenne / Maximum : " + main.getSynthesis().mlMinTempData.Text + " / " +
+                                                                             main.getSynthesis().mlMedTempData.Text + " / " +
+                                                                             main.getSynthesis().mlMaxTempData.Text));
+            doc.Add(new Paragraph("Humidité Minimum / Moyenne / Maximum : " + main.getSynthesis().mlMinHumidData.Text + " / " +
+                                                                             main.getSynthesis().mlMedHumidData.Text + " / " +
+                                                                             main.getSynthesis().mlMaxHumidData.Text));
+
+
             PdfPTable table = new PdfPTable(5);
 
             table.HorizontalAlignment = 0;
@@ -103,9 +121,6 @@ namespace SensorBoard
             table.AddCell("Humidité");
             
 
-            Form form = this.ParentForm;
-            MainForm main = (MainForm)form;
-            SynthesisForm synthesis = main.getSynthesis();
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
             String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
@@ -152,15 +167,6 @@ namespace SensorBoard
             //Stream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
             //iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer);
             //doc.Add(iImage);
-
-
-            doc.Add(new Phrase("Amplitude temporelle des relevés : " + main.getSynthesis().tfAmplitude.Text + Environment.NewLine));
-            doc.Add(new Phrase("Date et heure du dernier relevé : " + main.getSynthesis().tfdtEnd.Text + Environment.NewLine));
-            doc.Add(new Phrase("Date et heure du premier relevé : " + main.getSynthesis().tfdtStart.Text + Environment.NewLine));
-            doc.Add(new Phrase(main.getSynthesis().tfLabel.Text + Environment.NewLine));
-            doc.Add(new Phrase(main.getSynthesis().tfNbr.Text + Environment.NewLine));
-            doc.Add(new Phrase(main.getSynthesis().tfUID.Text + Environment.NewLine));
-
 
             // Close the document
             doc.Close();
