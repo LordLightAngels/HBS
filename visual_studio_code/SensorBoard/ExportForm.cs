@@ -84,7 +84,7 @@ namespace SensorBoard
             // Add a simple and wellknown phrase to the document in a flow layout manner
             doc.Add(new Paragraph("Phrase test à changer"));
 
-           PdfPTable table = new PdfPTable(5);
+            PdfPTable table = new PdfPTable(5);
 
             table.HorizontalAlignment = 0;
             //leave a gap before and after the table
@@ -101,11 +101,11 @@ namespace SensorBoard
             table.AddCell("Date-heure du relevé");
             table.AddCell("Température");
             table.AddCell("Humidité");
+            
 
             Form form = this.ParentForm;
             MainForm main = (MainForm)form;
             SynthesisForm synthesis = main.getSynthesis();
-            Byte[] chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
             String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
@@ -148,7 +148,18 @@ namespace SensorBoard
             }
 
             doc.Add(table);
-            
+
+            //Stream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
+            //iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer);
+            //doc.Add(iImage);
+
+
+            doc.Add(new Phrase("Amplitude temporelle des relevés : " + main.getSynthesis().tfAmplitude.Text + Environment.NewLine));
+            doc.Add(new Phrase("Date et heure du dernier relevé : " + main.getSynthesis().tfdtEnd.Text + Environment.NewLine));
+            doc.Add(new Phrase("Date et heure du premier relevé : " + main.getSynthesis().tfdtStart.Text + Environment.NewLine));
+            doc.Add(new Phrase(main.getSynthesis().tfLabel.Text + Environment.NewLine));
+            doc.Add(new Phrase(main.getSynthesis().tfNbr.Text + Environment.NewLine));
+            doc.Add(new Phrase(main.getSynthesis().tfUID.Text + Environment.NewLine));
 
 
             // Close the document
@@ -157,7 +168,7 @@ namespace SensorBoard
             writer.Close();
             // Always close open filehandles explicity
             fs.Close();
-
+            
             try
             {
                 if (mcbOuvrir.Checked)

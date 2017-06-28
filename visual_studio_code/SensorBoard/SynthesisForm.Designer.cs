@@ -550,8 +550,15 @@
 
         #endregion
 
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfAmplitude;
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfLabel;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chTempHumid;
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfNbr;
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfdtEnd;
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfdtStart;
+        public MaterialSkin.Controls.MaterialSingleLineTextField tfUID;
+
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chTempHumid;
         private MaterialSkin.Controls.MaterialLabel mlTemp;
         private System.Windows.Forms.Panel pnlRecapTemp;
         private MaterialSkin.Controls.MaterialLabel mlMinTempData;
@@ -560,10 +567,6 @@
         private MaterialSkin.Controls.MaterialLabel mlMinTemp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfNbr;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfdtEnd;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfdtStart;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfUID;
         private System.Windows.Forms.Label lNbr;
         private System.Windows.Forms.Label ldtEnd;
         private System.Windows.Forms.Label ldtStart;
@@ -580,9 +583,7 @@
         private MaterialSkin.Controls.MaterialLabel mlMinHumid;
         private MaterialSkin.Controls.MaterialLabel mlMedTempData;
         private MaterialSkin.Controls.MaterialLabel mlMaxTempData;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfLabel;
         private System.Windows.Forms.Label lLabel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField tfAmplitude;
         private System.Windows.Forms.Label lAmplitude;
     }
 }

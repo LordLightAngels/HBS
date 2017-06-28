@@ -14,12 +14,13 @@ namespace SensorBoard
 {
     public partial class SynthesisForm : Form
     {
-        public Stream getCHTempHumidImageBuffer()
-        {
-            Stream stream = null;
-            this.chTempHumid.SaveImage(stream, ChartImageFormat.Png);
-            return stream;
-        }
+        //public Image getCHTempHumidImageBuffer()
+        //{
+        //    MemoryStream stream = new MemoryStream();
+        //    System.Drawing.Image sdi = System.Drawing.Image.FromStream(stream);
+        //    Image res = chTempHumid.to (sdi, ChartImageFormat.Png);
+        //    return res;
+        //}
         
         public SynthesisForm()
         {
