@@ -82,7 +82,9 @@ namespace SensorBoard
             // Open the document to enable you to write to the document
             doc.Open();
             // Add a simple and wellknown phrase to the document in a flow layout manner
-            doc.Add(new Paragraph("Phrase test à changer"));
+            doc.Add(new Paragraph("Rapport de données relatives à un ou plusieurs capteur HBS"));
+            doc.Add(new Paragraph("" + Environment.NewLine));
+
 
             Form form = this.ParentForm;
             MainForm main = (MainForm)form;
@@ -222,8 +224,21 @@ namespace SensorBoard
 
                 mail.From = new MailAddress("cobralerte@gmail.com");
                 mail.To.Add(destAddress);
-                mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
+
+                Form form = this.ParentForm;
+                MainForm main = (MainForm)form;
+                String idSensor = main.getSensor();
+
+                if (mrbPDF.Checked)
+                {
+                    mail.Subject = "Rapport PDF relatif au capteur '" + idSensor + "'";
+                    mail.Body = "Ci-joint les relevés du capteur '" + idSensor + "' au format PDF";
+                }
+                else
+                {
+                    mail.Subject = "Données CSV (compatible Excel) relatif au(x) capteur(s) sélectionné(s)";
+                    mail.Body = "Ci-joint les relevés relatif au(x) capteur(s) sélectionné(s) au format CSV, compatible avec le logiciel Excel ou LibreOffice Calc.";
+                }
                 mail.Attachments.Add(new Attachment(filePath));
 
                 SmtpServer.Port = 587;
@@ -241,10 +256,16 @@ namespace SensorBoard
 
         private void mrbExport_Click(object sender, EventArgs e)
         {
+            Form form = this.ParentForm;
+            MainForm main = (MainForm)form;
 
             if (!mrbExcel.Checked && !mrbPDF.Checked)
             {
                 MessageBox.Show("Veuillez saisir un format d'export");
+            }
+            else if (mrbPDF.Checked && main.getSensor() == "")
+            {
+                MessageBox.Show("Afin de générer le PDF, veuillez sélectionner un capteur");
             }
             else
             {
