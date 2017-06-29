@@ -52,7 +52,7 @@
 | Estimation  | ___3___                                                  |
 | En tant que | PO                                                       |
 | Je veux     |  que les dev fassent une maquette de l'application       |
-| Afin de     | montrer au client le rendu visuel attendu			     |
+| Afin de     | montrer au client le rendu visuel attendu			           |
 
 ### DoD :
 
@@ -98,7 +98,7 @@
 
 | ID          | 1_1                                                      |
 |:----------- |----------------------------------------------------------|
-| Titre       | **Attribuer l'id de capteur à l'import**      			 |
+| Titre       | **Attribuer l'id de capteur à l'import**      			     |
 | Priorite    | ___40___                                                 |
 | Estimation  | ___2___                                                  |
 | En tant que | Utilisateur                                              |
@@ -122,13 +122,13 @@
 | Priorite    | ___100___                                                                 |
 | Estimation  | ___5___                                                                   |
 | En tant que | Utilisateur                                                               |
-| Je veux     | cliquer sur "Exporter le relevé vers la BDD" et choisir date ID du relevé |
+| Je veux     | cliquer sur "Importer" et choisir date ID du relevé                       |
 | Afin de     | pouvoir consulter les enregistrements du relevé en BDD                    |
 
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export de données 
-- [x] bouton "Export vers la BDD" permettant l'export vers la BDD des données importées dans l'appli 
+- [x] bouton "Import" permettant l'export vers la BDD des données importées dans l'appli 
 - [x] afficher un message de confirmation que l'export des données vers la BDD a bien réussi
 
 2 - Disposer des champs suivants dans la BDD :
@@ -146,7 +146,7 @@
 
 | ID          | 2_0                                                                           |
 |:----------- |-------------------------------------------------------------------------------|
-| Titre       | **Afficher des données de synthèse**          			                      |
+| Titre       | **Afficher des données de synthèse**          			                          |
 | Priorite    | ___40___                                                                      |
 | Estimation  | ___3___                                                                       |
 | En tant que | Utilisateur                                                                   |
