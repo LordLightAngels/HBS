@@ -17,8 +17,8 @@ namespace SensorBoard
             Sensor s = new Sensor();
             DateTime start = s.main.GetStartDate();
             DateTime end = s.main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String startString = start.ToString("yyyy-MM-dd HH:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd HH:mm:ss");
             String idSensor = s.main.getSensor();
 
             String query;
