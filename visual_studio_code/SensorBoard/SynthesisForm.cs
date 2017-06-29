@@ -32,8 +32,8 @@ namespace SensorBoard
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String startString = start.ToString("yyyy-MM-dd HH:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd HH:mm:ss");
             String idSensor = main.getSensor();
             String labelSensor;
             String query;
@@ -135,8 +135,8 @@ namespace SensorBoard
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String startString = start.ToString("yyyy-MM-dd HH:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd HH:mm:ss");
             String idSensor = main.getSensor();
             String query;
 
