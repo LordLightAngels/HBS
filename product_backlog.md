@@ -314,10 +314,10 @@
 | ID          | 6_0                                                                                                         |
 |:----------- |-------------------------------------------------------------------------------------------------------------|
 | Titre       | **Afficher un rapport au format PDF**                                                                       |
-| Priorite    | ___13___                                                                                                   |
-| Estimation  | ___13___                                                                                                     |
+| Priorite    | ___13___                                                                                                    |
+| Estimation  | ___13___                                                                                                    |
 | En tant que | Utilisateur                                                                                                 |
-| Je veux     | cliquer sur "Afficher au format PDF" et choisir ID & date relevé                                            |
+| Je veux     | cliquer sur "Rapport" et choisir ID & date relevé                                                           |
 | Afin de     | afficher un rapport pdf comprenant les données de synthèse, le tableau et le graphique du relevé selectionné|
 
 ### DoD :
