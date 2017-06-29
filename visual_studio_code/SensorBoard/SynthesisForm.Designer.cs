@@ -67,7 +67,6 @@
             this.mlMaxTemp = new MaterialSkin.Controls.MaterialLabel();
             this.mlMinTemp = new MaterialSkin.Controls.MaterialLabel();
             this.chTempHumid = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,31 +95,34 @@
             this.pnlMain.Controls.Add(this.pnlRecapTemp);
             this.pnlMain.Controls.Add(this.chTempHumid);
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(656, 537);
+            this.pnlMain.Size = new System.Drawing.Size(875, 661);
             this.pnlMain.TabIndex = 0;
             // 
             // tfAmplitude
             // 
             this.tfAmplitude.Depth = 0;
             this.tfAmplitude.Hint = "";
-            this.tfAmplitude.Location = new System.Drawing.Point(318, 70);
+            this.tfAmplitude.Location = new System.Drawing.Point(424, 86);
+            this.tfAmplitude.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfAmplitude.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfAmplitude.Name = "tfAmplitude";
             this.tfAmplitude.PasswordChar = '\0';
             this.tfAmplitude.SelectedText = "";
             this.tfAmplitude.SelectionLength = 0;
             this.tfAmplitude.SelectionStart = 0;
-            this.tfAmplitude.Size = new System.Drawing.Size(170, 23);
+            this.tfAmplitude.Size = new System.Drawing.Size(227, 28);
             this.tfAmplitude.TabIndex = 16;
             this.tfAmplitude.UseSystemPasswordChar = false;
             // 
             // lAmplitude
             // 
             this.lAmplitude.AutoSize = true;
-            this.lAmplitude.Location = new System.Drawing.Point(139, 74);
+            this.lAmplitude.Location = new System.Drawing.Point(185, 91);
+            this.lAmplitude.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lAmplitude.Name = "lAmplitude";
-            this.lAmplitude.Size = new System.Drawing.Size(161, 13);
+            this.lAmplitude.Size = new System.Drawing.Size(217, 17);
             this.lAmplitude.TabIndex = 15;
             this.lAmplitude.Text = "Amplitude temporelle des relevés";
             // 
@@ -128,14 +130,15 @@
             // 
             this.tfLabel.Depth = 0;
             this.tfLabel.Hint = "";
-            this.tfLabel.Location = new System.Drawing.Point(59, 9);
+            this.tfLabel.Location = new System.Drawing.Point(79, 11);
+            this.tfLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfLabel.Name = "tfLabel";
             this.tfLabel.PasswordChar = '\0';
             this.tfLabel.SelectedText = "";
             this.tfLabel.SelectionLength = 0;
             this.tfLabel.SelectionStart = 0;
-            this.tfLabel.Size = new System.Drawing.Size(129, 23);
+            this.tfLabel.Size = new System.Drawing.Size(172, 28);
             this.tfLabel.TabIndex = 14;
             this.tfLabel.Text = "materialSingleLineTextField1";
             this.tfLabel.UseSystemPasswordChar = false;
@@ -143,16 +146,16 @@
             // lLabel
             // 
             this.lLabel.AutoSize = true;
-            this.lLabel.Location = new System.Drawing.Point(16, 13);
+            this.lLabel.Location = new System.Drawing.Point(21, 16);
+            this.lLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lLabel.Name = "lLabel";
-            this.lLabel.Size = new System.Drawing.Size(37, 13);
+            this.lLabel.Size = new System.Drawing.Size(49, 17);
             this.lLabel.TabIndex = 13;
             this.lLabel.Text = "Libelle";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.materialTabSelector1);
             this.panel1.Controls.Add(this.mlMedHumidData);
             this.panel1.Controls.Add(this.mlMaxHumidData);
             this.panel1.Controls.Add(this.panel3);
@@ -160,9 +163,10 @@
             this.panel1.Controls.Add(this.mlMedHumid);
             this.panel1.Controls.Add(this.mlMaxHumid);
             this.panel1.Controls.Add(this.mlMinHumid);
-            this.panel1.Location = new System.Drawing.Point(349, 108);
+            this.panel1.Location = new System.Drawing.Point(465, 133);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 97);
+            this.panel1.Size = new System.Drawing.Size(259, 119);
             this.panel1.TabIndex = 6;
             // 
             // mlMedHumidData
@@ -171,10 +175,11 @@
             this.mlMedHumidData.Depth = 0;
             this.mlMedHumidData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMedHumidData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMedHumidData.Location = new System.Drawing.Point(133, 62);
+            this.mlMedHumidData.Location = new System.Drawing.Point(177, 76);
+            this.mlMedHumidData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMedHumidData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMedHumidData.Name = "mlMedHumidData";
-            this.mlMedHumidData.Size = new System.Drawing.Size(0, 19);
+            this.mlMedHumidData.Size = new System.Drawing.Size(0, 24);
             this.mlMedHumidData.TabIndex = 7;
             // 
             // mlMaxHumidData
@@ -183,10 +188,11 @@
             this.mlMaxHumidData.Depth = 0;
             this.mlMaxHumidData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMaxHumidData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMaxHumidData.Location = new System.Drawing.Point(78, 62);
+            this.mlMaxHumidData.Location = new System.Drawing.Point(104, 76);
+            this.mlMaxHumidData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMaxHumidData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMaxHumidData.Name = "mlMaxHumidData";
-            this.mlMaxHumidData.Size = new System.Drawing.Size(0, 19);
+            this.mlMaxHumidData.Size = new System.Drawing.Size(0, 24);
             this.mlMaxHumidData.TabIndex = 6;
             // 
             // panel3
@@ -195,16 +201,18 @@
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.mlHumid);
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(194, 34);
+            this.panel3.Size = new System.Drawing.Size(259, 42);
             this.panel3.TabIndex = 5;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(84, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -215,10 +223,11 @@
             this.mlHumid.Depth = 0;
             this.mlHumid.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlHumid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlHumid.Location = new System.Drawing.Point(69, 6);
+            this.mlHumid.Location = new System.Drawing.Point(92, 7);
+            this.mlHumid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlHumid.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlHumid.Name = "mlHumid";
-            this.mlHumid.Size = new System.Drawing.Size(70, 19);
+            this.mlHumid.Size = new System.Drawing.Size(88, 24);
             this.mlHumid.TabIndex = 0;
             this.mlHumid.Text = "Humidite";
             // 
@@ -228,10 +237,11 @@
             this.mlMinHumidData.Depth = 0;
             this.mlMinHumidData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMinHumidData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMinHumidData.Location = new System.Drawing.Point(15, 62);
+            this.mlMinHumidData.Location = new System.Drawing.Point(20, 76);
+            this.mlMinHumidData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMinHumidData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMinHumidData.Name = "mlMinHumidData";
-            this.mlMinHumidData.Size = new System.Drawing.Size(0, 19);
+            this.mlMinHumidData.Size = new System.Drawing.Size(0, 24);
             this.mlMinHumidData.TabIndex = 4;
             // 
             // mlMedHumid
@@ -240,10 +250,11 @@
             this.mlMedHumid.Depth = 0;
             this.mlMedHumid.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMedHumid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMedHumid.Location = new System.Drawing.Point(133, 37);
+            this.mlMedHumid.Location = new System.Drawing.Point(177, 46);
+            this.mlMedHumid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMedHumid.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMedHumid.Name = "mlMedHumid";
-            this.mlMedHumid.Size = new System.Drawing.Size(38, 19);
+            this.mlMedHumid.Size = new System.Drawing.Size(47, 24);
             this.mlMedHumid.TabIndex = 3;
             this.mlMedHumid.Text = "Moy";
             // 
@@ -253,10 +264,11 @@
             this.mlMaxHumid.Depth = 0;
             this.mlMaxHumid.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMaxHumid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMaxHumid.Location = new System.Drawing.Point(78, 37);
+            this.mlMaxHumid.Location = new System.Drawing.Point(104, 46);
+            this.mlMaxHumid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMaxHumid.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMaxHumid.Name = "mlMaxHumid";
-            this.mlMaxHumid.Size = new System.Drawing.Size(37, 19);
+            this.mlMaxHumid.Size = new System.Drawing.Size(46, 24);
             this.mlMaxHumid.TabIndex = 2;
             this.mlMaxHumid.Text = "Max";
             // 
@@ -266,10 +278,11 @@
             this.mlMinHumid.Depth = 0;
             this.mlMinHumid.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMinHumid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMinHumid.Location = new System.Drawing.Point(15, 37);
+            this.mlMinHumid.Location = new System.Drawing.Point(20, 46);
+            this.mlMinHumid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMinHumid.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMinHumid.Name = "mlMinHumid";
-            this.mlMinHumid.Size = new System.Drawing.Size(34, 19);
+            this.mlMinHumid.Size = new System.Drawing.Size(42, 24);
             this.mlMinHumid.TabIndex = 1;
             this.mlMinHumid.Text = "Min";
             // 
@@ -277,14 +290,15 @@
             // 
             this.tfNbr.Depth = 0;
             this.tfNbr.Hint = "";
-            this.tfNbr.Location = new System.Drawing.Point(565, 8);
+            this.tfNbr.Location = new System.Drawing.Point(753, 10);
+            this.tfNbr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfNbr.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfNbr.Name = "tfNbr";
             this.tfNbr.PasswordChar = '\0';
             this.tfNbr.SelectedText = "";
             this.tfNbr.SelectionLength = 0;
             this.tfNbr.SelectionStart = 0;
-            this.tfNbr.Size = new System.Drawing.Size(50, 23);
+            this.tfNbr.Size = new System.Drawing.Size(67, 28);
             this.tfNbr.TabIndex = 12;
             this.tfNbr.Text = "materialSingleLineTextField4";
             this.tfNbr.UseSystemPasswordChar = false;
@@ -293,14 +307,15 @@
             // 
             this.tfdtEnd.Depth = 0;
             this.tfdtEnd.Hint = "";
-            this.tfdtEnd.Location = new System.Drawing.Point(459, 38);
+            this.tfdtEnd.Location = new System.Drawing.Point(612, 47);
+            this.tfdtEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfdtEnd.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtEnd.Name = "tfdtEnd";
             this.tfdtEnd.PasswordChar = '\0';
             this.tfdtEnd.SelectedText = "";
             this.tfdtEnd.SelectionLength = 0;
             this.tfdtEnd.SelectionStart = 0;
-            this.tfdtEnd.Size = new System.Drawing.Size(194, 23);
+            this.tfdtEnd.Size = new System.Drawing.Size(259, 28);
             this.tfdtEnd.TabIndex = 11;
             this.tfdtEnd.Text = "materialSingleLineTextField3";
             this.tfdtEnd.UseSystemPasswordChar = false;
@@ -309,14 +324,15 @@
             // 
             this.tfdtStart.Depth = 0;
             this.tfdtStart.Hint = "";
-            this.tfdtStart.Location = new System.Drawing.Point(124, 38);
+            this.tfdtStart.Location = new System.Drawing.Point(165, 47);
+            this.tfdtStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfdtStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfdtStart.Name = "tfdtStart";
             this.tfdtStart.PasswordChar = '\0';
             this.tfdtStart.SelectedText = "";
             this.tfdtStart.SelectionLength = 0;
             this.tfdtStart.SelectionStart = 0;
-            this.tfdtStart.Size = new System.Drawing.Size(194, 23);
+            this.tfdtStart.Size = new System.Drawing.Size(259, 28);
             this.tfdtStart.TabIndex = 10;
             this.tfdtStart.Text = "materialSingleLineTextField2";
             this.tfdtStart.UseSystemPasswordChar = false;
@@ -325,14 +341,15 @@
             // 
             this.tfUID.Depth = 0;
             this.tfUID.Hint = "";
-            this.tfUID.Location = new System.Drawing.Point(294, 9);
+            this.tfUID.Location = new System.Drawing.Point(392, 11);
+            this.tfUID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tfUID.MouseState = MaterialSkin.MouseState.HOVER;
             this.tfUID.Name = "tfUID";
             this.tfUID.PasswordChar = '\0';
             this.tfUID.SelectedText = "";
             this.tfUID.SelectionLength = 0;
             this.tfUID.SelectionStart = 0;
-            this.tfUID.Size = new System.Drawing.Size(129, 23);
+            this.tfUID.Size = new System.Drawing.Size(172, 28);
             this.tfUID.TabIndex = 9;
             this.tfUID.Text = "materialSingleLineTextField1";
             this.tfUID.UseSystemPasswordChar = false;
@@ -340,36 +357,40 @@
             // lNbr
             // 
             this.lNbr.AutoSize = true;
-            this.lNbr.Location = new System.Drawing.Point(480, 13);
+            this.lNbr.Location = new System.Drawing.Point(640, 16);
+            this.lNbr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lNbr.Name = "lNbr";
-            this.lNbr.Size = new System.Drawing.Size(63, 13);
+            this.lNbr.Size = new System.Drawing.Size(81, 17);
             this.lNbr.TabIndex = 8;
             this.lNbr.Text = "Nb Relevés";
             // 
             // ldtEnd
             // 
             this.ldtEnd.AutoSize = true;
-            this.ldtEnd.Location = new System.Drawing.Point(331, 41);
+            this.ldtEnd.Location = new System.Drawing.Point(441, 50);
+            this.ldtEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ldtEnd.Name = "ldtEnd";
-            this.ldtEnd.Size = new System.Drawing.Size(129, 13);
+            this.ldtEnd.Size = new System.Drawing.Size(174, 17);
             this.ldtEnd.TabIndex = 7;
             this.ldtEnd.Text = "Date-Heure dernier relevé";
             // 
             // ldtStart
             // 
             this.ldtStart.AutoSize = true;
-            this.ldtStart.Location = new System.Drawing.Point(9, 41);
+            this.ldtStart.Location = new System.Drawing.Point(12, 50);
+            this.ldtStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ldtStart.Name = "ldtStart";
-            this.ldtStart.Size = new System.Drawing.Size(112, 13);
+            this.ldtStart.Size = new System.Drawing.Size(150, 17);
             this.ldtStart.TabIndex = 6;
             this.ldtStart.Text = "Date-Heure 1er relevé";
             // 
             // lUID
             // 
             this.lUID.AutoSize = true;
-            this.lUID.Location = new System.Drawing.Point(251, 13);
+            this.lUID.Location = new System.Drawing.Point(335, 16);
+            this.lUID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lUID.Name = "lUID";
-            this.lUID.Size = new System.Drawing.Size(26, 13);
+            this.lUID.Size = new System.Drawing.Size(31, 17);
             this.lUID.TabIndex = 5;
             this.lUID.Text = "UID";
             // 
@@ -383,9 +404,10 @@
             this.pnlRecapTemp.Controls.Add(this.mlMedTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMaxTemp);
             this.pnlRecapTemp.Controls.Add(this.mlMinTemp);
-            this.pnlRecapTemp.Location = new System.Drawing.Point(83, 108);
+            this.pnlRecapTemp.Location = new System.Drawing.Point(111, 133);
+            this.pnlRecapTemp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRecapTemp.Name = "pnlRecapTemp";
-            this.pnlRecapTemp.Size = new System.Drawing.Size(194, 97);
+            this.pnlRecapTemp.Size = new System.Drawing.Size(259, 119);
             this.pnlRecapTemp.TabIndex = 2;
             // 
             // mlMedTempData
@@ -394,10 +416,11 @@
             this.mlMedTempData.Depth = 0;
             this.mlMedTempData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMedTempData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMedTempData.Location = new System.Drawing.Point(133, 62);
+            this.mlMedTempData.Location = new System.Drawing.Point(177, 76);
+            this.mlMedTempData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMedTempData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMedTempData.Name = "mlMedTempData";
-            this.mlMedTempData.Size = new System.Drawing.Size(0, 19);
+            this.mlMedTempData.Size = new System.Drawing.Size(0, 24);
             this.mlMedTempData.TabIndex = 7;
             // 
             // mlMaxTempData
@@ -406,10 +429,11 @@
             this.mlMaxTempData.Depth = 0;
             this.mlMaxTempData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMaxTempData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMaxTempData.Location = new System.Drawing.Point(78, 62);
+            this.mlMaxTempData.Location = new System.Drawing.Point(104, 76);
+            this.mlMaxTempData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMaxTempData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMaxTempData.Name = "mlMaxTempData";
-            this.mlMaxTempData.Size = new System.Drawing.Size(0, 19);
+            this.mlMaxTempData.Size = new System.Drawing.Size(0, 24);
             this.mlMaxTempData.TabIndex = 6;
             // 
             // panel2
@@ -418,16 +442,18 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.mlTemp);
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(194, 34);
+            this.panel2.Size = new System.Drawing.Size(259, 42);
             this.panel2.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -438,10 +464,11 @@
             this.mlTemp.Depth = 0;
             this.mlTemp.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlTemp.Location = new System.Drawing.Point(69, 6);
+            this.mlTemp.Location = new System.Drawing.Point(92, 7);
+            this.mlTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlTemp.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlTemp.Name = "mlTemp";
-            this.mlTemp.Size = new System.Drawing.Size(102, 19);
+            this.mlTemp.Size = new System.Drawing.Size(127, 24);
             this.mlTemp.TabIndex = 0;
             this.mlTemp.Text = "Temperatures";
             // 
@@ -451,10 +478,11 @@
             this.mlMinTempData.Depth = 0;
             this.mlMinTempData.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMinTempData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMinTempData.Location = new System.Drawing.Point(15, 62);
+            this.mlMinTempData.Location = new System.Drawing.Point(20, 76);
+            this.mlMinTempData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMinTempData.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMinTempData.Name = "mlMinTempData";
-            this.mlMinTempData.Size = new System.Drawing.Size(0, 19);
+            this.mlMinTempData.Size = new System.Drawing.Size(0, 24);
             this.mlMinTempData.TabIndex = 4;
             // 
             // mlMedTemp
@@ -463,10 +491,11 @@
             this.mlMedTemp.Depth = 0;
             this.mlMedTemp.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMedTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMedTemp.Location = new System.Drawing.Point(133, 37);
+            this.mlMedTemp.Location = new System.Drawing.Point(177, 46);
+            this.mlMedTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMedTemp.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMedTemp.Name = "mlMedTemp";
-            this.mlMedTemp.Size = new System.Drawing.Size(38, 19);
+            this.mlMedTemp.Size = new System.Drawing.Size(47, 24);
             this.mlMedTemp.TabIndex = 3;
             this.mlMedTemp.Text = "Moy";
             // 
@@ -476,10 +505,11 @@
             this.mlMaxTemp.Depth = 0;
             this.mlMaxTemp.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMaxTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMaxTemp.Location = new System.Drawing.Point(78, 37);
+            this.mlMaxTemp.Location = new System.Drawing.Point(104, 46);
+            this.mlMaxTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMaxTemp.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMaxTemp.Name = "mlMaxTemp";
-            this.mlMaxTemp.Size = new System.Drawing.Size(37, 19);
+            this.mlMaxTemp.Size = new System.Drawing.Size(46, 24);
             this.mlMaxTemp.TabIndex = 2;
             this.mlMaxTemp.Text = "Max";
             // 
@@ -489,10 +519,11 @@
             this.mlMinTemp.Depth = 0;
             this.mlMinTemp.Font = new System.Drawing.Font("Roboto", 11F);
             this.mlMinTemp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mlMinTemp.Location = new System.Drawing.Point(15, 37);
+            this.mlMinTemp.Location = new System.Drawing.Point(20, 46);
+            this.mlMinTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlMinTemp.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlMinTemp.Name = "mlMinTemp";
-            this.mlMinTemp.Size = new System.Drawing.Size(34, 19);
+            this.mlMinTemp.Size = new System.Drawing.Size(42, 24);
             this.mlMinTemp.TabIndex = 1;
             this.mlMinTemp.Text = "Min";
             // 
@@ -506,7 +537,8 @@
             legend1.IsDockedInsideChartArea = false;
             legend1.Name = "Legend1";
             this.chTempHumid.Legends.Add(legend1);
-            this.chTempHumid.Location = new System.Drawing.Point(12, 211);
+            this.chTempHumid.Location = new System.Drawing.Point(16, 260);
+            this.chTempHumid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chTempHumid.Name = "chTempHumid";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
@@ -520,28 +552,18 @@
             series2.Name = "Humidité";
             this.chTempHumid.Series.Add(series1);
             this.chTempHumid.Series.Add(series2);
-            this.chTempHumid.Size = new System.Drawing.Size(617, 323);
+            this.chTempHumid.Size = new System.Drawing.Size(823, 398);
             this.chTempHumid.TabIndex = 1;
             this.chTempHumid.Text = "graph Temp";
             // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = null;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(153, 78);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(8, 8);
-            this.materialTabSelector1.TabIndex = 8;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
             // SynthesisForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 537);
+            this.ClientSize = new System.Drawing.Size(875, 661);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SynthesisForm";
             this.Text = "SynthesisForm";
             this.pnlMain.ResumeLayout(false);
@@ -598,6 +620,5 @@
         private MaterialSkin.Controls.MaterialLabel mlMaxTemp;
         private System.Windows.Forms.Label lLabel;
         private System.Windows.Forms.Label lAmplitude;
-        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
     }
 }

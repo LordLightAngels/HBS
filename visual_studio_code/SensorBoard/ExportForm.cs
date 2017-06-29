@@ -164,9 +164,11 @@ namespace SensorBoard
 
             doc.Add(table);
 
-            //Stream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
-            //iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer);
-            //doc.Add(iImage);
+            MemoryStream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
+            iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer.ToArray());
+            iImage.ScaleToFit(doc.PageSize);
+            iImage.SetAbsolutePosition(0, 0);
+            doc.Add(iImage);
 
             // Close the document
             doc.Close();
