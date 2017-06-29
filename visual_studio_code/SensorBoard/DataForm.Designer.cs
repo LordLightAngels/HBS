@@ -52,9 +52,10 @@
             this.colUID,
             this.colDelete});
             this.dgBase.Location = new System.Drawing.Point(0, 37);
+            this.dgBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgBase.Name = "dgBase";
             this.dgBase.ReadOnly = true;
-            this.dgBase.Size = new System.Drawing.Size(566, 299);
+            this.dgBase.Size = new System.Drawing.Size(875, 661);
             this.dgBase.TabIndex = 0;
             this.dgBase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBase_CellContentClick);
             this.dgBase.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgBase_UserDeletingRow);
@@ -63,44 +64,51 @@
             // lblDatas
             // 
             this.lblDatas.AutoSize = true;
-            this.lblDatas.Location = new System.Drawing.Point(13, 13);
+            this.lblDatas.Location = new System.Drawing.Point(17, 16);
+            this.lblDatas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDatas.Name = "lblDatas";
-            this.lblDatas.Size = new System.Drawing.Size(101, 13);
+            this.lblDatas.Size = new System.Drawing.Size(133, 17);
             this.lblDatas.TabIndex = 1;
             this.lblDatas.Text = "Donnees Existantes";
             // 
             // colID
             // 
+            this.colID.FillWeight = 31.7416F;
             this.colID.HeaderText = "Nom Capteur";
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
             // 
             // ColDate
             // 
+            this.ColDate.FillWeight = 45F;
             this.ColDate.HeaderText = "Date et heure";
             this.ColDate.Name = "ColDate";
             this.ColDate.ReadOnly = true;
             // 
             // colTemp
             // 
+            this.colTemp.FillWeight = 31.7416F;
             this.colTemp.HeaderText = "Temperature";
             this.colTemp.Name = "colTemp";
             this.colTemp.ReadOnly = true;
             // 
             // colHumid
             // 
+            this.colHumid.FillWeight = 31.7416F;
             this.colHumid.HeaderText = "Humidité";
             this.colHumid.Name = "colHumid";
             this.colHumid.ReadOnly = true;
             // 
             // colUID
             // 
+            this.colUID.FillWeight = 31.7416F;
             this.colUID.HeaderText = "UID";
             this.colUID.Name = "colUID";
             this.colUID.ReadOnly = true;
             // 
             // colDelete
             // 
+            this.colDelete.FillWeight = 31.7416F;
             this.colDelete.HeaderText = "Suppression";
             this.colDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.colDelete.Name = "colDelete";
@@ -108,12 +116,13 @@
             // 
             // DataForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 336);
+            this.ClientSize = new System.Drawing.Size(875, 661);
             this.Controls.Add(this.lblDatas);
             this.Controls.Add(this.dgBase);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DataForm";
             this.Text = "Data";
             ((System.ComponentModel.ISupportInitialize)(this.dgBase)).EndInit();
