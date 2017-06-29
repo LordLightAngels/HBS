@@ -67,7 +67,7 @@
 - [x] Export des données
 - [x] Génération de rapport
 - [ ] Configuration
-- [ ] Gestion des capteurs
+- [x] Gestion des capteurs
 
 ----------
 
@@ -160,10 +160,10 @@
 - [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-- [ ] uid du capteur
-- [ ] nombre de données importées totales
-- [ ] date - heure du 1er enregistrement
-- [ ] date - heure du dernier enregistrement
+- [x] uid du capteur
+- [x] nombre de données importées totales
+- [x] date - heure du 1er enregistrement
+- [x] date - heure du dernier enregistrement
 
 ----------
 
@@ -187,14 +187,14 @@
 - [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Afficher les données suivantes :
-- [ ] ID du capteur
-- [ ] nombre de données importées totales
-- [ ] date - heure du 1er enregistrement
-- [ ] date - heure du dernier enregistrement
-- [ ] nombre d'enregistrements
-- [ ] amplitude de temps de relevé en heure et minutes
-- [ ] température max/min/moyenne
-- [ ] hygrométrie max/min/moyenne
+- [x] ID du capteur
+- [x] nombre de données importées totales
+- [x] date - heure du 1er enregistrement
+- [x] date - heure du dernier enregistrement
+- [x] nombre d'enregistrements
+- [x] amplitude de temps de relevé en heure et minutes
+- [x] température max/min/moyenne
+- [x] hygrométrie max/min/moyenne
 
 ----------
 
@@ -277,10 +277,10 @@
 - [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir l'affichage d'un graphique avec :
-- [ ] axe des abscisses = temps
-- [ ] axe des ordonnées = gradations
-- [ ] courbe évolution températures relevées
-- [ ] courbe évolutions hygrométries relevées
+- [x] axe des abscisses = temps
+- [x] axe des ordonnées = gradations
+- [x] courbe évolution températures relevées
+- [x] courbe évolutions hygrométries relevées
 
 ----------
 
@@ -323,12 +323,12 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'export :
-- [ ] bouton "Afficher au format PDF"
-- [ ] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
+- [x] bouton "Afficher au format PDF"
+- [x] avoir la possibilité de sélectionner le numéro de capteur et la date du relevé à afficher
 
 2 - Obtenir un rapport PDF affichant pour le relevé :
-- [ ] les données de synthèse
-- [ ] le tableau
+- [x] les données de synthèse
+- [x] le tableau
 - [ ] le graphique
 
 ----------
@@ -373,7 +373,7 @@
 1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
 - [ ] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
 
-2 - Dans la fenêtre de création de mail générée, avoir :
+2  - Dans la fenêtre de création de mail générée, avoir :
 - [ ] champ de saisie du destinataire
 - [ ] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
 - [ ] corps du message pré-rempli avec des informations pertinentes
