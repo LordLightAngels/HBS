@@ -14,14 +14,13 @@ namespace SensorBoard
 {
     public partial class SynthesisForm : Form
     {
-        //public Image getCHTempHumidImageBuffer()
-        //{
-        //    MemoryStream stream = new MemoryStream();
-        //    System.Drawing.Image sdi = System.Drawing.Image.FromStream(stream);
-        //    Image res = chTempHumid.to (sdi, ChartImageFormat.Png);
-        //    return res;
-        //}
-        
+        public MemoryStream getCHTempHumidImageBuffer()
+        {
+            MemoryStream stream = new MemoryStream();
+            chTempHumid.SaveImage(stream, ChartImageFormat.Jpeg);
+            return stream;
+        }
+
         public SynthesisForm()
         {
             InitializeComponent();
@@ -33,8 +32,8 @@ namespace SensorBoard
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String startString = start.ToString("yyyy-MM-dd HH:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd HH:mm:ss");
             String idSensor = main.getSensor();
             String labelSensor;
             String query;
@@ -117,10 +116,10 @@ namespace SensorBoard
                 tfAmplitude.Text = amplitude;
                 mlMinTempData.Text = tempMin + "°C";
                 mlMaxTempData.Text = tempMax + "°C";
-                mlMedTempData.Text = Math.Round(tempMed,1) + "°C";
+                mlMedTempData.Text = Math.Round(tempMed, 1) + "°C";
                 mlMinHumidData.Text = humidMin + "%";
                 mlMaxHumidData.Text = humidMax + "%";
-                mlMedHumidData.Text = Math.Round(humidMed,1) + "%";
+                mlMedHumidData.Text = Math.Round(humidMed, 1) + "%";
 
                 chTemp_Load();
 
@@ -136,8 +135,8 @@ namespace SensorBoard
             MainForm main = (MainForm)form;
             DateTime start = main.GetStartDate();
             DateTime end = main.GetEndDate();
-            String startString = start.ToString("yyyy-MM-dd hh:mm:ss");
-            String endString = end.ToString("yyyy-MM-dd hh:mm:ss");
+            String startString = start.ToString("yyyy-MM-dd HH:mm:ss");
+            String endString = end.ToString("yyyy-MM-dd HH:mm:ss");
             String idSensor = main.getSensor();
             String query;
 
@@ -170,7 +169,7 @@ namespace SensorBoard
                     chTempHumid.Series["Temperatures"].Points.AddXY(line["data_date"], line["temperature"]);
                     chTempHumid.Series["Humidité"].Points.AddXY(line["data_date"], line["humidity"]);
                 }
-                
+
             }
         }
     }
