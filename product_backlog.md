@@ -329,32 +329,9 @@
 2 - Obtenir un rapport PDF affichant pour le relevé :
 - [x] les données de synthèse
 - [x] le tableau
-- [ ] le graphique
+- [x] le graphique
 
 ----------
-
-
-
-
-
-| ID          | 6_1                                    |
-|:----------- |----------------------------------------|
-| Titre       | **Imprimer un rapport au format PDF**  |
-| Priorite    | ___5___                                |
-| Estimation  | ___2___                                |
-| En tant que | Utilisateur                            |
-| Je veux     | cliquer sur "Imprimer le rapport"      |
-| Afin de     | imprimer un rapport                    |
-
-### DoD :
-
-1 - Disposer d'une fonctionnalité permettant l'export :
-- [ ] bouton "Imprimer le rapport"
-
-2 - Obtenir un aperçu avant impression du rapport 
-
-----------
-
 
 
 
@@ -371,16 +348,9 @@
 ### DoD :
 
 1 - Disposer d'une fonctionnalité permettant l'envoi par mail :
-- [ ] bouton "Envoi par mail" qui ouvre une fenêtre de création de mail
-
-2  - Dans la fenêtre de création de mail générée, avoir :
-- [ ] champ de saisie du destinataire
-- [ ] champ de saisie de l'objet pré-rempli avec l'ID du capteur et la date du relevé
-- [ ] corps du message pré-rempli avec des informations pertinentes
-- [ ] bouton "envoyer" qui envoie le mail au destinataire saisi
-
-3 - Vérifier que l'adresse mail du destinataire saisie est correcte
-- [ ] affichage d'un message d'erreur si l'adresse mail saisie est incorrecte
+- [x] bouton "Envoi par mail" qui permet d'envoyer le pdf par mail avec un objet et un message prédéfini
+- [x] détection d'un mauvais format d'un mail avec message le faisant remarqué
+- [x] affichage d'un message de succès si le mail a été envoyé
 
 ----------
 
