@@ -17,7 +17,7 @@ namespace SensorBoard
         public MemoryStream getCHTempHumidImageBuffer()
         {
             MemoryStream stream = new MemoryStream();
-            chTempHumid.SaveImage(stream, ChartImageFormat.Jpeg);
+            chTempHumid.SaveImage(stream, ChartImageFormat.Png);
             return stream;
         }
 
