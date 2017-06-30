@@ -79,7 +79,7 @@ namespace SensorBoard
             // Open the document to enable you to write to the document
             doc.Open();
             // Add a simple and wellknown phrase to the document in a flow layout manner
-            doc.Add(new Paragraph("Rapport de données relatives à un ou plusieurs capteur HBS"));
+            doc.Add(new Paragraph("Rapport de données relatives à un capteur"));
             doc.Add(new Paragraph("" + Environment.NewLine));
 
 
@@ -100,6 +100,13 @@ namespace SensorBoard
                                                                              main.getSynthesis().mlMedHumidData.Text + " / " +
                                                                              main.getSynthesis().mlMaxHumidData.Text));
 
+
+            MemoryStream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
+            iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer.ToArray());
+            iImage.ScaleToFit(doc.PageSize);
+            iImage.SetAbsolutePosition(0, 250);
+            doc.Add(iImage);
+            doc.NewPage();
 
             PdfPTable table = new PdfPTable(5);
 
@@ -162,12 +169,6 @@ namespace SensorBoard
             }
 
             doc.Add(table);
-
-            MemoryStream chTempHumidImageBuffer = synthesis.getCHTempHumidImageBuffer();
-            iTextSharp.text.Image iImage = iTextSharp.text.Image.GetInstance(chTempHumidImageBuffer.ToArray());
-            iImage.ScaleToFit(doc.PageSize);
-            iImage.SetAbsolutePosition(0, 0);
-            doc.Add(iImage);
 
             // Close the document
             doc.Close();
