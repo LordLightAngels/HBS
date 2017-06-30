@@ -19,6 +19,7 @@ using iTextSharp;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Threading;
 
 namespace SensorBoard
 {
@@ -54,11 +55,7 @@ namespace SensorBoard
             try
             {
                 File.WriteAllText(filePath, finalRes.ToString());
-
-                if (mcbOuvrir.Checked)
-                {
-                    Process.Start(filePath);
-                }
+                Thread.Sleep(1000);
 
             }
             catch (Exception ex)
@@ -174,17 +171,14 @@ namespace SensorBoard
 
             // Close the document
             doc.Close();
-            // Close the writer instance
-            writer.Close();
-            // Always close open filehandles explicity
-            fs.Close();
-            
+
             try
             {
-                if (mcbOuvrir.Checked)
-                {
-                    Process.Start(filePath);
-                }
+                // Close the writer instance
+                writer.Close();
+                // Always close open filehandles explicity
+                fs.Close();
+                Thread.Sleep(1000);
             }
             catch (Exception ex)
             {
@@ -246,6 +240,8 @@ namespace SensorBoard
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
+                mail.Attachments[0].Dispose();
+                Thread.Sleep(1000);
                 MessageBox.Show("Mail envoyé avec succès");
             }
             catch (Exception ex)
@@ -279,9 +275,10 @@ namespace SensorBoard
                 {
 
                     this.filePath = saveFile.FileName;
-                    if (mcbEnvoiDoc.Checked) SendMail();
                     if (mrbExcel.Checked) ExportDataCSV(saveFile.FileName);
                     if (mrbPDF.Checked) ExportDataPDF(saveFile.FileName);
+                    if (mcbEnvoiDoc.Checked) SendMail();
+                    if (mcbOuvrir.Checked) Process.Start(filePath);
                 }
             }
 

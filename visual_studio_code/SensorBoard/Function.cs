@@ -9,12 +9,12 @@ namespace SensorBoard
 {
     class Function
     {
-        internal static string slugify(string name)
+        public static string slugify(string name)
         {
             return Regex.Replace(name, "[^a-z0-9\\._\\s]", "", RegexOptions.IgnoreCase);
         }
 
-        internal static bool IsValidEmailAddress(string s)
+        public static bool IsValidEmailAddress(string s)
         {
             if (string.IsNullOrEmpty(s))
                 return false;
